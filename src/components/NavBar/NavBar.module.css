@@ -1,16 +1,29 @@
 .nav {
-  /* text-decoration: none; */
-  display: flex;
-  flex-direction: column;
-
-  color: black;
-  font-weight: 500;
+  grid-area: navBar;
 }
 
-img {
-  margin: 5px 10px 10px 0;
+.ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.li {
+  margin: 10px;
+  vertical-align: middle;
+}
+
+.link {
+  color: #000;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: none;
 }
 
 .activeLink {
   color: brown;
+}
+
+img {
+  margin-right: 10px;
 }

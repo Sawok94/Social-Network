@@ -9,19 +9,6 @@ body {
   display: grid;
   grid-template-areas: 'header header' 'navBar main';
   grid-template-rows: 50px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 2fr 8fr;
   grid-gap: 15px;
-}
-
-.app-container-header {
-  grid-area: header;
-  background-color: white;
-}
-.app-container-navBar {
-  grid-area: navBar;
-  /* background-color: blue; */
-}
-.app-container-main {
-  grid-area: main;
-  background-color: white;
 }

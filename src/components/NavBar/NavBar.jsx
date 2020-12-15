@@ -12,34 +12,78 @@ import settingsIcon from '../../assets/settings.png';
 const NavBar = (props) => {
   return (
     <nav className={style.nav}>
-      <NavLink to='/profile' activeClassName={style.activeLink}>
-        <img src={userIcon} alt='userIcon' />
-        Мой профиль
-      </NavLink>
-      <NavLink to='/news' activeClassName={style.activeLink}>
-        <img src={newsIcon} alt='newsIcon' />
-        Новости
-      </NavLink>
-      <NavLink to='/messages' activeClassName={style.activeLink}>
-        <img src={messagesIcon} alt='messagesIcon' />
-        Сообщения
-      </NavLink>
-      <NavLink to='/friends' activeClassName={style.activeLink}>
-        <img src={friendsIcon} alt='friendsIcon' />
-        Друзья
-      </NavLink>
-      <NavLink to='/music' activeClassName={style.activeLink}>
-        <img src={musicIcon} alt='musicIcon' />
-        Музыка
-      </NavLink>
-      <NavLink to='/video' activeClassName={style.activeLink}>
-        <img src={videoIcon} alt='videoIcon' />
-        Видио
-      </NavLink>
-      <NavLink to='/settings' activeClassName={style.activeLink}>
-        <img src={settingsIcon} alt='settingsIcon' />
-        Настройки
-      </NavLink>
+      <ul className={style.ul}>
+        <li className={style.li}>
+          <NavLink
+            to='/profile'
+            className={style.link}
+            activeClassName={style.activeLink}
+          >
+            <img src={userIcon} alt='userIcon' />
+            Мой профиль
+          </NavLink>
+        </li>
+        <li className={style.li}>
+          <NavLink
+            to='/news'
+            className={style.link}
+            activeClassName={style.activeLink}
+          >
+            <img src={newsIcon} alt='newsIcon' />
+            Новости
+          </NavLink>
+        </li>
+        <li className={style.li}>
+          <NavLink
+            to='/messages'
+            className={style.link}
+            activeClassName={style.activeLink}
+          >
+            <img src={messagesIcon} alt='messagesIcon' />
+            Сообщения
+          </NavLink>
+        </li>
+        <li className={style.li}>
+          <NavLink
+            to='/friends'
+            className={style.link}
+            activeClassName={style.activeLink}
+          >
+            <img src={friendsIcon} alt='friendsIcon' />
+            Друзья
+          </NavLink>
+        </li>
+        <li className={style.li}>
+          <NavLink
+            to='/music'
+            className={style.link}
+            activeClassName={style.activeLink}
+          >
+            <img src={musicIcon} alt='musicIcon' />
+            Музыка
+          </NavLink>
+        </li>
+        <li className={style.li}>
+          <NavLink
+            to='/video'
+            className={style.link}
+            activeClassName={style.activeLink}
+          >
+            <img src={videoIcon} alt='videoIcon' />
+            Видио
+          </NavLink>
+        </li>
+        <li className={style.li}>
+          <NavLink
+            to='/settings'
+            className={style.link}
+            activeClassName={style.activeLink}
+          >
+            <img src={settingsIcon} alt='settingsIcon' />
+            Настройки
+          </NavLink>
+        </li>
+      </ul>
     </nav>
   );
 };
