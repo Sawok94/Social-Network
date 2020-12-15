@@ -9,6 +9,6 @@ body {
   display: grid;
   grid-template-areas: 'header header' 'navBar main';
   grid-template-rows: 50px 1fr;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: 1.7fr 8.3fr;
   grid-gap: 15px;
 }

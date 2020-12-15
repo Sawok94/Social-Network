@@ -2,12 +2,12 @@ import React from 'react';
 import style from '../NavBar/NavBar.module.css';
 import { NavLink } from 'react-router-dom';
 import userIcon from '../../assets/user.png';
-import newsIcon from '../../assets/news.png';
 import messagesIcon from '../../assets/messages.png';
 import friendsIcon from '../../assets/friends.png';
-import musicIcon from '../../assets/music.png';
-import videoIcon from '../../assets/video.png';
 import settingsIcon from '../../assets/settings.png';
+// import newsIcon from '../../assets/news.png';
+// import musicIcon from '../../assets/music.png';
+// import videoIcon from '../../assets/video.png';
 
 const NavBar = (props) => {
   return (
@@ -21,16 +21,6 @@ const NavBar = (props) => {
           >
             <img src={userIcon} alt='userIcon' />
             Мой профиль
-          </NavLink>
-        </li>
-        <li className={style.li}>
-          <NavLink
-            to='/news'
-            className={style.link}
-            activeClassName={style.activeLink}
-          >
-            <img src={newsIcon} alt='newsIcon' />
-            Новости
           </NavLink>
         </li>
         <li className={style.li}>
@@ -55,6 +45,16 @@ const NavBar = (props) => {
         </li>
         <li className={style.li}>
           <NavLink
+            to='/settings'
+            className={style.link}
+            activeClassName={style.activeLink}
+          >
+            <img src={settingsIcon} alt='settingsIcon' />
+            Настройки
+          </NavLink>
+        </li>
+        {/* <li className={style.li}>
+          <NavLink
             to='/music'
             className={style.link}
             activeClassName={style.activeLink}
@@ -72,17 +72,17 @@ const NavBar = (props) => {
             <img src={videoIcon} alt='videoIcon' />
             Видио
           </NavLink>
-        </li>
-        <li className={style.li}>
+        </li> */}
+        {/* <li className={style.li}>
           <NavLink
-            to='/settings'
+            to='/news'
             className={style.link}
             activeClassName={style.activeLink}
           >
-            <img src={settingsIcon} alt='settingsIcon' />
-            Настройки
+            <img src={newsIcon} alt='newsIcon' />
+            Новости
           </NavLink>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

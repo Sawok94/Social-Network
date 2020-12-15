@@ -1,8 +1,9 @@
 import React from 'react';
+import style from '../Friends/Friends.module.css'
 
 const Friends = (props) => {
   return (
-  <div>Friends</div>
+  <div className={style.container}>Friends</div>
   );
 };
 
