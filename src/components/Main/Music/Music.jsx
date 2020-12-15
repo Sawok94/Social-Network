@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Music = (props) => {
+const MusicC = (props) => {
   return (
   <div></div>
   );
 };
 
-export default Music;
+export default MusicC;

@@ -1,0 +1,16 @@
+.nav {
+  /* text-decoration: none; */
+  display: flex;
+  flex-direction: column;
+
+  color: black;
+  font-weight: 500;
+}
+
+img {
+  margin: 5px 10px 10px 0;
+}
+
+.activeLink {
+  color: brown;
+}

@@ -1,4 +1,4 @@
-# Социльная сеть "Socialict" 
+# Социльная сеть "Socialist" 
 
 Данный проект создан с помощью [Create React App](https://github.com/facebook/create-react-app).
 
