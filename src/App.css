@@ -12,3 +12,11 @@ body {
   grid-template-columns: 1.7fr 8.3fr;
   grid-gap: 15px;
 }
+
+.wrapper {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 5px;
+
+  color: blueviolet;
+}
