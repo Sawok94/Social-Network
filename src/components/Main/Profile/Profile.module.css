@@ -1,5 +1,6 @@
 .container {
   display: grid;
+  grid-template-areas: 'photo info' 'friends wall';
   grid-template-rows: 200px 1fr; 
   grid-template-columns: 200px 1fr;
   grid-gap: 15px;

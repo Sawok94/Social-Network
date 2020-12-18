@@ -1,21 +1,16 @@
-import React from 'react';
+import React, { createRef } from 'react';
+import Post from '../../../../utils/OverallComponents/Post/Post';
 import style from '../Wall/Wall.module.css';
-import border from '../../Main.module.css';
-import TextArea from '../../../../utils/OverallComponents/TextArea/TextArea';
+import AddPost from './AddPost/AddPost';
+import posts from '../../../../redux/posts-reducer.js';
 
 const Wall = (props) => {
+  let showPosts = posts.posts.map((post) => <Post textPost={post.textPost} />);
+
   return (
-    <div className={`${style.wall} ${border.wrapper}`}>
-      <TextArea btn='Опубликовать' />
-      стена
-      <p>.</p>
-      <p>.</p>
-      <p>.</p>
-      <p>.</p>
-      <p>.</p>
-      <p>.</p>
-      <p>.</p>
-      <p>.</p>
+    <div className={style.wall}>
+      <AddPost />
+      {showPosts}
     </div>
   );
 };
