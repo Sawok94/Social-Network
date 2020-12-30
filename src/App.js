@@ -4,7 +4,7 @@ import Header from '../src/components/Header/Header';
 import NavBar from '../src/components/NavBar/NavBar';
 import Main from '../src/components/Main/Main';
 
-function App() {
+function App(props) {
   return (
     <div className='app-container'>
       <Header />

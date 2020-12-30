@@ -11,8 +11,13 @@ const AddPost = (props) => {
   return (
     <div className={`${style.wall__form} ${border.wrapper}`}>
       <Avatar style='avatar__small' />
-      <TextArea place='поста' ref={ref} />
-      <Button btn='Опубликовать' value={ref} />
+      <TextArea
+        place='поста'
+        ref={ref}
+        textPost={props.textPost}
+        addChar={props.addChar}
+      />
+      <Button btn='Опубликовать' value={ref} addPost={props.addPost} />
     </div>
   );
 };
