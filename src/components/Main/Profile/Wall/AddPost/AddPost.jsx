@@ -1,25 +1,24 @@
-import React, { createRef } from 'react';
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 import style from '../AddPost/AddPost.module.css';
 import border from '../../../Main.module.css';
 import Avatar from '../../../../../utils/OverallComponents/Avatar/Avatar';
-import TextArea from '../../../../../utils/OverallComponents/TextArea/TextArea';
 import Button from '../../../../../utils/OverallComponents/Button/Button';
 
 const AddPost = (props) => {
-  const ref = React.createRef();
-
   return (
     <div className={`${style.wall__form} ${border.wrapper}`}>
-      <Avatar style='avatar__small' />
-      <TextArea
-        place='поста'
-        ref={ref}
-        textPost={props.textPost}
-        addChar={props.addChar}
-      />
-      <Button btn='Опубликовать' value={ref} addPost={props.addPost} />
+      <form onSubmit={handleSubmit}>
+        <Avatar style='avatar__small' />
+        <Field name='textArea' component='textArea' placeholder='' />
+        <button>Опубликовать</button>
+      </form>
     </div>
   );
 };
 
-export default AddPost;
+const AddPostReduxForm = reduxForm({
+  form: post,
+})(AddPost);
+
+export default AddPostReduxForm;

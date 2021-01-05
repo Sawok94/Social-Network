@@ -1,0 +1,10 @@
+.message {
+  padding: 10px 40px;
+  display: flex;
+
+  font-size: 10px;
+}
+
+.message__name {
+  font-weight: bold;
+}
