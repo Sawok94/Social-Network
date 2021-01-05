@@ -10,7 +10,7 @@ const TextArea = React.forwardRef((props, ref) => {
     <textarea
       className={style.wall__form__txtr}
       placeholder={`Введите текст ${props.place}...`}
-      value={props.textPost}
+      value={props.textPost || props.textMessage}
       onChange={addCharOfText}
       ref={ref}
       cols='40'

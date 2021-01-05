@@ -3,8 +3,8 @@ import style from '../Button/Button.module.css';
 
 const Button = (props) => {
   const pushPostOfWall = () => {
-    props.addPost(props.value.current.value);
-    props.value.current.value = '';
+    props.addPost(props.value.current.value) ||
+      props.addMessage(props.value.current.value);
   };
 
   return (

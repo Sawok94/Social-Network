@@ -1,13 +1,13 @@
 import React from 'react';
 import style from '../Messages/Messages.module.css';
 import ListFriends from './ListFriends/ListFriends';
-import ListMessages from './ListMessages/ListMessages';
+import ListMessagesContainer from './ListMessages/ListMessagesContainer';
 
 const Messages = (props) => {
   return (
     <div className={style.container}>
       <ListFriends />
-      <ListMessages />
+      <ListMessagesContainer />
     </div>
   );
 };

@@ -10,7 +10,10 @@ const Post = (props) => {
       <div className={style.post__avatar}>
         <Avatar style='avatar__middle' />
       </div>
-      <div className={style.post__text}>{props.textPost}</div>
+      <div className={style.post__text}>
+        {props.textPost}
+        {props.textMessage}
+      </div>
     </div>
   );
 };

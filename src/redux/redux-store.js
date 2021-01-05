@@ -1,9 +1,10 @@
 import { combineReducers, createStore } from 'redux';
 import posts from './posts-reducer';
+import messages from './messages-reducer';
 
 const reducers = combineReducers({
   posts: posts,
-  // messages: messages,
+  messages: messages,
 });
 
 const store = createStore(reducers);

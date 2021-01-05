@@ -4,25 +4,25 @@ const ADD_CHAR = 'ADD_CHAR';
 
 const initialState = {
   posts: [
-    { id: 1, textPost: 'One' },
-    { id: 2, textPost: 'Two' },
+    { id: 0, textPost: 'One' },
+    { id: 1, textPost: 'Two' },
   ],
-  textPost: 'qwewqrm',
+  textPost: '',
 };
 
 const postReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST: {
-      let i = 3;
       return {
         ...state,
         posts: [
           ...state.posts,
           {
-            id: i++,
+            id: state.posts.length,
             textPost: action.textPost,
           },
         ],
+        textPost: ''
       };
     }
     case ADD_CHAR: {
@@ -36,12 +36,12 @@ const postReducer = (state = initialState, action) => {
   }
 };
 
-export const addPostAC = (textPost) => ({
+export const addPost = (textPost) => ({
   type: ADD_POST,
   textPost,
 });
 
-export const addCharAC = (addChar) => ({
+export const addChar = (addChar) => ({
   type: ADD_CHAR,
   addChar,
 });

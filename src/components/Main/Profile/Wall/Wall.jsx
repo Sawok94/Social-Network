@@ -4,7 +4,7 @@ import style from '../Wall/Wall.module.css';
 import AddPost from './AddPost/AddPost';
 
 const Wall = (props) => {
-  let showPosts = props.posts.posts.map((post) => (
+  let showPosts = props.posts.map((post) => (
     <Post key={post.id} textPost={post.textPost} />
   ));
 
