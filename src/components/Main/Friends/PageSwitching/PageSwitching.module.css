@@ -1,0 +1,15 @@
+.pages {
+  display: flex;
+  justify-content: center;
+
+  padding: 25px;
+}
+
+.page a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: bold;
+}

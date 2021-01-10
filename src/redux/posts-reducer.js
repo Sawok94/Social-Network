@@ -1,5 +1,4 @@
 const ADD_POST = 'ADD_POST';
-const ADD_CHAR = 'ADD_CHAR';
 // const DELETE_POST = 'DELETE_POST';
 
 const initialState = {
@@ -7,7 +6,6 @@ const initialState = {
     { id: 0, textPost: 'One' },
     { id: 1, textPost: 'Two' },
   ],
-  textPost: '',
 };
 
 const postReducer = (state = initialState, action) => {
@@ -22,13 +20,6 @@ const postReducer = (state = initialState, action) => {
             textPost: action.textPost,
           },
         ],
-        textPost: ''
-      };
-    }
-    case ADD_CHAR: {
-      return {
-        ...state,
-        textPost: action.addChar,
       };
     }
     default:
@@ -39,11 +30,6 @@ const postReducer = (state = initialState, action) => {
 export const addPost = (textPost) => ({
   type: ADD_POST,
   textPost,
-});
-
-export const addChar = (addChar) => ({
-  type: ADD_CHAR,
-  addChar,
 });
 
 export default postReducer;

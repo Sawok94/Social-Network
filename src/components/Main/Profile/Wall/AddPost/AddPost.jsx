@@ -3,22 +3,26 @@ import { Field, reduxForm } from 'redux-form';
 import style from '../AddPost/AddPost.module.css';
 import border from '../../../Main.module.css';
 import Avatar from '../../../../../utils/OverallComponents/Avatar/Avatar';
-import Button from '../../../../../utils/OverallComponents/Button/Button';
 
-const AddPost = (props) => {
+const AddPostForm = (props) => {
   return (
-    <div className={`${style.wall__form} ${border.wrapper}`}>
-      <form onSubmit={handleSubmit}>
+    <div className={border.wrapper}>
+      <form onSubmit={props.handleSubmit} className={style.wall__form}>
         <Avatar style='avatar__small' />
-        <Field name='textArea' component='textArea' placeholder='' />
-        <button>Опубликовать</button>
+        <Field
+          className={style.wall__form_textArea}
+          placeholder='Введите текст поста...'
+          name='textArea'
+          component='textArea'
+          cols='40'
+          rows='3'
+        />
+        <button className={style.wall__form_button}>Опубликовать</button>
       </form>
     </div>
   );
 };
 
-const AddPostReduxForm = reduxForm({
-  form: post,
-})(AddPost);
-
-export default AddPostReduxForm;
+export default reduxForm({
+  form: 'post',
+})(AddPostForm);

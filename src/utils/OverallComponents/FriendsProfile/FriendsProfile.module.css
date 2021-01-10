@@ -1,23 +1,24 @@
-.wall__form {
-  padding: 15px;
-  margin: 0 auto;
-
+.friendsProfile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 15px;
+  width: 70%;
+  margin: 0 auto;
+
+  border-bottom: 1px solid rgb(220, 213, 213);
 }
 
-.wall__form_textArea {
-  border-color: rgb(72, 67, 167);
-  border-radius: 5px;
-  resize: none;
-  outline:none;
+.friendsProfile__infoProfile_name {
+  font-weight: bold;
 }
 
-.wall__form_button {
+.friendsProfile__infoProfile_info {
+  font-size: 10px;
+}
+
+.friendsProfile__addFriendBtn {
   margin-left: 15px;
   border-radius: 8px;
   padding: 7px 10px;
