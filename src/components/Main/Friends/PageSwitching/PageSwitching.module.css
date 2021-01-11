@@ -3,11 +3,17 @@
   justify-content: center;
 
   padding: 25px;
+
+  user-select: none;
 }
 
-.page a {
-  margin-left: 10px;
-  text-decoration: none;
+.pages__navigator {
+  padding: 0 30px;
+  cursor: pointer;
+}
+.page {
+  padding: 0 12px;
+  cursor: pointer;
 }
 
 .active {

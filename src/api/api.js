@@ -1,4 +1,4 @@
-import axios from 'axios';
+import * as axios from 'axios';
 
 let instance = axios.create({
   withCredentials: true,
@@ -10,10 +10,9 @@ let instance = axios.create({
 
 export const userAPI = {
   getUsers(currentPage = 1, sizePage = 10) {
-    return instance
-      .get(`users?page=${currentPage}&count=${sizePage}`)
-      .then((response) => {
-        return response.data;
-      });
+    return instance.get(`users?page=${currentPage}&count=${sizePage}`);
+  },
+  getTotalCount() {
+    return instance.get(`users`);
   },
 };

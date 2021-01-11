@@ -1,10 +1,12 @@
-.header{
+.header {
   grid-area: header;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 0 0 5px 5px;
+
+  width: 70%;
 }
 
 .img {
-margin-left: 3px;
+  margin-left: 3px;
 }
