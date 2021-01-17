@@ -54,13 +54,9 @@ export const setCurrentPage = (currentPage) => ({
 export const getUserProfile = (currentPage, sizePage) => (dispatch) => {
   userAPI.getUsers(currentPage, sizePage).then((response) => {
     dispatch(setUserProfile(response.data.items));
-  });
-};
-
-export const getTotalCount = () => (dispatch) => {
-  userAPI.getUsers().then((response) => {
     dispatch(setTotalCount(response.data.totalCount));
   });
+  dispatch(setCurrentPage(currentPage));
 };
 
 export default profilesReducer;

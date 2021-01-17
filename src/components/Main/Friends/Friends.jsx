@@ -1,9 +1,9 @@
 import React from 'react';
 import style from './Friends.module.css';
 import border from '../Main.module.css';
-import PageSwitching from './PageSwitching/PageSwitching';
-import FriendsProfile from '../../../utils/OverallComponents/FriendsProfile/FriendsProfile';
 import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
+import PageSwitching from '../../../utils/OverallComponents/PageSwitching/PageSwitching';
+import FriendsProfile from './FriendsProfile/FriendsProfile';
 
 const Friends = (props) => {
   let profilesPage =
@@ -20,10 +20,9 @@ const Friends = (props) => {
     );
 
   let getUserProfile = !props.profiles ? (
-    props.getUserProfile()
+    props.getUserProfile(props.currentPage)
   ) : (
     <PageSwitching
-      getTotalCount={props.getTotalCount}
       sizePage={props.sizePage}
       totalCount={props.totalCount}
       currentPage={props.currentPage}
@@ -36,7 +35,6 @@ const Friends = (props) => {
     <div className={`${style.container} ${border.wrapper}`}>
       {profilesPage}
       {getUserProfile}
-      {/* {console.log(props)} */}
     </div>
   );
 };

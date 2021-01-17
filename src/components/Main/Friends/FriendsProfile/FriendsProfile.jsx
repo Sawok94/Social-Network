@@ -1,13 +1,11 @@
 import React from 'react';
-import Avatar from '../Avatar/Avatar';
+import Avatar from '../../../../utils/OverallComponents/Avatar/Avatar';
 import style from './FriendsProfile.module.css';
 
 const FriendsProfile = (props) => {
   return (
     <div className={style.friendsProfile}>
-      <div>
-        <Avatar style='avatar__middle' />
-      </div>
+      <div><Avatar style='avatar__middle' /></div>
       <div className={style.friendsProfile__infoProfile}>
         <div className={style.friendsProfile__infoProfile_name}>
           {props.name}
