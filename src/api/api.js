@@ -14,4 +14,9 @@ export const userAPI = {
       `users?page=${currentPage}&count=${sizePage}&term=${searchName}`
     );
   },
+  followUser(userId) {
+    return instance.post(`follow/${userId}`).then((res) => {
+      return console.log(res);
+    });
+  },
 };

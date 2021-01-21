@@ -21,50 +21,52 @@ const PageSwitching = (props) => {
   };
 
   return (
-    <div className={style.pages}>
-      {totalPages.length > 1 && (
-        <span
-          className={style.pages__navigator}
-          onClick={() => {
-            leftPageStartingPosition > 1 &&
-              setStartingPosition(startingPosition - 1);
-          }}
-        >
-          &#171;
+    totalPages.length > 1 && (
+      <div className={style.pages}>
+        {
+          <span
+            className={style.pages__navigator}
+            onClick={() => {
+              leftPageStartingPosition > 1 &&
+                setStartingPosition(startingPosition - 1);
+            }}
+          >
+            &#171;
+          </span>
+        }
+        <span>
+          {totalPages
+            .filter(
+              (page) =>
+                page >= leftPageStartingPosition &&
+                page <= rightPageStartingPosition
+            )
+            .map((page) => {
+              return (
+                <span
+                  className={
+                    props.currentPage === page ? style.pageActive : style.page
+                  }
+                  onClick={onSetCurrentPage}
+                >
+                  {page}
+                </span>
+              );
+            })}
         </span>
-      )}
-      <span>
-        {totalPages
-          .filter(
-            (page) =>
-              page >= leftPageStartingPosition &&
-              page <= rightPageStartingPosition
-          )
-          .map((page) => {
-            return (
-              <span
-                className={
-                  props.currentPage === page ? style.pageActive : style.page
-                }
-                onClick={onSetCurrentPage}
-              >
-                {page}
-              </span>
-            );
-          })}
-      </span>
-      {totalPages.length > 1 && (
-        <span
-          className={style.pages__navigator}
-          onClick={() => {
-            rightPageStartingPosition < totalPages.length &&
-              setStartingPosition(startingPosition + 1);
-          }}
-        >
-          &#187;
-        </span>
-      )}
-    </div>
+        {
+          <span
+            className={style.pages__navigator}
+            onClick={() => {
+              rightPageStartingPosition < totalPages.length &&
+                setStartingPosition(startingPosition + 1);
+            }}
+          >
+            &#187;
+          </span>
+        }
+      </div>
+    )
   );
 };
 

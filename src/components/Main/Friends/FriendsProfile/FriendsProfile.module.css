@@ -18,8 +18,11 @@
 
 .friendsProfile__infoProfile_status {
   font-size: 10px;
-  text-align: left;
-  margin-right: 50px;
+
+  text-overflow: ellipsis; 
+  width: 340px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .friendsProfile__addFriendBtn {
