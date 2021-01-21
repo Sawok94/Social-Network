@@ -3,12 +3,14 @@ import { userAPI } from '../api/api';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_SEARCH_NAME = 'SET_SEARCH_NAME';
 
 const initialState = {
   profiles: null,
   currentPage: 1,
   sizePage: 10,
   totalCount: null,
+  searchName: '',
 };
 
 const profilesReducer = (state = initialState, action) => {
@@ -31,6 +33,12 @@ const profilesReducer = (state = initialState, action) => {
         currentPage: action.currentPage,
       };
     }
+    case SET_SEARCH_NAME: {
+      return {
+        ...state,
+        searchName: action.searchName,
+      };
+    }
     default:
       return state;
   }
@@ -51,12 +59,20 @@ export const setCurrentPage = (currentPage) => ({
   currentPage,
 });
 
-export const getUserProfile = (currentPage, sizePage) => (dispatch) => {
-  userAPI.getUsers(currentPage, sizePage).then((response) => {
+export const setSearchName = (searchName) => ({
+  type: SET_SEARCH_NAME,
+  searchName,
+});
+
+export const getUserProfile = (currentPage, sizePage, searchName) => (
+  dispatch
+) => {
+  userAPI.getUsers(currentPage, sizePage, searchName).then((response) => {
     dispatch(setUserProfile(response.data.items));
     dispatch(setTotalCount(response.data.totalCount));
   });
   dispatch(setCurrentPage(currentPage));
+  dispatch(setSearchName(searchName));
 };
 
 export default profilesReducer;

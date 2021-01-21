@@ -1,20 +1,21 @@
 .pages {
-  display: flex;
-  justify-content: center;
-
   padding: 25px;
+  text-align: center;
 
   user-select: none;
   font-size: 8px;
 }
 
 .pages__navigator {
-  padding: 0 30px;
+  margin: 0 30px;
+  font-size: 35px;
+  font-weight: bold;
+
   cursor: pointer;
 }
 
 .page {
-  padding: 0 12px;
+  padding: 10px 12px;
   cursor: pointer;
 }
 

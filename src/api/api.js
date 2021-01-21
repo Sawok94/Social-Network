@@ -9,10 +9,9 @@ let instance = axios.create({
 });
 
 export const userAPI = {
-  getUsers(currentPage, sizePage) {
-    return instance.get(`users?page=${currentPage}&count=${sizePage}`);
-  },
-  getTotalCount() {
-    return instance.get(`users`);
+  getUsers(currentPage, sizePage, searchName = '') {
+    return instance.get(
+      `users?page=${currentPage}&count=${sizePage}&term=${searchName}`
+    );
   },
 };

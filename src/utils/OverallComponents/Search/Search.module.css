@@ -1,0 +1,22 @@
+.search__container {
+  padding: 20px;
+
+  border-bottom: 1px solid rgb(220, 213, 213);
+}
+
+.search__container__elements {
+  display: grid;
+  grid-template-areas: 'img search';
+  grid-template-columns: max-content;
+  grid-gap: 15px;
+  align-items: center;
+
+  margin: 0 auto;
+  width: 80%;
+}
+
+.search__input {
+  width: 100%;
+  border: white;
+  outline: none;
+}

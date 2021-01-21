@@ -1,7 +1,7 @@
 import React from 'react';
 import Friends from './Friends';
 import { connect } from 'react-redux';
-import { getUserProfile, setCurrentPage } from '../../../redux/profile-reducer';
+import { getUserProfile } from '../../../redux/profile-reducer';
 
 const mapStateToProps = (state) => {
   return {
@@ -9,10 +9,10 @@ const mapStateToProps = (state) => {
     currentPage: state.profiles.currentPage,
     sizePage: state.profiles.sizePage,
     totalCount: state.profiles.totalCount,
+    searchName: state.profiles.searchName,
   };
 };
 
 export default connect(mapStateToProps, {
   getUserProfile,
-  setCurrentPage,
 })(Friends);

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import style from '../PageSwitching/PageSwitching.module.css';
-import left from '../../../assets/left.png';
-import right from '../../../assets/right.png';
 
 const PageSwitching = (props) => {
-  let totalPages = [
-    ...Array(Math.round(props.totalCount / props.sizePage)).keys(),
-  ];
+  let pages = Math.ceil(props.totalCount / props.sizePage);
+
+  let totalPages = [];
+
+  for (let i = 0; i < pages; i++) {
+    totalPages.push(i + 1);
+  }
 
   const [startingPosition, setStartingPosition] = useState(1);
 
@@ -15,21 +17,23 @@ const PageSwitching = (props) => {
   const rightPageStartingPosition = startingPosition * 10;
 
   const onSetCurrentPage = (e) => {
-    props.getUserProfile(+e.target.innerText);
+    props.getUserProfile(+e.target.innerText, props.sizePage, props.searchName);
   };
 
   return (
     <div className={style.pages}>
-      <div
-        className={style.pages__navigator}
-        onClick={() => {
-          leftPageStartingPosition > 1 &&
-            setStartingPosition(startingPosition - 1);
-        }}
-      >
-        <img src={left} alt='leftImg' />
-      </div>
-      <div>
+      {totalPages.length > 1 && (
+        <span
+          className={style.pages__navigator}
+          onClick={() => {
+            leftPageStartingPosition > 1 &&
+              setStartingPosition(startingPosition - 1);
+          }}
+        >
+          &#171;
+        </span>
+      )}
+      <span>
         {totalPages
           .filter(
             (page) =>
@@ -48,16 +52,18 @@ const PageSwitching = (props) => {
               </span>
             );
           })}
-      </div>
-      <div
-        className={style.pages__navigator}
-        onClick={() => {
-          // leftPageStartingPosition > 0 &&
-          setStartingPosition(startingPosition + 1);
-        }}
-      >
-        <img src={right} alt='rightImg' />
-      </div>
+      </span>
+      {totalPages.length > 1 && (
+        <span
+          className={style.pages__navigator}
+          onClick={() => {
+            rightPageStartingPosition < totalPages.length &&
+              setStartingPosition(startingPosition + 1);
+          }}
+        >
+          &#187;
+        </span>
+      )}
     </div>
   );
 };
