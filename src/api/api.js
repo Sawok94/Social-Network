@@ -9,9 +9,9 @@ let instance = axios.create({
 });
 
 export const userAPI = {
-  getUsers(currentPage, sizePage, searchName = '') {
+  getUsers(currentPage, sizePage, searchName, searchFriends) {
     return instance.get(
-      `users?page=${currentPage}&count=${sizePage}&term=${searchName}`
+      `users?page=${currentPage}&count=${sizePage}&term=${searchName}&friend=${searchFriends}`
     );
   },
   followUser(userId) {

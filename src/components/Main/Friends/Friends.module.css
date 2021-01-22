@@ -3,9 +3,34 @@
 }
 
 .container_error {
-  padding: 30px 0 1000px;
+  padding: 30px 0 500px;
   font-size: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.friendsSwither {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  width: 70%;
+}
+
+.friendsSwither__btn {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: white;
+  border: white;
+  outline: none;
+  padding-bottom: 8px;
+}
+
+.active {
+  border-bottom: 2px solid brown;
 }

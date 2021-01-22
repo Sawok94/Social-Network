@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './Friends.module.css';
 import border from '../Main.module.css';
 import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
@@ -6,7 +6,6 @@ import PageSwitching from '../../../utils/OverallComponents/PageSwitching/PageSw
 import FriendsProfile from './FriendsProfile/FriendsProfile';
 import Search from '../../../utils/OverallComponents/Search/Search';
 import noSearch from '../../../assets/noSearch.png';
-import { userAPI } from '../../../api/api';
 
 const Friends = (props) => {
   let profilesPage = !props.profiles ? (
@@ -22,24 +21,73 @@ const Friends = (props) => {
   );
 
   let getUserProfile = !props.profiles ? (
-    props.getUserProfile(props.currentPage)
+    props.getUserProfile(
+      props.currentPage,
+      props.sizePage,
+      props.searchName,
+      props.searchFriends
+    )
   ) : (
     <PageSwitching
       sizePage={props.sizePage}
       totalCount={props.totalCount}
       currentPage={props.currentPage}
       searchName={props.searchName}
+      searchFriends={props.searchFriends}
       getUserProfile={props.getUserProfile}
     />
   );
 
   let searchProfiles = (name) => {
-    props.getUserProfile(props.currentPage, props.sizePage, name.searchName);
+    props.getUserProfile(
+      props.currentPage,
+      props.sizePage,
+      name.searchName,
+      props.searchFriends
+    );
+  };
+
+  let showMyFriends = () => {
+    props.getUserProfile(
+      props.currentPage,
+      props.sizePage,
+      props.searchName,
+      true
+    );
+  };
+
+  let searchFriends = () => {
+    props.getUserProfile(
+      props.currentPage,
+      props.sizePage,
+      props.searchName,
+      false
+    );
   };
 
   return (
     <div className={`${style.container} ${border.wrapper}`}>
       <Search onChange={searchProfiles} />
+
+      <div className={style.friendsSwither}>
+        <button
+          onClick={showMyFriends}
+          className={`${style.friendsSwither__btn} ${
+            props.searchFriends && style.active
+          }`}
+        >
+          Мои друзья
+        </button>
+        <button
+          onClick={searchFriends}
+          className={`${style.friendsSwither__btn} ${
+            !props.searchFriends && style.active
+          }`}
+        >
+          Поиск друзей
+        </button>
+      </div>
+
       {profilesPage == false ? (
         <div className={style.container_error}>
           <img src={noSearch} alt='noSearchImg' />
@@ -49,8 +97,7 @@ const Friends = (props) => {
         profilesPage
       )}
       {getUserProfile}
-      {/* {console.log(userAPI.followUser(12733))} */}
-      {/* {console.log()} */}
+      {console.log(props)}
     </div>
   );
 };

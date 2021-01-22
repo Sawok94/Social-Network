@@ -4,6 +4,7 @@ const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_SEARCH_NAME = 'SET_SEARCH_NAME';
+const SET_SEARCH_FRIENDS = 'SET_SEARCH_FRIENDS';
 
 const initialState = {
   profiles: null,
@@ -11,6 +12,7 @@ const initialState = {
   sizePage: 10,
   totalCount: null,
   searchName: '',
+  searchFriends: true,
 };
 
 const profilesReducer = (state = initialState, action) => {
@@ -39,6 +41,12 @@ const profilesReducer = (state = initialState, action) => {
         searchName: action.searchName,
       };
     }
+    case SET_SEARCH_FRIENDS: {
+      return {
+        ...state,
+        searchFriends: action.searchFriends,
+      };
+    }
     default:
       return state;
   }
@@ -64,15 +72,26 @@ export const setSearchName = (searchName) => ({
   searchName,
 });
 
-export const getUserProfile = (currentPage, sizePage, searchName) => (
-  dispatch
-) => {
-  userAPI.getUsers(currentPage, sizePage, searchName).then((response) => {
-    dispatch(setUserProfile(response.data.items));
-    dispatch(setTotalCount(response.data.totalCount));
-  });
+export const setSearchFriends = (searchFriends) => ({
+  type: SET_SEARCH_FRIENDS,
+  searchFriends,
+});
+
+export const getUserProfile = (
+  currentPage,
+  sizePage,
+  searchName,
+  searchFriends
+) => (dispatch) => {
+  userAPI
+    .getUsers(currentPage, sizePage, searchName, searchFriends)
+    .then((response) => {
+      dispatch(setUserProfile(response.data.items));
+      dispatch(setTotalCount(response.data.totalCount));
+    });
   dispatch(setCurrentPage(currentPage));
   dispatch(setSearchName(searchName));
+  dispatch(setSearchFriends(searchFriends));
 };
 
 export default profilesReducer;

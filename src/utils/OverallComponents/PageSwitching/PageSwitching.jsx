@@ -17,7 +17,12 @@ const PageSwitching = (props) => {
   const rightPageStartingPosition = startingPosition * 10;
 
   const onSetCurrentPage = (e) => {
-    props.getUserProfile(+e.target.innerText, props.sizePage, props.searchName);
+    props.getUserProfile(
+      +e.target.innerText,
+      props.sizePage,
+      props.searchName,
+      props.searchFriends
+    );
   };
 
   return (
