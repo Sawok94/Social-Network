@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addPost } from '../../../../redux/posts-reducer';
-import Wall from './Wall';
+import { addPost } from '../../../redux/posts-reducer';
+import Profile from './Profile';
 
 const mapStateToProps = (state) => {
   return {
@@ -9,4 +9,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { addPost })(Wall);
+export default connect(mapStateToProps, { addPost })(Profile);

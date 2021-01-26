@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import style from '../AddPost/AddPost.module.css';
+import style from '../AddPostForm/AddPostForm.module.css';
 import border from '../../../Main.module.css';
 import Avatar from '../../../../../utils/OverallComponents/Avatar/Avatar';
 
@@ -11,9 +11,9 @@ const AddPostForm = (props) => {
         <Avatar style='avatar__small' />
         <Field
           className={style.wall__form_textArea}
-          placeholder='Введите текст поста...'
-          name='textArea'
-          component='textArea'
+          placeholder=' Введите текст поста...'
+          name='textAreaForm'
+          component='textarea'
           cols='40'
           rows='3'
         />

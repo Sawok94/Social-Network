@@ -5,6 +5,8 @@ const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_SEARCH_NAME = 'SET_SEARCH_NAME';
 const SET_SEARCH_FRIENDS = 'SET_SEARCH_FRIENDS';
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
 
 const initialState = {
   profiles: null,
@@ -47,6 +49,29 @@ const profilesReducer = (state = initialState, action) => {
         searchFriends: action.searchFriends,
       };
     }
+    case FOLLOW: {
+      return {
+        ...state,
+        profiles: state.profiles.map((user) => {
+          if (user.id === action.userId) {
+            console.log(user);
+            return { ...user, followed: true };
+          }
+          return user;
+        }),
+      };
+    }
+    case UNFOLLOW: {
+      return {
+        ...state,
+        profiles: state.profiles.map((user) => {
+          if (user.id === action.userId) {
+            return { ...user, followed: false };
+          }
+          return user;
+        }),
+      };
+    }
     default:
       return state;
   }
@@ -77,6 +102,16 @@ export const setSearchFriends = (searchFriends) => ({
   searchFriends,
 });
 
+export const follow = (userId) => ({
+  type: FOLLOW,
+  userId,
+});
+
+export const unfollow = (userId) => ({
+  type: UNFOLLOW,
+  userId,
+});
+
 export const getUserProfile = (
   currentPage,
   sizePage,
@@ -92,6 +127,16 @@ export const getUserProfile = (
   dispatch(setCurrentPage(currentPage));
   dispatch(setSearchName(searchName));
   dispatch(setSearchFriends(searchFriends));
+};
+
+export const followUser = (userId) => (dispatch) => {
+  userAPI.followUser(userId);
+  dispatch(follow(userId));
+};
+
+export const unfollowUser = (userId) => (dispatch) => {
+  userAPI.unfollowUser(userId);
+  dispatch(unfollow(userId));
 };
 
 export default profilesReducer;

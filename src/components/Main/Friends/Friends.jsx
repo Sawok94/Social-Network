@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import style from './Friends.module.css';
 import border from '../Main.module.css';
 import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
@@ -8,6 +8,14 @@ import Search from '../../../utils/OverallComponents/Search/Search';
 import noSearch from '../../../assets/noSearch.png';
 
 const Friends = (props) => {
+  let followUser = (userId) => {
+    props.followUser(userId);
+  };
+
+  let unfollowUser = (userId) => {
+    props.unfollowUser(userId);
+  };
+  debugger;
   let profilesPage = !props.profiles ? (
     <Preloader />
   ) : (
@@ -16,6 +24,11 @@ const Friends = (props) => {
         name={profile.name}
         status={profile.status}
         key={profile.id}
+        id={profile.id}
+        photos={profile.photos}
+        followed={profile.followed}
+        followUser={followUser}
+        unfollowUser={unfollowUser}
       />
     ))
   );
@@ -97,7 +110,6 @@ const Friends = (props) => {
         profilesPage
       )}
       {getUserProfile}
-      {console.log(props)}
     </div>
   );
 };

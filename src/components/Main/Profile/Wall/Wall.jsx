@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from '../../../../utils/OverallComponents/Post/Post';
 import style from '../Wall/Wall.module.css';
-import AddPostForm from './AddPost/AddPost';
+import AddPostForm from './AddPostForm/AddPostForm';
 
 const Wall = (props) => {
   let showPosts = props.posts.map((post) => (
@@ -9,9 +9,9 @@ const Wall = (props) => {
   ));
 
   const addNewPost = (post) => {
-    props.addPost(post.textArea);
+    props.addPost(post.textAreaForm);
   };
-
+  
   return (
     <div className={style.wall}>
       <AddPostForm onSubmit={addNewPost} />

@@ -2,7 +2,9 @@ import React from 'react';
 import Friends from './Friends';
 import { connect } from 'react-redux';
 import {
+  followUser,
   getUserProfile,
+  unfollowUser,
 } from '../../../redux/profile-reducer';
 
 const mapStateToProps = (state) => {
@@ -15,6 +17,9 @@ const mapStateToProps = (state) => {
     searchFriends: state.profiles.searchFriends,
   };
 };
+
 export default connect(mapStateToProps, {
   getUserProfile,
+  followUser,
+  unfollowUser,
 })(Friends);
