@@ -5,16 +5,16 @@ import {
   followUser,
   getUserProfile,
   unfollowUser,
-} from '../../../redux/profile-reducer';
+} from '../../../redux/users-reducer';
 
 const mapStateToProps = (state) => {
   return {
-    profiles: state.profiles.profiles,
-    currentPage: state.profiles.currentPage,
-    sizePage: state.profiles.sizePage,
-    totalCount: state.profiles.totalCount,
-    searchName: state.profiles.searchName,
-    searchFriends: state.profiles.searchFriends,
+    profiles: state.users.profiles,
+    currentPage: state.users.currentPage,
+    sizePage: state.users.sizePage,
+    totalCount: state.users.totalCount,
+    searchName: state.users.searchName,
+    searchFriends: state.users.searchFriends,
   };
 };
 

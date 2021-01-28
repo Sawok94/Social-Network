@@ -1,14 +1,14 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import posts from './posts-reducer';
+import profiles from './profiles-reducer';
 import messages from './messages-reducer';
-import profiles from './profile-reducer';
+import users from './users-reducer';
 import { reducer as formReducer } from 'redux-form';
 import thunkMiddleware from 'redux-thunk';
 
 const reducers = combineReducers({
-  posts: posts,
-  messages: messages,
   profiles: profiles,
+  messages: messages,
+  users: users,
   form: formReducer,
 });
 

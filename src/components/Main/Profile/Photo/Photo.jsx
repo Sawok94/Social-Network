@@ -5,7 +5,7 @@ import Avatar from '../../../../utils/OverallComponents/Avatar/Avatar';
 const Photo = (props) => {
   return (
     <div className={style.photo}>
-      <Avatar style='avatar__large' />
+      <Avatar photo={props.photo} style='avatar__large' />
     </div>
   );
 };

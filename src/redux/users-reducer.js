@@ -17,7 +17,7 @@ const initialState = {
   searchFriends: true,
 };
 
-const profilesReducer = (state = initialState, action) => {
+const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER_PROFILE: {
       return {
@@ -139,4 +139,4 @@ export const unfollowUser = (userId) => (dispatch) => {
   dispatch(unfollow(userId));
 };
 
-export default profilesReducer;
+export default usersReducer;

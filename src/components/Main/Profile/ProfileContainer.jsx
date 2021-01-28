@@ -1,12 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addPost } from '../../../redux/posts-reducer';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import {
+  addPost,
+  deletePost,
+  getProfile,
+} from '../../../redux/profiles-reducer';
 import Profile from './Profile';
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts.posts,
+    posts: state.profiles.posts,
+    profile: state.profiles.profile,
   };
 };
 
-export default connect(mapStateToProps, { addPost })(Profile);
+export default compose(
+  connect(mapStateToProps, { addPost, deletePost, getProfile }),
+  withRouter
+)(Profile);

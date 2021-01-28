@@ -5,7 +5,7 @@ import avatar from '../../../assets/avatar.png';
 const Avatar = (props) => {
   return (
     <img
-      src={props.photos || avatar}
+      src={props.photo || avatar}
       className={props.style}
       alt='avatarImg'
     />

@@ -15,7 +15,6 @@ const Friends = (props) => {
   let unfollowUser = (userId) => {
     props.unfollowUser(userId);
   };
-  debugger;
   let profilesPage = !props.profiles ? (
     <Preloader />
   ) : (
@@ -80,8 +79,8 @@ const Friends = (props) => {
 
   return (
     <div className={`${style.container} ${border.wrapper}`}>
+      {console.log(props)}
       <Search onChange={searchProfiles} />
-
       <div className={style.friendsSwither}>
         <button
           onClick={showMyFriends}

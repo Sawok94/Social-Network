@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Avatar from '../../../../utils/OverallComponents/Avatar/Avatar';
 import style from './FriendsProfile.module.css';
 
@@ -6,16 +7,20 @@ const FriendsProfile = (props) => {
   return (
     <div className={style.friendsProfile}>
       <div>
-        <Avatar photos={props.photos.small} style='avatar__middle' />
+        <NavLink to={'/profile/' + props.id} className={style.link}>
+          <Avatar photo={props.photos.small} style='avatar__middle' />
+        </NavLink>
       </div>
       <div className={style.friendsProfile__infoProfile}>
         <div className={style.friendsProfile__infoProfile_name}>
-          {props.name}
+          <NavLink to={'/profile/' + props.id} className={style.link}>
+            {props.name}
+          </NavLink>
         </div>
         <div className={style.friendsProfile__infoProfile_status}>
           {props.status || '---'}
         </div>
-      </div>
+      </div>{' '}
       <div>
         <button
           className={style.friendsProfile__addFriendBtn}
@@ -27,7 +32,6 @@ const FriendsProfile = (props) => {
         >
           {props.followed ? 'Удалить из друзей' : 'Добавить в друзья'}
         </button>
-        {/* {console.log(props)} */}
       </div>
     </div>
   );

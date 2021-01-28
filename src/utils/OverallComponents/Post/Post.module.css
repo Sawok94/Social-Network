@@ -5,4 +5,10 @@
 
 .post__avatar {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post__delete {
+  cursor: pointer;
 }

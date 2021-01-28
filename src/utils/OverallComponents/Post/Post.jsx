@@ -8,6 +8,14 @@ const Post = (props) => {
     <div className={`${style.post} ${border.wrapper}`}>
       <div className={style.post__avatar}>
         <Avatar style='avatar__middle' />
+        <div
+          onClick={() => {
+            props.deletePost(props.id);
+          }}
+          className={style.post__delete}
+        >
+          &#215;
+        </div>
       </div>
       {props.textPost}
     </div>
