@@ -7,7 +7,7 @@ const Post = (props) => {
   return (
     <div className={`${style.post} ${border.wrapper}`}>
       <div className={style.post__avatar}>
-        <Avatar style='avatar__middle' />
+        <Avatar photo={props.photo} style='avatar__middle' />
         <div
           onClick={() => {
             props.deletePost(props.id);

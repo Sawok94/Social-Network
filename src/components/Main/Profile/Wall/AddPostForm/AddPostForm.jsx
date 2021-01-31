@@ -8,7 +8,7 @@ const AddPostForm = (props) => {
   return (
     <div className={border.wrapper}>
       <form onSubmit={props.handleSubmit} className={style.wall__form}>
-        <Avatar style='avatar__small' />
+        <Avatar photo={props.photo} style='avatar__small' />
         <Field
           className={style.wall__form_textArea}
           placeholder=' Введите текст поста...'

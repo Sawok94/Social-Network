@@ -34,3 +34,7 @@
 .active {
   border-bottom: 2px solid brown;
 }
+
+.container_error_img {
+  margin: 50px 0 30px;
+}

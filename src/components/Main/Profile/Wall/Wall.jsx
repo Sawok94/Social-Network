@@ -14,6 +14,7 @@ const Wall = (props) => {
       textPost={post.textPost}
       id={post.id}
       deletePost={deletePost}
+      photo={props.profilePhoto}
     />
   ));
 
@@ -23,7 +24,7 @@ const Wall = (props) => {
 
   return (
     <div className={style.wall}>
-      <AddPostForm onSubmit={addNewPost} />
+      <AddPostForm onSubmit={addNewPost} photo={props.profilePhoto} />
       {showPosts}
     </div>
   );

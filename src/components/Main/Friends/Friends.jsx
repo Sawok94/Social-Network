@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './Friends.module.css';
 import border from '../Main.module.css';
 import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
@@ -8,13 +8,22 @@ import Search from '../../../utils/OverallComponents/Search/Search';
 import noSearch from '../../../assets/noSearch.png';
 
 const Friends = (props) => {
-  let followUser = (userId) => {
-    props.followUser(userId);
+  const getUserProfileFunc = (
+    searchName = props.searchName,
+    searchFriends = props.searchFriends
+  ) => {
+    return props.getUserProfile(
+      props.currentPage,
+      props.sizePage,
+      searchName,
+      searchFriends
+    );
   };
 
-  let unfollowUser = (userId) => {
-    props.unfollowUser(userId);
-  };
+  useState(() => {
+    getUserProfileFunc();
+  }, []);
+
   let profilesPage = !props.profiles ? (
     <Preloader />
   ) : (
@@ -26,64 +35,28 @@ const Friends = (props) => {
         id={profile.id}
         photos={profile.photos}
         followed={profile.followed}
-        followUser={followUser}
-        unfollowUser={unfollowUser}
+        followUser={(userId) => {
+          props.followUser(userId);
+        }}
+        unfollowUser={(userId) => {
+          props.unfollowUser(userId);
+        }}
       />
     ))
   );
 
-  let getUserProfile = !props.profiles ? (
-    props.getUserProfile(
-      props.currentPage,
-      props.sizePage,
-      props.searchName,
-      props.searchFriends
-    )
-  ) : (
-    <PageSwitching
-      sizePage={props.sizePage}
-      totalCount={props.totalCount}
-      currentPage={props.currentPage}
-      searchName={props.searchName}
-      searchFriends={props.searchFriends}
-      getUserProfile={props.getUserProfile}
-    />
-  );
-
-  let searchProfiles = (name) => {
-    props.getUserProfile(
-      props.currentPage,
-      props.sizePage,
-      name.searchName,
-      props.searchFriends
-    );
-  };
-
-  let showMyFriends = () => {
-    props.getUserProfile(
-      props.currentPage,
-      props.sizePage,
-      props.searchName,
-      true
-    );
-  };
-
-  let searchFriends = () => {
-    props.getUserProfile(
-      props.currentPage,
-      props.sizePage,
-      props.searchName,
-      false
-    );
-  };
-
   return (
     <div className={`${style.container} ${border.wrapper}`}>
-      {console.log(props)}
-      <Search onChange={searchProfiles} />
+      <Search
+        onChange={(name) => {
+          getUserProfileFunc(name.searchName);
+        }}
+      />
       <div className={style.friendsSwither}>
         <button
-          onClick={showMyFriends}
+          onClick={() => {
+            getUserProfileFunc(props.searchName, true);
+          }}
           className={`${style.friendsSwither__btn} ${
             props.searchFriends && style.active
           }`}
@@ -91,7 +64,9 @@ const Friends = (props) => {
           Мои друзья
         </button>
         <button
-          onClick={searchFriends}
+          onClick={() => {
+            getUserProfileFunc(props.searchName, false);
+          }}
           className={`${style.friendsSwither__btn} ${
             !props.searchFriends && style.active
           }`}
@@ -102,13 +77,25 @@ const Friends = (props) => {
 
       {profilesPage == false ? (
         <div className={style.container_error}>
-          <img src={noSearch} alt='noSearchImg' />
-          <span className={style.r}>Ничего не найдено. Попробуйте снова.</span>
+          <img
+            className={style.container_error_img}
+            src={noSearch}
+            alt='noSearchImg'
+          />
+          <span>Ничего не найдено.</span>
+          <span> Попробуйте снова.</span>
         </div>
       ) : (
         profilesPage
       )}
-      {getUserProfile}
+      <PageSwitching
+        sizePage={props.sizePage}
+        totalCount={props.totalCount}
+        currentPage={props.currentPage}
+        searchName={props.searchName}
+        searchFriends={props.searchFriends}
+        getUserProfile={props.getUserProfile}
+      />
     </div>
   );
 };

@@ -55,7 +55,7 @@ export const deletePost = (idPost) => ({
 
 export const setProfile = (profile) => ({
   type: SET_PROFILE,
-  profile,
+  profile, 
 });
 
 export const getProfile = (userId) => (dispatch) => {
