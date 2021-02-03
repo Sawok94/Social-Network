@@ -1,7 +1,37 @@
 .info {
   grid-area: info;
-  /* grid-row-start: 1;
-  grid-column-start: 2;
-  grid-row-end: 3;
-  grid-column-end: 3; */
+  padding: 5px 15px;
+}
+
+.info_name {
+  font-weight: bold;
+}
+
+.info_status {
+  font-size: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(220, 213, 213);
+}
+
+.info_lookingForAJobInfo {
+  display: flex;
+  font-size: 7px;
+}
+
+.info_lookingForAJob_title {
+  font-weight: bold;
+  font-size: 7px;
+  margin-top: 10px;
+}
+
+.info_lookingForAJobQuestion {
+  margin-right: 20px;
+}
+
+.info_lookingForAJobDescription {
+  font-style: italic;
+}
+
+.info_lookingForAJobDescription_comment {
+  margin-right: 20px;
 }

@@ -8,16 +8,6 @@ const Wall = (props) => {
     props.deletePost(userId);
   };
 
-  let showPosts = props.posts.map((post) => (
-    <Post
-      key={post.id}
-      textPost={post.textPost}
-      id={post.id}
-      deletePost={deletePost}
-      photo={props.profilePhoto}
-    />
-  ));
-
   const addNewPost = (post) => {
     props.addPost(post.textAreaForm);
   };
@@ -25,7 +15,15 @@ const Wall = (props) => {
   return (
     <div className={style.wall}>
       <AddPostForm onSubmit={addNewPost} photo={props.profilePhoto} />
-      {showPosts}
+      {props.posts.map((post) => (
+        <Post
+          key={post.id}
+          textPost={post.textPost}
+          id={post.id}
+          deletePost={deletePost}
+          photo={props.profilePhoto}
+        />
+      ))}
     </div>
   );
 };

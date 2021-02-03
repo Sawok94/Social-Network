@@ -18,14 +18,21 @@ const Profile = (props) => {
   return (
     <div className={style.container}>
       <Photo photo={props.profile.photos.large} />
-      <Info />
+      <Info info={props.profile} />
       <Wall
         deletePost={props.deletePost}
         addPost={props.addPost}
         posts={props.posts}
         profilePhoto={props.profile.photos.small}
       />
-      <Friends />
+      <Friends
+        getUserProfile={props.getUserProfile}
+        currentPage={props.currentPage}
+        sizePage={props.sizePage}
+        searchName={props.searchName}
+        searchFriends={props.searchFriends}
+        profiles={props.profiles}
+      />
     </div>
   );
 };

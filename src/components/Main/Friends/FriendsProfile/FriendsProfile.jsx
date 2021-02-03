@@ -18,7 +18,7 @@ const FriendsProfile = (props) => {
           </NavLink>
         </div>
         <div className={style.friendsProfile__infoProfile_status}>
-          {props.status || '---'}
+          {props.status || <i>Статус не указан</i>}
         </div>
       </div>{' '}
       <div>
