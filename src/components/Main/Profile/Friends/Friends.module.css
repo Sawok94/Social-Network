@@ -4,6 +4,20 @@
   grid-column-start: 1;
   grid-row-end: 4;
   grid-column-end: 2; */
-  height: 200px;
+  height: 250px;
+  padding: 0 10px;
 }
 
+.title {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.profiles {
+  display: grid;
+  grid-template-areas: 'profile profile' 'profile profile';
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  margin-top: 10px;
+}

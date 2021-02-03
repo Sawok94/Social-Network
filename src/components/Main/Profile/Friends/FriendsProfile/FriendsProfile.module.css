@@ -1,9 +1,16 @@
-.friends {
-  grid-area: friends;
-  /* grid-row-start: 3;
-  grid-column-start: 1;
-  grid-row-end: 4;
-  grid-column-end: 2; */
-  height: 200px;
+.profile {
+  grid-area: 'profile';
+  text-align: center;
 }
 
+.profile_name {
+  text-overflow: ellipsis;
+  width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 10px;
+}

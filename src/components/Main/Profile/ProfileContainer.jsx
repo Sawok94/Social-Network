@@ -16,7 +16,6 @@ const mapStateToProps = (state) => {
     profile: state.profiles.profile,
     profiles: state.users.profiles,
     currentPage: state.users.currentPage,
-    sizePage: state.users.sizePage,
     searchName: state.users.searchName,
     searchFriends: state.users.searchFriends,
   };

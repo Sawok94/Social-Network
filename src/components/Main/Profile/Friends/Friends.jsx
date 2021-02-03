@@ -7,7 +7,7 @@ const Friends = (props) => {
   useEffect(() => {
     props.getUserProfile(
       props.currentPage,
-      props.sizePage,
+      4,
       props.searchName,
       props.searchFriends
     );
@@ -15,19 +15,20 @@ const Friends = (props) => {
 
   return (
     <div className={`${style.friends} ${border.wrapper}`}>
-      <span>Друзья</span>
-      {props.profiles &&
-        props.profiles.map((profile) => {
-          // for (let i = 0; (profile = 4); i++) {
+      <span className={style.title}>Друзья</span>
+      <div className={style.profiles}>
+        {props.profiles &&
+          props.profiles.map((profile) => {
             return (
               <FriendsProfile
+                key={profile.id}
                 id={profile.id}
                 name={profile.name}
                 photo={profile.photos.small}
               />
             );
-          // }
-        })}
+          })}
+      </div>
     </div>
   );
 };

@@ -28,7 +28,6 @@ const Profile = (props) => {
       <Friends
         getUserProfile={props.getUserProfile}
         currentPage={props.currentPage}
-        sizePage={props.sizePage}
         searchName={props.searchName}
         searchFriends={props.searchFriends}
         profiles={props.profiles}
