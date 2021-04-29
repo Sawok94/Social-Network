@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import { compose } from 'redux';
 import { getUserProfile } from '../../../redux/users-reducer';
 import Messages from './Messages';
 
@@ -13,6 +15,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {
-  getUserProfile,
-})(Messages);
+export default compose(
+  connect(mapStateToProps, {
+    getUserProfile,
+  }),
+  withRouter
+)(Messages);

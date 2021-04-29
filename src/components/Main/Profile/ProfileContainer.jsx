@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
+import { addAuthMe } from '../../../redux/auth-reducer';
 import {
   addPost,
   deletePost,
@@ -18,10 +19,17 @@ const mapStateToProps = (state) => {
     currentPage: state.users.currentPage,
     searchName: state.users.searchName,
     searchFriends: state.users.searchFriends,
+    auth: state.auth.auth,
   };
 };
 
 export default compose(
-  connect(mapStateToProps, { addPost, deletePost, getProfile, getUserProfile }),
+  connect(mapStateToProps, {
+    addPost,
+    deletePost,
+    getProfile,
+    getUserProfile,
+    addAuthMe,
+  }),
   withRouter
 )(Profile);

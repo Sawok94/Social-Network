@@ -16,43 +16,43 @@ const SocialNetworks = (props) => {
           switch (key) {
             case 'github':
               return (
-                <a href={`${props.contacts[key]}`} target='_blank'>
+                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
                   <img src={github} alt='github' />
                 </a>
               );
             case 'facebook':
               return (
-                <a href={`${props.contacts[key]}`} target='_blank'>
+                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
                   <img src={facebook} alt='facebook' />
                 </a>
               );
             case 'vk':
               return (
-                <a href={`${props.contacts[key]}`} target='_blank'>
+                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
                   <img src={vk} alt='vk' />
                 </a>
               );
             case 'youtube':
               return (
-                <a href={`${props.contacts[key]}`} target='_blank'>
+                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
                   <img src={youtube} alt='youtube' />
                 </a>
               );
             case 'website':
               return (
-                <a href={`${props.contacts[key]}`} target='_blank'>
+                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
                   <img src={website} alt='website' />
                 </a>
               );
             case 'twitter':
               return (
-                <a href={`${props.contacts[key]}`} target='_blank'>
+                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
                   <img src={twitter} alt='twitter' />
                 </a>
               );
             case 'instagram':
               return (
-                <a href={`${props.contacts[key]}`} target='_blank'>
+                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
                   <img src={instagram} alt='instagram' />
                 </a>
               );

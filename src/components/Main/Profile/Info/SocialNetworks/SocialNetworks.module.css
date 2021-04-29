@@ -1,7 +1,7 @@
-.info_contacts_heading {
-  font-size: 7px;
+.info_contact {
+  margin-top: 7px;
 }
 
-.info_contacts_heading {
-  font-weight: bold;
+.info_contact_a {
+  padding: 0 5px;
 }

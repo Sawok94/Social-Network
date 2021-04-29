@@ -15,6 +15,7 @@ const Messages = (props) => {
 
   return (
     <div className={style.container}>
+      {console.log(props)}
       <ListFriends profiles={props.profiles} />
       <ListMessagesContainer />
     </div>

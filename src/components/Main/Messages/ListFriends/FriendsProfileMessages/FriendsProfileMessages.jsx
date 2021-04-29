@@ -8,7 +8,7 @@ const FriendsProfileMessages = (props) => {
     <div className={style.s}>
       <Avatar photo={props.photo} style='avatar__middle' />
       <div className={style.friendsProfile__infoProfile_name}>
-        <NavLink to={'/profile/' + props.id} className={style.link}>
+        <NavLink to={'/messages/' + props.id} className={style.link}>
           {props.name}
         </NavLink>
       </div>

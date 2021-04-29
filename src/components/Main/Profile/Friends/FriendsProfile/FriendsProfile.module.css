@@ -5,12 +5,12 @@
 
 .profile_name {
   text-overflow: ellipsis;
-  width: 80px;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 6ch;
 }
 
 .link {
   text-decoration: none;
-  font-size: 10px;
+  /* font-size: 16px; */
 }

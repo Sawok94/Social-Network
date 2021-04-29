@@ -20,7 +20,7 @@ const FriendsProfile = (props) => {
         <div className={style.friendsProfile__infoProfile_status}>
           {props.status || <i>Статус не указан</i>}
         </div>
-      </div>{' '}
+      </div>
       <div>
         <button
           className={style.friendsProfile__addFriendBtn}

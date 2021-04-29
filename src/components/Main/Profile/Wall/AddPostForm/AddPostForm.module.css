@@ -15,6 +15,7 @@
   border-radius: 5px;
   resize: none;
   outline: none;
+  margin-left: 15px;
 }
 
 .wall__form_button {

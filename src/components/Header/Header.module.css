@@ -5,8 +5,61 @@
   border-radius: 0 0 5px 5px;
 
   width: 100%;
+
+  display: flex;
+  justify-content: space-between;
 }
 
-.img {
+.header_img {
   margin-left: 3px;
+}
+
+.header_accordion {
+  z-index: 1;
+  margin-right: 10px;
+}
+
+summary {
+  list-style: none;
+  padding: 0 8px;
+
+  cursor: pointer;
+}
+
+.header_accordion:hover {
+  background: #f7f4f4;
+  display: block;
+}
+
+.header_accordion_auth {
+  display: flex;
+}
+
+.header_accordion_auth_name {
+  font-weight: 500;
+  font-size: 22px;
+
+  margin-top: 8px;
+}
+
+.header_accordion_auth_avatar {
+  margin: 7px;
+}
+
+.header_accordion_auth_arrow {
+  transform: rotate(270deg);
+}
+
+.header_accordion_exit {
+  border: 1px rgb(255, 255, 255) solid;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+  padding: 5px 10px;
+
+  background: rgb(255, 255, 255);
+  color: rgb(72, 67, 167);
+
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
 }

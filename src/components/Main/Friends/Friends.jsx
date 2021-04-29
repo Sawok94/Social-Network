@@ -88,6 +88,7 @@ const Friends = (props) => {
       ) : (
         profilesPage
       )}
+      
       <PageSwitching
         sizePage={props.sizePage}
         totalCount={props.totalCount}

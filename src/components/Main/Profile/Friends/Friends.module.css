@@ -1,23 +1,25 @@
 .friends {
-  grid-area: friends;
-  /* grid-row-start: 3;
-  grid-column-start: 1;
-  grid-row-end: 4;
-  grid-column-end: 2; */
+  grid-area: 'friends';
   height: 250px;
   padding: 0 10px;
 }
 
-.title {
-  font-size: 10px;
+.friends_title {
+  font-size: 14px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.friends_title_link {
+  color: #000;
+  text-decoration: none;
 }
 
 .profiles {
   display: grid;
   grid-template-areas: 'profile profile' 'profile profile';
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 100px);
+  grid-template-columns: repeat(2, 90px);
 
   margin-top: 10px;
 }
