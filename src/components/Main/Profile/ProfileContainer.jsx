@@ -20,6 +20,7 @@ const mapStateToProps = (state) => {
     searchName: state.users.searchName,
     searchFriends: state.users.searchFriends,
     auth: state.auth.auth,
+    isAuth: state.auth.isAuth,
   };
 };
 

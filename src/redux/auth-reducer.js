@@ -4,7 +4,9 @@ const AUTH_ME = 'AUTH_ME';
 const DE_AUTH_ME = 'DE_AUTH_ME';
 
 const initialState = {
-  auth: null,
+  id: null,
+  login: null,
+  email: null,
   isAuth: false,
 };
 
@@ -13,7 +15,7 @@ const authReducer = (state = initialState, action) => {
     case AUTH_ME: {
       return {
         ...state,
-        auth: action.myProfile,
+        ...action.data,
         isAuth: true,
       };
     }
@@ -29,9 +31,9 @@ const authReducer = (state = initialState, action) => {
   }
 };
 
-export const setAuthMe = (myProfile) => ({
+export const setAuthMe = (id, login, email) => ({
   type: AUTH_ME,
-  myProfile,
+  data: (id, login, email),
 });
 
 export const deleteAuthMe = () => ({
@@ -40,7 +42,10 @@ export const deleteAuthMe = () => ({
 
 export const addAuthMe = () => (dispatch) => {
   authAPI.authMe().then((response) => {
-    dispatch(setAuthMe(response.data.data));
+    if (response.data.resultCode === 0) {
+      let(id, login, email) = response.data.data;
+      dispatch(setAuthMe(id, login, email));
+    }
   });
 };
 

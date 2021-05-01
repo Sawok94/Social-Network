@@ -2,6 +2,7 @@ import React from 'react';
 import style from '../Header/Header.module.css';
 import logo from '../../assets/logo.jpg';
 import Avatar from '../../utils/OverallComponents/Avatar/Avatar';
+import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
   return (
@@ -21,11 +22,11 @@ const Header = (props) => {
           </div>
         </summary>
         <div className={style.header_accordion_exit} onClick={props.deAuthMe()}>
-          Выход
+          <NavLink to={'/login'}> Выход</NavLink>
         </div>
       </details>
     </div>
   );
 };
-NavLin
+
 export default Header;
