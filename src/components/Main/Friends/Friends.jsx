@@ -75,7 +75,6 @@ const Friends = (props) => {
           Поиск друзей
         </button>
       </div>
-
       {profilesPage == false ? (
         <div className={style.container_error}>
           <img

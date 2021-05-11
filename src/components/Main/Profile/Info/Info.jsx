@@ -2,33 +2,19 @@ import React, { useState } from 'react';
 import style from '../Info/Info.module.css';
 import border from '../../Main.module.css';
 import SocialNetworks from './SocialNetworks/SocialNetworks';
+import Status from './Status/Status';
 
 const Info = (props) => {
-  const [editMode, setEditMode] = useState(false);
-
   return (
     <div className={`${style.info} ${border.wrapper}`}>
       <div className={style.info_name}>{props.info.fullName}</div>
       <div className={style.info_status}>
-        {!editMode && (
-          <div
-            onClick={() => {
-              setEditMode(true);
-            }}
-          >
-            {props.info.aboutMe || <i>Статус не указан</i>}
-          </div>
-        )}
-
-        {editMode && (
-          <input
-            type='text'
-            value={props.info.aboutMe || <i>Статус не указан</i>}
-            onBlur={() => {
-              setEditMode(false);
-            }}
-          />
-        )}
+        <Status
+          onSubmit={(status) => {
+            props.updateMyStatus(status.statusInputForm);
+          }}
+          status={props.status}
+        />
       </div>
       <div className={style.info_lookingForAJob}>
         <div className={style.info_lookingForAJob_title}>Статус</div>

@@ -9,6 +9,7 @@ import Wall from './Wall/Wall';
 const Profile = (props) => {
   useEffect(() => {
     props.getProfile(props.match.params.userId || props.id);
+    props.getMyStatus(props.id);
     props.addAuthMe();
   }, []);
 
@@ -19,14 +20,17 @@ const Profile = (props) => {
   return (
     <div className={style.container}>
       <Photo photo={props.profile.photos.large} />
-      <Info info={props.profile} />
+      <Info
+        info={props.profile}
+        updateMyStatus={props.updateMyStatus}
+        status={props.status}
+      />
       <Wall
         deletePost={props.deletePost}
         addPost={props.addPost}
         posts={props.posts}
         profilePhoto={props.profile.photos.small}
       />
-      {console.log(props)}
       <Friends
         getUserProfile={props.getUserProfile}
         currentPage={props.currentPage}

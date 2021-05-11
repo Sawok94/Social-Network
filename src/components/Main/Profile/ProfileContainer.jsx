@@ -7,7 +7,9 @@ import { addAuthMe } from '../../../redux/auth-reducer';
 import {
   addPost,
   deletePost,
+  getMyStatus,
   getProfile,
+  updateMyStatus,
 } from '../../../redux/profiles-reducer';
 import { getUserProfile } from '../../../redux/users-reducer';
 import Profile from './Profile';
@@ -22,6 +24,7 @@ const mapStateToProps = (state) => {
     searchFriends: state.users.searchFriends,
     id: state.auth.id,
     isAuth: state.auth.isAuth,
+    status: state.profiles.status,
   };
 };
 
@@ -32,6 +35,8 @@ export default compose(
     getProfile,
     getUserProfile,
     addAuthMe,
+    updateMyStatus,
+    getMyStatus,
   }),
   withRouter,
   withAuthRedirect

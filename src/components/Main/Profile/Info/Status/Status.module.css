@@ -1,0 +1,7 @@
+.status {
+  cursor: pointer;
+}
+
+.status:hover {
+  background: #f7f4f4;
+}
