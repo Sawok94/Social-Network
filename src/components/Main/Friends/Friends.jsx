@@ -41,6 +41,7 @@ const Friends = (props) => {
         unfollowUser={(userId) => {
           props.unfollowUser(userId);
         }}
+        followingInProgress={props.followingInProgress}
       />
     ))
   );
@@ -88,7 +89,7 @@ const Friends = (props) => {
       ) : (
         profilesPage
       )}
-      
+
       <PageSwitching
         sizePage={props.sizePage}
         totalCount={props.totalCount}

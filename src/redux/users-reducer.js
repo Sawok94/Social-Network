@@ -7,6 +7,7 @@ const SET_SEARCH_NAME = 'SET_SEARCH_NAME';
 const SET_SEARCH_FRIENDS = 'SET_SEARCH_FRIENDS';
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
+const FOLLOWING_IN_PROGRESS = 'FOLLOWING_IN_PROGRESS';
 
 const initialState = {
   profiles: null,
@@ -15,6 +16,8 @@ const initialState = {
   totalCount: null,
   searchName: '',
   searchFriends: true,
+  isToggle: false,
+  followingInProgress: [],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -54,7 +57,6 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         profiles: state.profiles.map((user) => {
           if (user.id === action.userId) {
-            console.log(user);
             return { ...user, followed: true };
           }
           return user;
@@ -72,6 +74,14 @@ const usersReducer = (state = initialState, action) => {
         }),
       };
     }
+    case FOLLOWING_IN_PROGRESS: {
+      return {
+        ...state,
+        followingInProgress: action.isToggle
+          ? [...state.followingInProgress, action.userId]
+          : state.followingInProgress.filter((id) => id != action.userId),
+      };
+    }
     default:
       return state;
   }
@@ -85,6 +95,12 @@ export const setUserProfile = (profiles) => ({
 export const setTotalCount = (totalCount) => ({
   type: SET_TOTAL_COUNT,
   totalCount,
+});
+
+export const toggleFollowingInProgress = (isToggle, userId) => ({
+  type: FOLLOWING_IN_PROGRESS,
+  isToggle,
+  userId,
 });
 
 export const setCurrentPage = (currentPage) => ({
@@ -130,13 +146,23 @@ export const getUserProfile = (
 };
 
 export const followUser = (userId) => (dispatch) => {
-  userAPI.followUser(userId);
-  dispatch(follow(userId));
+  userAPI.followUser(userId).then((response) => {
+    if (response.data.resultCode == 0) {
+      dispatch(follow(userId));
+      dispatch(toggleFollowingInProgress(false, userId));
+    }
+  });
+  dispatch(toggleFollowingInProgress(true, userId));
 };
 
 export const unfollowUser = (userId) => (dispatch) => {
-  userAPI.unfollowUser(userId);
-  dispatch(unfollow(userId));
+  userAPI.unfollowUser(userId).then((response) => {
+    if (response.data.resultCode == 0) {
+      dispatch(unfollow(userId));
+      dispatch(toggleFollowingInProgress(false, userId));
+    }
+  });
+  dispatch(toggleFollowingInProgress(true, userId));
 };
 
 export default usersReducer;

@@ -5,7 +5,7 @@ import Header from './Header';
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.auth.auth,
+    login: state.auth.login,
   };
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { compose } from 'redux';
+import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 import { getUserProfile } from '../../../redux/users-reducer';
 import Messages from './Messages';
 
@@ -19,5 +20,6 @@ export default compose(
   connect(mapStateToProps, {
     getUserProfile,
   }),
-  withRouter
+  withRouter,
+  withAuthRedirect
 )(Messages);

@@ -6,6 +6,8 @@ import {
   getUserProfile,
   unfollowUser,
 } from '../../../redux/users-reducer';
+import { compose } from 'redux';
+import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 
 const mapStateToProps = (state) => {
   return {
@@ -15,11 +17,15 @@ const mapStateToProps = (state) => {
     totalCount: state.users.totalCount,
     searchName: state.users.searchName,
     searchFriends: state.users.searchFriends,
+    followingInProgress: state.users.followingInProgress,
   };
 };
 
-export default connect(mapStateToProps, {
-  getUserProfile,
-  followUser,
-  unfollowUser,
-})(Friends);
+export default compose(
+  connect(mapStateToProps, {
+    getUserProfile,
+    followUser,
+    unfollowUser,
+  }),
+  withAuthRedirect
+)(Friends);

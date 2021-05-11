@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import style from '../Header/Header.module.css';
 import logo from '../../assets/logo.jpg';
 import Avatar from '../../utils/OverallComponents/Avatar/Avatar';
 import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
+  // const [blur, setBlur] = useState(false);
+
   return (
     <div className={style.header}>
-      {console.log(props)}
+      {console.log(121)}
       <img src={logo} className={style.header_img} alt='logo' />
-      <details className={style.header_accordion}>
+      <details
+        className={style.header_accordion}
+        // open={blur}
+        // onFocus={() => {
+        //   setBlur(true);
+        // }}
+        // onBlur={() => {
+        //   console.log(123);
+        //   setBlur(false);
+        // }}
+      >
         <summary>
           <div className={style.header_accordion_auth}>
             <div className={style.header_accordion_auth_name}>
@@ -21,7 +33,7 @@ const Header = (props) => {
             <div className={style.header_accordion_auth_arrow}> &#8249;</div>
           </div>
         </summary>
-        <div className={style.header_accordion_exit} onClick={props.deAuthMe()}>
+        <div className={style.header_accordion_exit} onClick={props.deAuthMe}>
           <NavLink to={'/login'}> Выход</NavLink>
         </div>
       </details>

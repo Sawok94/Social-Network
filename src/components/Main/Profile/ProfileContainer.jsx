@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
+import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 import { addAuthMe } from '../../../redux/auth-reducer';
 import {
   addPost,
@@ -19,7 +20,7 @@ const mapStateToProps = (state) => {
     currentPage: state.users.currentPage,
     searchName: state.users.searchName,
     searchFriends: state.users.searchFriends,
-    auth: state.auth.auth,
+    id: state.auth.id,
     isAuth: state.auth.isAuth,
   };
 };
@@ -32,5 +33,6 @@ export default compose(
     getUserProfile,
     addAuthMe,
   }),
-  withRouter
+  withRouter,
+  withAuthRedirect
 )(Profile);

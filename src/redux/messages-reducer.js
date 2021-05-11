@@ -19,7 +19,6 @@ const messageReducer = (state = initialState, action) => {
             textMessage: action.textMessage,
           },
         ],
-        textMessage: '',
       };
     }
     default:

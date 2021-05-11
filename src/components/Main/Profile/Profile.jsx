@@ -8,7 +8,7 @@ import Wall from './Wall/Wall';
 
 const Profile = (props) => {
   useEffect(() => {
-    props.getProfile(props.match.params.userId || 2);
+    props.getProfile(props.match.params.userId || props.id);
     props.addAuthMe();
   }, []);
 
@@ -26,7 +26,7 @@ const Profile = (props) => {
         posts={props.posts}
         profilePhoto={props.profile.photos.small}
       />
-      {/* {console.log(props)} */}
+      {console.log(props)}
       <Friends
         getUserProfile={props.getUserProfile}
         currentPage={props.currentPage}
