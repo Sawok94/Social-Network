@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import style from './Status.module.css';
+import style from './MyStatus.module.css';
 
-const Status = (props) => {
+const MyStatus = (props) => {
   const [editMode, setEditMode] = useState(false);
 
   return (
@@ -20,6 +20,7 @@ const Status = (props) => {
             name='statusInputForm'
             component='input'
             placeholder='Введите текст статуса...'
+            maxlength='300'
             autoFocus={true}
             value={props.status}
             onBlur={() => {
@@ -33,5 +34,5 @@ const Status = (props) => {
 };
 
 export default reduxForm({
-  form: 'userStatus',
-})(Status);
+  form: 'userMyStatus',
+})(MyStatus);

@@ -9,7 +9,7 @@ import Wall from './Wall/Wall';
 const Profile = (props) => {
   useEffect(() => {
     props.getProfile(props.match.params.userId || props.id);
-    props.getMyStatus(props.id);
+    props.getMyStatus(props.match.params.userId || props.id);
     props.addAuthMe();
   }, []);
 
@@ -24,6 +24,7 @@ const Profile = (props) => {
         info={props.profile}
         updateMyStatus={props.updateMyStatus}
         status={props.status}
+        myId={props.id}
       />
       <Wall
         deletePost={props.deletePost}
