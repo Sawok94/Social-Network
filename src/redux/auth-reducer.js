@@ -1,7 +1,7 @@
 import { authAPI } from '../api/api';
 
 const AUTH_ME = 'AUTH_ME';
-const DE_AUTH_ME = 'DE_AUTH_ME';
+const LOGOUT_ME = 'LOGOUT_ME';
 
 const initialState = {
   id: null,
@@ -19,7 +19,7 @@ const authReducer = (state = initialState, action) => {
         isAuth: true,
       };
     }
-    case DE_AUTH_ME: {
+    case LOGOUT_ME: {
       return {
         ...state,
         auth: null,
@@ -36,8 +36,8 @@ export const setAuthMe = (id, email, login) => ({
   auth: { id, email, login },
 });
 
-export const deleteAuthMe = () => ({
-  type: DE_AUTH_ME,
+export const logoutMe = () => ({
+  type: LOGOUT_ME,
 });
 
 export const addAuthMe = () => (dispatch) => {
@@ -49,9 +49,17 @@ export const addAuthMe = () => (dispatch) => {
   });
 };
 
-export const deAuthMe = () => (dispatch) => {
-  authAPI.deAuthMe();
-  dispatch(deleteAuthMe());
+export const login = (email, password, rememberMe) => (dispatch) => {
+  authAPI.login(email, password, rememberMe).then((response) => {
+    if (response.data.resultCode === 0) {
+      dispatch(addAuthMe());
+    }
+  });
+};
+
+export const logout = () => (dispatch) => {
+  authAPI.logout();
+  dispatch(logoutMe());
 };
 
 export default authReducer;

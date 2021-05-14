@@ -35,7 +35,7 @@ const Header = (props) => {
         <div
           className={style.header_accordion_exit
           }
-          onClick={props.deAuthMe}
+          onClick={props.logout}
         >
           <NavLink to={'/login'}> Выход</NavLink>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deAuthMe } from '../../redux/auth-reducer';
+import { logout } from '../../redux/auth-reducer';
 import Header from './Header';
 
 const mapStateToProps = (state) => {
@@ -9,4 +9,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {deAuthMe})(Header);
+export default connect(mapStateToProps, { logout })(Header);

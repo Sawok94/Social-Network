@@ -1,30 +1,30 @@
-.nav {
-  grid-area: navBar;
-}
+.login_wrapper_form {
+  width: 300px;
 
-.ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
+  margin: 0 auto;
 
-.li {
-  margin: 5px;
-  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   user-select: none;
 }
 
-.link {
-  color: #000;
-  font-weight: 400;
-  font-size: 18px;
-  text-decoration: none;
+.login_wrapper_form_lbl {
+  font-weight: bolder;
+  font-size: 10px;
+  margin-left: 10px;
 }
 
-.activeLink {
-  color: brown;
+.login_wrapper_form_input {
+  padding: 10px;
+  margin: 0 10px;
 }
 
-.li img {
-  margin-right: 10px;
+.login_wrapper_form_label {
+  font-size: 10px;
+}
+
+.login_wrapper_form_btn {
+  margin: 10px;
+  font-weight: bolder;
 }
