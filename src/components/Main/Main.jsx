@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import Login from '../Login/Login';
+import LoginContainer from '../Login/LoginContainer';
 import style from '../Main/Main.module.css';
 import Settings from '../Main/Settings/Settings';
 import FriendsContainer from './Friends/FriendsContainer';
@@ -15,8 +15,7 @@ const Main = (props) => {
       <Route path='/friends' render={() => <FriendsContainer />} />
       <Route path='/settings' render={() => <Settings />} />
       {<Route path='' /> && <Redirect to={'/profile'} />}
-      <Route path='/login' render={() => <Login />} />
-
+      <Route path='/login' render={() => <LoginContainer />} />
     </div>
   );
 };

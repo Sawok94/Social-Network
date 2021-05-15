@@ -1,25 +1,27 @@
 import React from 'react';
-import { Field } from 'redux-form';
+import { Redirect } from 'react-router';
+import { Field, reduxForm } from 'redux-form';
 import style from '../Login/Login.module.css';
 import border from '../Main/Main.module.css';
 
 const Login = (props) => {
+  if (props.isAuth) {
+    return <Redirect to={'/profile'} />;
+  }
+
   return (
-    <div
-      className={`${style.login_wrapper} ${border.wrapper}`}
-      // onSubmit={(form) => {}}
-    >
-      {console.log(props)}
-      <form className={style.login_wrapper_form} onSubmit={props.handleSubmit}>
+    <div className={`${style.login_wrapper} ${border.wrapper}`}>
+      <form className={style.login_wrapper_form}>
         <div>
           <label className={style.login_wrapper_form_lbl}>Логин:</label>
           <Field
             className={style.login_wrapper_form_input}
-            name='loginInputForm'
+            name='emailInputForm'
             component='input'
-            type='text'
-            placeholder='Введите логин'
+            type='email'
+            placeholder='Введите email'
             maxlength='50'
+            required
           />
         </div>
         <div>
@@ -31,11 +33,12 @@ const Login = (props) => {
             type='password'
             placeholder='Введите пароль'
             maxlength='50'
+            required
           />
         </div>
         <div>
           <Field
-            name='passwordInputForm'
+            name='checkboxInputForm'
             component='input'
             type='checkbox'
             id='checkbox'
@@ -47,7 +50,13 @@ const Login = (props) => {
         <button
           className={style.login_wrapper_form_btn}
           type='submit'
-          // disabled={}
+          onClick={props.handleSubmit((data) => {
+            props.login(
+              data.emailInputForm,
+              data.passwordInputForm,
+              data.checkboxInputForm
+            );
+          })}
         >
           Войти
         </button>
