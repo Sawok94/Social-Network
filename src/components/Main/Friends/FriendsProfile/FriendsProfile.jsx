@@ -6,7 +6,6 @@ import style from './FriendsProfile.module.css';
 const FriendsProfile = (props) => {
   return (
     <div className={style.friendsProfile}>
-      {console.log(props)}
       <div>
         <NavLink to={'/profile/' + props.id} className={style.link}>
           <Avatar photo={props.photos.small} style='avatar__middle' />

@@ -7,7 +7,7 @@ const initialState = {
   id: null,
   email: null,
   login: null,
-  isAuth: true,
+  isAuth: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -22,7 +22,7 @@ const authReducer = (state = initialState, action) => {
     case LOGOUT_ME: {
       return {
         ...state,
-        auth: null,
+        ...action.auth,
         isAuth: false,
       };
     }
@@ -36,8 +36,9 @@ export const setAuthMe = (id, email, login) => ({
   auth: { id, email, login },
 });
 
-export const logoutMe = () => ({
+export const logoutMe = (id, email, login) => ({
   type: LOGOUT_ME,
+  auth: { id, email, login },
 });
 
 export const addAuthMe = () => (dispatch) => {
@@ -58,8 +59,11 @@ export const login = (email, password, rememberMe) => (dispatch) => {
 };
 
 export const logout = () => (dispatch) => {
-  authAPI.logout();
-  dispatch(logoutMe());
+  authAPI.logout().then((response) => {
+    if (response.data.resultCode === 0) {
+      dispatch(logoutMe(null, null, null));
+    }
+  });
 };
 
 export default authReducer;

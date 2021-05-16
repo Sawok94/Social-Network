@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Redirect } from 'react-router';
 import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
 import style from '../Profile/Profile.module.css';
 import Friends from './Friends/Friends';
@@ -15,6 +16,10 @@ const Profile = (props) => {
 
   if (!props.profile) {
     return <Preloader />;
+  }
+
+  if (!props.isAuth) {
+    <Redirect to='/login' />;
   }
 
   return (
