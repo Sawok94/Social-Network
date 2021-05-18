@@ -17,7 +17,7 @@ const Post = (props) => {
           &#215;
         </div>
       </div>
-      {props.textPost}
+      <div className={style.post__text}></div> {props.textPost}
     </div>
   );
 };

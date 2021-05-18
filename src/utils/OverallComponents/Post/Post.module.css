@@ -12,3 +12,7 @@
 .post__delete {
   cursor: pointer;
 }
+
+.post__text {
+  white-space: pre;
+}

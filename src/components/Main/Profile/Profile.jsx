@@ -19,7 +19,7 @@ const Profile = (props) => {
   }
 
   if (!props.isAuth) {
-    <Redirect to='/login' />;
+    <Redirect to={'/login'} />;
   }
 
   return (

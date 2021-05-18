@@ -2,6 +2,12 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import style from '../AddMessage/AddMessage.module.css';
 import border from '../../../Main.module.css';
+import {
+  maxLenght,
+  required,
+} from '../../../../../utils/validators/validators';
+
+const maxLenghtValid = maxLenght(30);
 
 const AddMessageForm = (props) => {
   return (
@@ -12,6 +18,7 @@ const AddMessageForm = (props) => {
           placeholder='Введите текст сообщения...'
           name='textArea'
           component='textArea'
+          validate={[required, maxLenghtValid]}
           cols='40'
           rows='2'
         />

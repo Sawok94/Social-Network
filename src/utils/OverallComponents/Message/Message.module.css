@@ -8,3 +8,7 @@
 .message__name {
   font-weight: bold;
 }
+
+.message__text{
+  white-space: pre;
+}

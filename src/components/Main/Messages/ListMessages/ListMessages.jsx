@@ -10,7 +10,7 @@ const ListMessages = (props) => {
   ));
 
   const addNewMessage = (message) => {
-    props.addMessage(message.textArea);
+    props.addMessage(message.textArea.trim());
   };
 
   return (

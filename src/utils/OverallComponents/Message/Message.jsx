@@ -8,7 +8,7 @@ const Message = (props) => {
       <Avatar style='avatar__small' />
       <div>
         <div className={style.message__name}>Name</div>
-        <div>{props.textMessage}</div>
+        <div className={style.message__text}>{props.textMessage}</div>
       </div>
     </div>
   );

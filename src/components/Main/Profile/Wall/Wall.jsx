@@ -9,7 +9,7 @@ const Wall = (props) => {
   };
 
   const addNewPost = (post) => {
-    props.addPost(post.textAreaForm);
+    props.addPost(post.textAreaForm.trim());
   };
 
   return (
