@@ -34,7 +34,7 @@ const Header = (props) => {
           </summary>
           <div className={style.header_accordion_exit} onClick={props.logout}>
             <NavLink to={'/login'}> Выход</NavLink>
-          </div>
+          </div> 
         </details>
       )}
     </div>
