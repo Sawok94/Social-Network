@@ -3,6 +3,12 @@ import { Field, reduxForm } from 'redux-form';
 import style from '../AddPostForm/AddPostForm.module.css';
 import border from '../../../Main.module.css';
 import Avatar from '../../../../../utils/OverallComponents/Avatar/Avatar';
+import {
+  maxLength,
+  required,
+} from '../../../../../utils/validators/validators';
+
+const maxLengthVal = maxLength(5);
 
 const AddPostForm = (props) => {
   return (
@@ -14,6 +20,7 @@ const AddPostForm = (props) => {
           placeholder=' Введите текст поста...'
           name='textAreaForm'
           component='textarea'
+          validate={[required, maxLengthVal]}
           cols='40'
           rows='3'
         />

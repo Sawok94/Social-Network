@@ -3,22 +3,22 @@ import { Field, reduxForm } from 'redux-form';
 import style from '../AddMessage/AddMessage.module.css';
 import border from '../../../Main.module.css';
 import {
-  maxLenght,
+  maxLength,
   required,
 } from '../../../../../utils/validators/validators';
+import { Textarea } from '../../../../../utils/validators/Forms/ValidationForms';
 
-const maxLenghtValid = maxLenght(30);
+const maxLengthVal = maxLength(5);
 
 const AddMessageForm = (props) => {
   return (
     <div className={border.wrapper}>
       <form onSubmit={props.handleSubmit} className={style.message__form}>
         <Field
-          className={style.message__form_textArea}
           placeholder='Введите текст сообщения...'
           name='textArea'
-          component='textArea'
-          validate={[required, maxLenghtValid]}
+          component={Textarea}
+          validate={[required, maxLengthVal]}
           cols='40'
           rows='2'
         />

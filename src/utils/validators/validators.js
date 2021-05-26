@@ -3,7 +3,8 @@ export const required = (value) => {
   return undefined;
 };
 
-export const maxLenght = (number) => (value) => {
+export const maxLength
+ = (number) => (value) => {
   if (value.length > number) return `Максимальная длина ${number} символов`;
   return undefined;
 };

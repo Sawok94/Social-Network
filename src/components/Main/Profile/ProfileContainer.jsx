@@ -37,9 +37,7 @@ export default compose(
     addAuthMe,
     updateMyStatus,
     getMyStatus,
-    
   }),
   withRouter,
   withAuthRedirect
 )(Profile);
-

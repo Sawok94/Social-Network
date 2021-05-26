@@ -14,7 +14,10 @@ const Wall = (props) => {
 
   return (
     <div className={style.wall}>
-      <AddPostForm onSubmit={addNewPost} photo={props.profilePhoto} />
+      <AddPostForm
+        onSubmit={addNewPost}
+        photo={props.profilePhoto}
+      />
       {props.posts.map((post) => (
         <Post
           key={post.id}

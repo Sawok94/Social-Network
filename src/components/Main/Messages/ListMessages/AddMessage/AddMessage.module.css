@@ -8,13 +8,6 @@
   align-items: center;
 }
 
-.message__form_textArea {
-  border-color: rgb(72, 67, 167);
-  border-radius: 5px;
-  resize: none;
-  outline: none;
-}
-
 .message__form_button {
   margin-left: 15px;
   border-radius: 8px;
