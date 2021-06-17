@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
-import { addAuthMe } from '../../../redux/auth-reducer';
+import { getAuthMe } from '../../../redux/auth-reducer';
 import {
   addPost,
   deletePost,
@@ -34,7 +34,7 @@ export default compose(
     deletePost,
     getProfile,
     getUserProfile,
-    addAuthMe,
+    getAuthMe,
     updateMyStatus,
     getMyStatus,
   }),

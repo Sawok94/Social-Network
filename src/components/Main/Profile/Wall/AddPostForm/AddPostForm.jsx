@@ -7,6 +7,7 @@ import {
   maxLength,
   required,
 } from '../../../../../utils/validators/validators';
+import { Textarea } from '../../../../../utils/validators/Forms/ValidationForms';
 
 const maxLengthVal = maxLength(5);
 
@@ -16,10 +17,9 @@ const AddPostForm = (props) => {
       <form onSubmit={props.handleSubmit} className={style.wall__form}>
         <Avatar photo={props.photo} style='avatar__small' />
         <Field
-          className={style.wall__form_textArea}
           placeholder=' Введите текст поста...'
           name='textAreaForm'
-          component='textarea'
+          component={Textarea}
           validate={[required, maxLengthVal]}
           cols='40'
           rows='3'

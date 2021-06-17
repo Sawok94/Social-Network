@@ -10,14 +10,6 @@
   margin-bottom: 15px;
 }
 
-.wall__form_textArea {
-  border-color: rgb(72, 67, 167);
-  border-radius: 5px;
-  resize: none;
-  outline: none;
-  margin-left: 15px;
-}
-
 .wall__form_button {
   margin-left: 15px;
   border-radius: 8px;

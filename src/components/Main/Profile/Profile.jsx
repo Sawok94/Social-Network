@@ -9,9 +9,10 @@ import Wall from './Wall/Wall';
 
 const Profile = (props) => {
   useEffect(() => {
-    props.getProfile(props.match.params.userId || props.id);
-    props.getMyStatus(props.match.params.userId || props.id);
-    props.addAuthMe();
+    let id = props.match.params.userId || props.id;
+    props.getProfile(id);
+    props.getMyStatus(id);
+    // props.getAuthMe(); in login
   }, []);
 
   if (!props.profile) {

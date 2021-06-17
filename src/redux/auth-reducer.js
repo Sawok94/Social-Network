@@ -7,7 +7,7 @@ const initialState = {
   id: null,
   email: null,
   login: null,
-  isAuth: true,
+  isAuth: false,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -28,7 +28,7 @@ export const setAuthMe = (id, email, login, isAuth) => ({
   auth: { id, email, login, isAuth },
 });
 
-export const addAuthMe = () => (dispatch) => {
+export const getAuthMe = () => (dispatch) => {
   authAPI.authMe().then((response) => {
     if (response.data.resultCode === 0) {
       let { id, email, login } = response.data.data;
@@ -40,9 +40,13 @@ export const addAuthMe = () => (dispatch) => {
 export const login = (email, password, rememberMe) => (dispatch) => {
   authAPI.login(email, password, rememberMe).then((response) => {
     if (response.data.resultCode === 0) {
-      dispatch(addAuthMe());
+      dispatch(getAuthMe());
     } else {
-      dispatch(stopSubmit('loginForm'));
+      let errorMesages =
+        response.data.messages.length > 0
+          ? response.data.messages[0]
+          : 'Ошибка...';
+      dispatch(stopSubmit('loginForm', { _error: errorMesages }));
     }
   });
 };

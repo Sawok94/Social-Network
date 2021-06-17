@@ -1,6 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import { Field, reduxForm } from 'redux-form';
+import { Input } from '../../utils/validators/Forms/ValidationForms';
+import { required } from '../../utils/validators/validators';
 import style from '../Login/Login.module.css';
 import border from '../Main/Main.module.css';
 
@@ -12,12 +14,14 @@ const Login = (props) => {
   return (
     <div className={`${style.login_wrapper} ${border.wrapper}`}>
       <form className={style.login_wrapper_form}>
+        {props.error && <div className={style.login_wrapper_form_error} >{props.error}</div>}
         <div>
           <label className={style.login_wrapper_form_lbl}>Логин:</label>
           <Field
             className={style.login_wrapper_form_input}
             name='emailInputForm'
-            component='input'
+            component={Input}
+            validate={[required]}
             type='email'
             placeholder='Введите email'
             maxlength='50'
@@ -29,7 +33,8 @@ const Login = (props) => {
           <Field
             className={style.login_wrapper_form_input}
             name='passwordInputForm'
-            component='input'
+            component={Input}
+            validate={[required]}
             type='password'
             placeholder='Введите пароль'
             maxlength='50'

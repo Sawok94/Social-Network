@@ -9,6 +9,16 @@
   user-select: none;
 }
 
+.login_wrapper_form_error {
+  color: red;
+  font-weight: bolder;
+
+  margin: 50px 0 20px;
+  border: 2px red solid;
+  border-radius: 2%;
+  padding: 15px;
+}
+
 .login_wrapper_form_lbl {
   font-weight: bolder;
   font-size: 10px;
