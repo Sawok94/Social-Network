@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Login from './Login';
 import { login } from '../../redux/auth-reducer';
+import { getIsAuth } from '../../selectors/auth-selectors';
 
 const mapStateToProps = (state) => {
   return {
-    isAuth: state.auth.isAuth,
+    isAuth: getIsAuth(state),
   };
 };
 

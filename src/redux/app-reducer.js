@@ -1,3 +1,5 @@
+import { getAuthMe } from './auth-reducer';
+
 const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS';
 
 const initialState = {
@@ -17,17 +19,13 @@ const appReducer = (state = initialState, action) => {
   }
 };
 
-export const setAuthMe = (id, email, login, isAuth) => ({
+export const initializedSuccess = () => ({
   type: INITIALIZED_SUCCESS,
-  auth: { id, email, login, isAuth },
 });
 
-export const getAuthMe = () => (dispatch) => {
-  authAPI.authMe().then((response) => {
-    if (response.data.resultCode === 0) {
-      let { id, email, login } = response.data.data;
-      dispatch(setAuthMe(id, email, login, true));
-    }
+export const initializeApp = () => (dispatch) => {
+  Promise.all([dispatch(getAuthMe())]).then(() => {
+    dispatch(initializedSuccess());
   });
 };
 

@@ -12,7 +12,6 @@ const Profile = (props) => {
     let id = props.match.params.userId || props.id;
     props.getProfile(id);
     props.getMyStatus(id);
-    // props.getAuthMe(); in login
   }, []);
 
   if (!props.profile) {
