@@ -13,9 +13,6 @@ function App(props) {
   useEffect(() => {
     props.initializeApp();
   }, []);
-  {
-    console.log(props);
-  }
 
   if (!props.initialized) {
     return <Preloader />;
