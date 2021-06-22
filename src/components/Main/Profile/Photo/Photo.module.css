@@ -1,11 +1,5 @@
 .photo {
   grid-area: photo;
-  /* padding: 10px; */
   position: relative;
-  /* grid-row-start: 1;
-  grid-column-start: 1;
-  grid-row-end: 2;
-  grid-column-end: 2; */
-
-  /* height: 200px; */
+  cursor: pointer;
 }
