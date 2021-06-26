@@ -12,9 +12,6 @@ import { Textarea } from '../../../../../utils/validators/Forms/ValidationForms'
 const maxLengthVal = maxLength(5);
 
 const AddPostForm = (props) => {
-  {
-    console.log(props);
-  }
   return (
     <div className={border.wrapper}>
       <form onSubmit={props.handleSubmit} className={style.wall__form}>

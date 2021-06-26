@@ -1,5 +1,19 @@
 .photo {
   grid-area: photo;
   position: relative;
+  /* display: flex; */
+}
+
+.photo_editor {
+  z-index: 1;
   cursor: pointer;
+
+  font-weight: bolder;
+  background-color: gbrown;
+  /* background-color: rgb(243, 240, 240); */
+  /* justify-content: end; */
+  color: white;
+  margin-top: 140px;
+  padding: 20px;
+  opacity: 0.5;
 }

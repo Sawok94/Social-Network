@@ -11,15 +11,13 @@ import {
   getProfile,
   updateMyStatus,
 } from '../../../redux/profiles-reducer';
-import { getUserProfile } from '../../../redux/users-reducer';
 import { getAuthId, getIsAuth } from '../../../selectors/auth-selectors';
-import { getProfilesPosts, getProfilesProfile, getProfilesStatus } from '../../../selectors/profiles-selectors';
 import {
-  getUsersCurrentPage,
-  getUsersProfiles,
-  getUsersSearchFriends,
-  getUsersSearchName,
-} from '../../../selectors/users-selectors';
+  getProfilesPosts,
+  getProfilesProfile,
+  getProfilesStatus,
+  showMyFriends,
+} from '../../../selectors/profiles-selectors';
 import Profile from './Profile';
 
 const mapStateToProps = (state) => {
@@ -27,12 +25,9 @@ const mapStateToProps = (state) => {
     posts: getProfilesPosts(state),
     profile: getProfilesProfile(state),
     status: getProfilesStatus(state),
-    profiles: getUsersProfiles(state),
-    currentPage: getUsersCurrentPage(state),
-    searchName: getUsersSearchName(state),
-    searchFriends: getUsersSearchFriends(state),
     id: getAuthId(state),
     isAuth: getIsAuth(state),
+    myFriendsProfile: showMyFriends(state),
   };
 };
 
@@ -41,7 +36,6 @@ export default compose(
     addPost,
     deletePost,
     getProfile,
-    getUserProfile,
     getAuthMe,
     updateMyStatus,
     getMyStatus,

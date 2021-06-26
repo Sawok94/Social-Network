@@ -38,11 +38,7 @@ const Profile = (props) => {
         profilePhoto={props.profile.photos.small}
       />
       <Friends
-        getUserProfile={props.getUserProfile}
-        currentPage={props.currentPage}
-        searchName={props.searchName}
-        searchFriends={props.searchFriends}
-        profiles={props.profiles}
+        myFriendsProfile={props.myFriendsProfile}
       />
     </div>
   );

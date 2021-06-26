@@ -5,15 +5,6 @@ import FriendsProfile from './FriendsProfile/FriendsProfile';
 import { NavLink } from 'react-router-dom';
 
 const Friends = (props) => {
-  useEffect(() => {
-    props.getUserProfile(
-      props.currentPage,
-      4,
-      props.searchName,
-      props.searchFriends
-    );
-  }, []);
-
   return (
     <div className={`${style.friends} ${border.wrapper}`}>
       <span className={style.friends_title}>
@@ -22,8 +13,8 @@ const Friends = (props) => {
         </NavLink>
       </span>
       <div className={style.profiles}>
-        {props.profiles &&
-          props.profiles.map((profile) => {
+        {props.myFriendsProfile &&
+          props.myFriendsProfile.map((profile) => {
             return (
               <FriendsProfile
                 key={profile.id}
