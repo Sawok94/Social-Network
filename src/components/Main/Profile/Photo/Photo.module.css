@@ -1,19 +1,18 @@
 .photo {
   grid-area: photo;
   position: relative;
-  /* display: flex; */
+  z-index: 1;
 }
 
 .photo_editor {
+  color: white;
   z-index: 1;
   cursor: pointer;
-
   font-weight: bolder;
-  background-color: gbrown;
-  /* background-color: rgb(243, 240, 240); */
-  /* justify-content: end; */
-  color: white;
-  margin-top: 140px;
-  padding: 20px;
-  opacity: 0.5;
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: rgb(174, 165, 165, 0.5);
 }

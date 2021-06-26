@@ -11,12 +11,12 @@ import {
   getProfile,
   updateMyStatus,
 } from '../../../redux/profiles-reducer';
+import { showMyFriends } from '../../../selectors/app-selectors ';
 import { getAuthId, getIsAuth } from '../../../selectors/auth-selectors';
 import {
   getProfilesPosts,
   getProfilesProfile,
   getProfilesStatus,
-  showMyFriends,
 } from '../../../selectors/profiles-selectors';
 import Profile from './Profile';
 
