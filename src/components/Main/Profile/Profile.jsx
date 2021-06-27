@@ -12,7 +12,7 @@ const Profile = (props) => {
     let id = props.match.params.userId || props.id;
     props.getProfile(id);
     props.getMyStatus(id);
-  }, []);
+  }, [props.match.params.userId]);
 
   if (!props.profile) {
     return <Preloader />;
@@ -24,7 +24,10 @@ const Profile = (props) => {
 
   return (
     <div className={style.container}>
-      <Photo photo={props.profile.photos.large} />
+      <Photo
+        isOwner={!props.match.params.userId}
+        photo={props.profile.photos.large}
+      />
       <Info
         info={props.profile}
         updateMyStatus={props.updateMyStatus}
@@ -37,9 +40,7 @@ const Profile = (props) => {
         posts={props.posts}
         profilePhoto={props.profile.photos.small}
       />
-      <Friends
-        myFriendsProfile={props.myFriendsProfile}
-      />
+      <Friends myFriendsProfile={props.myFriendsProfile} />
     </div>
   );
 };

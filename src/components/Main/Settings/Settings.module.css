@@ -3,19 +3,5 @@
   padding: 50px;
 }
 
-.table {
-  /* border-collapse: collapse; */
-  border-spacing: 100px 20px;
-  width: 50%;
-  text-align: left;
-}
 
-.table_tr:not(:last-child) {
-  border-bottom: rgb(201, 193, 193) 1px solid;
-  padding: 50px;
-}
-
-.table_td {
-  /* width: 50px; */
-}
 

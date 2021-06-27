@@ -11,15 +11,15 @@ const Photo = (props) => {
     <div
       className={style.photo}
       onMouseEnter={() => {
-        setEditMode(true);
+        props.isOwner && setEditMode(true);
       }}
       onMouseLeave={() => {
-        setEditMode(false);
+        props.isOwner && setEditMode(false);
       }}
     >
       {redirect && <Redirect to={'/settings'} />}
       <Avatar photo={props.photo} style='avatar__large' />
-      {editMode && (
+      {editMode && props.isOwner && (
         <div
           className={style.photo_editor}
           onClick={() => {
