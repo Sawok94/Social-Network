@@ -8,7 +8,9 @@ const MessagesContainer = React.lazy(() =>
   import('./Messages/MessagesContainer')
 );
 const FriendsContainer = React.lazy(() => import('./Friends/FriendsContainer'));
-const Settings = React.lazy(() => import('../Main/Settings/Settings'));
+const SettingsContainer = React.lazy(() =>
+  import('../Main/Settings/SettingsContainer')
+);
 const LoginContainer = React.lazy(() => import('../Login/LoginContainer'));
 
 const Main = (props) => {
@@ -20,7 +22,7 @@ const Main = (props) => {
         render={withSuspense(MessagesContainer)}
       />
       <Route path='/friends' render={withSuspense(FriendsContainer)} />
-      <Route path='/settings' render={withSuspense(Settings)} />
+      <Route path='/settings' render={withSuspense(SettingsContainer)} />
       {<Route path='' /> && <Redirect to={'/profile'} />}
       <Route path='/login' render={withSuspense(LoginContainer)} />
     </div>

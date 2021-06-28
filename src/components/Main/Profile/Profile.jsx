@@ -29,6 +29,7 @@ const Profile = (props) => {
         photo={props.profile.photos.large}
       />
       <Info
+        isOwner={!props.match.params.userId}
         info={props.profile}
         updateMyStatus={props.updateMyStatus}
         status={props.status}
