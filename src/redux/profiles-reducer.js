@@ -5,6 +5,9 @@ const DELETE_POST = 'DELETE_POST';
 const SET_PROFILE = 'SET_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 const SET_AVATAR_PHOTO = 'SET_AVATAR_PHOTO';
+const SET_AVATAR_PHOTO_UPDATE = 'SET_AVATAR_PHOTO_UPDATE';
+const SET_INFO_UPDATE = 'SET_INFO_UPDATE';
+const SET_INFO = 'SET_INFO';
 
 const initialState = {
   posts: [
@@ -13,6 +16,8 @@ const initialState = {
   ],
   profile: null,
   status: '',
+  updateAvatar: false,
+  updateInfo: false,
 };
 
 const postReducer = (state = initialState, action) => {
@@ -56,6 +61,24 @@ const postReducer = (state = initialState, action) => {
         },
       };
     }
+    case SET_AVATAR_PHOTO_UPDATE: {
+      return {
+        ...state,
+        updateAvatar: action.update,
+      };
+    }
+    case SET_INFO: {
+      return {
+        ...state,
+        profile: action.dateInfo,
+      };
+    }
+    case SET_INFO_UPDATE: {
+      return {
+        ...state,
+        updateInfo: action.update,
+      };
+    }
     default:
       return state;
   }
@@ -86,6 +109,21 @@ export const setAvatarPhoto = (photoFile) => ({
   photoFile,
 });
 
+export const setAvatarPhotoUpdate = (update) => ({
+  type: SET_AVATAR_PHOTO_UPDATE,
+  update,
+});
+
+export const setProfileInfoUpdate = (dateInfo) => ({
+  type: SET_INFO,
+  dateInfo,
+});
+
+export const setInfoUpdate = (update) => ({
+  type: SET_INFO_UPDATE,
+  update,
+});
+
 export const getProfile = (userId) => async (dispatch) => {
   let response = await profileAPI.getProfile(userId);
   dispatch(setProfile(response.data));
@@ -104,10 +142,20 @@ export const updateMyStatus = (status) => async (dispatch) => {
   }
 };
 
-export const uploadAvatarPhoto = (photoFile) => async (dispatch) => {
+export const updateAvatarPhoto = (photoFile) => async (dispatch) => {
   let response = await profileAPI.savePhoto(photoFile);
   if (response.data.resultCode == 0) {
     dispatch(setAvatarPhoto(response.data.data.photos));
+    dispatch(setAvatarPhotoUpdate(true));
+  }
+};
+
+export const updateProfileInfo = (profileInfo) => async (dispatch) => {
+  let response = await profileAPI.saveProfileInfo(profileInfo);
+  if (response.data.resultCode == 0) {
+    dispatch(setProfileInfoUpdate(response.data.data));
+    console.log(response.data.data);
+    dispatch(setInfoUpdate(true));
   }
 };
 

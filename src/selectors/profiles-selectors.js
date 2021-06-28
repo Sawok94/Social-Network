@@ -9,3 +9,11 @@ export const getProfilesProfile = (state) => {
 export const getProfilesStatus = (state) => {
   return state.profiles.status;
 };
+
+export const getProfilesUpdateAvatar = (state) => {
+  return state.profiles.updateAvatar;
+};
+
+export const getProfilesUpdateInfo = (state) => {
+  return state.profiles.updateInfo;
+};

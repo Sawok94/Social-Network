@@ -1,54 +1,34 @@
 import React from 'react';
 import style from '../Settings/Settings.module.css';
 import border from '../Main.module.css';
+import SettingsInfo from './SettingsInfo/SettingsInfo.jsx';
 
 const Settings = (props) => {
   let photoSelected = (e) => {
-    e.target.files.length && props.uploadAvatarPhoto(e.target.files[0]);
+    e.target.files.length && props.updateAvatarPhoto(e.target.files[0]);
   };
-  {
-    console.log(props);
-  }
+
+  let updateInfo = (profileInfo) => {
+    props.updateProfileInfo(profileInfo);
+  };
+
   return (
     <div className={`${style.container} ${border.wrapper}`}>
       <div className={style.setting}>
         <div className={style.setting_avatar}>
-          <b>Загрузить аватарку</b>
-          <hr />
-          <div>
+          <b>Обновить аватарку</b>
+          <div className={style.setting_avatar_file}>
             <input type='file' onChange={photoSelected} />
+            {props.updateAvatar && (
+              <span className={style.setting_avatar_succes}>
+                * Фотография обновлена
+              </span>
+            )}
           </div>
         </div>
-
-        <div className={style.setting_info}>
-          <b>Обо мне</b>
-          <hr />
-          <div>
-            <div>
-              <b>Мой никнейм:</b>
-              <input type='text' name='' id='' />
-            </div>
-            <div>
-              <b>В поисках работы:</b>
-              <input type='checkbox' name='' id='' />
-            </div>
-            <div>
-              <b>Мои навыки:</b>
-              <textarea name='' id='' cols='20' rows='2'></textarea>
-            </div>
-            <div>
-              <b>Обо мне:</b>
-              <textarea name='' id='' cols='20' rows='2' ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div className={style.setting_social}>
-          <b>Социальные сети</b>
-          <hr />
-          {/* <SocialNetworks contacts={props.info.contacts} /> */}
-          <div></div>
-        </div>
+        <hr />
+        <SettingsInfo onSubmit={updateInfo} />
+        {props.updateInfo && <span>Информация обновлена</span>}
       </div>
     </div>
   );

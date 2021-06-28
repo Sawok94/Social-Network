@@ -3,5 +3,18 @@
   padding: 50px;
 }
 
+hr {
+  margin: 20px 0;
+}
 
+.setting_avatar {
+  display: flex;
+}
 
+.setting_avatar_file {
+  margin-left: 50px;
+}
+
+.setting_avatar_succes {
+  color: red;
+}
