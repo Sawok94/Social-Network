@@ -4,15 +4,13 @@ import border from '../../Main.module.css';
 import SocialNetworks from './SocialNetworks/SocialNetworks';
 import MyStatus from './MyStatus/MyStatus';
 import StrangerStatus from './StrangerStatus/StrangerStatus';
-import settingImg from '../../../../assets/icons8-настройки-15.png';
+import settingImg from '../../../../assets/setting.png';
 import { Redirect } from 'react-router-dom';
 
 const Info = (props) => {
   const [editMode, setEditMode] = useState(false);
   const [redirect, setRedirect] = useState(false);
-  {
-    console.log(props);
-  }
+
   return (
     <div
       className={`${style.info} ${border.wrapper}`}
@@ -48,18 +46,19 @@ const Info = (props) => {
           />
         )}
         {redirect && <Redirect to={'/settings'} />}
-        <div className={style.info_lookingForAJob_title}>Статус</div>
-        <div className={style.info_lookingForAJobInfo}>
-          <div className={style.info_lookingForAJobQuestion}>
-            {props.info.lookingForAJob ? 'Ищу работу' : 'Не ищу работу'}
-          </div>
-          <div className={style.info_lookingForAJobDescription}>
-            <span className={style.info_lookingForAJobDescription_comment}>
-              {':'}
-            </span>
-            {`"${props.info.lookingForAJobDescription}"`}
-          </div>
+        <div className={style.info_lookingForAJob_title}>
+          <b>Ищу работу: </b>
+          {props.info.lookingForAJob ? 'да' : 'нет'}
         </div>
+        <div className={style.info_lookingForAJob_title}>
+          <b>Мои навыки: </b>
+          {props.info.lookingForAJobDescription}
+        </div>
+        <div className={style.info_lookingForAJob_title}>
+          <b>Обо мне: </b>
+          {props.info.aboutMe}
+        </div>
+
         <SocialNetworks contacts={props.info.contacts} />
       </div>
     </div>

@@ -1,24 +1,30 @@
 .setting_info_edit {
   margin-left: 70px;
+  width: 50%;
+  text-align: left;
 }
 
 .setting_field_name {
-  margin-left: 5%;
+  width: 168px;
+  margin-top: 10px;
 }
 
 .setting_field_scills {
   resize: none;
-  margin-left: 5%;
-
+  margin-top: 10px;
 }
 
 .setting_field_aboutMe {
   resize: none;
-  margin-left: 5%;
-
+  margin-top: 5px;
 }
 
-.setting_field_job {
-  margin-left: 5%;
+td {
+  width: 10px;
+}
 
+.setting_btn {
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
 }

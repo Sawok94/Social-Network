@@ -45,8 +45,6 @@ export const getMyFriends =
       searchName,
       searchFriends
     );
-    console.log('1312');
-
     dispatch(setMyFriends(response.data.items));
   };
 

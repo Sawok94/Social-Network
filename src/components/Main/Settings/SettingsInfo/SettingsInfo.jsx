@@ -3,11 +3,13 @@ import style from './SettingsInfo.module.css';
 import { Field, reduxForm } from 'redux-form';
 
 const SettingsInfo = (props) => {
+  {
+    console.log(props.profile);
+  }
   return (
     <form onSubmit={props.handleSubmit}>
       <div className={style.setting_info}>
         <b>Обо мне</b>
-
         <table className={style.setting_info_edit}>
           <tr>
             <th>Мой никнейм:</th>
@@ -18,7 +20,6 @@ const SettingsInfo = (props) => {
                 placeholder='Введите имя...'
                 maxlength='15'
                 className={style.setting_field_name}
-                // value={props.status}
               />
             </td>
           </tr>
@@ -31,7 +32,6 @@ const SettingsInfo = (props) => {
                 placeholder='Опишите Ваши навыки...'
                 maxlength='50'
                 className={style.setting_field_scills}
-                // value={props.status}
               />
             </td>
           </tr>
@@ -44,7 +44,6 @@ const SettingsInfo = (props) => {
                 placeholder='Расскажите о себе...'
                 maxlength='50'
                 className={style.setting_field_aboutMe}
-                // value={props.status}
               />
             </td>
           </tr>
@@ -56,7 +55,6 @@ const SettingsInfo = (props) => {
                 component='input'
                 type='checkbox'
                 className={style.setting_field_job}
-                // value={props.status}
               />
             </td>
           </tr>
@@ -65,11 +63,33 @@ const SettingsInfo = (props) => {
       <hr />
       <div className={style.setting_social}>
         <b>Социальные сети</b>
-        {/* <SocialNetworks contacts={props.info.contacts} /> */}
-        <div></div>
+        <div>
+          <table className={style.setting_info_edit}>
+            {Object.keys(props.profile.contacts).map((key) => {
+              return (
+                <tr>
+                  <th>
+                    <b> {key}: </b>
+                  </th>
+                  <td>
+                    <Field
+                      name={`contacts.${key}`}
+                      component='input'
+                      type='url'
+                      placeholder='Введите URL адрес...'
+                      maxlength='50'
+                      className={style.setting_field_name}
+                      // value={props.status}
+                    />
+                  </td>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
       </div>
 
-      <button>Сохранить</button>
+      <button className={style.setting_btn}>Сохранить</button>
     </form>
   );
 };

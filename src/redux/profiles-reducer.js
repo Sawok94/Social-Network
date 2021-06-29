@@ -7,7 +7,6 @@ const SET_STATUS = 'SET_STATUS';
 const SET_AVATAR_PHOTO = 'SET_AVATAR_PHOTO';
 const SET_AVATAR_PHOTO_UPDATE = 'SET_AVATAR_PHOTO_UPDATE';
 const SET_INFO_UPDATE = 'SET_INFO_UPDATE';
-const SET_INFO = 'SET_INFO';
 
 const initialState = {
   posts: [
@@ -67,12 +66,6 @@ const postReducer = (state = initialState, action) => {
         updateAvatar: action.update,
       };
     }
-    case SET_INFO: {
-      return {
-        ...state,
-        profile: action.dateInfo,
-      };
-    }
     case SET_INFO_UPDATE: {
       return {
         ...state,
@@ -114,11 +107,6 @@ export const setAvatarPhotoUpdate = (update) => ({
   update,
 });
 
-export const setProfileInfoUpdate = (dateInfo) => ({
-  type: SET_INFO,
-  dateInfo,
-});
-
 export const setInfoUpdate = (update) => ({
   type: SET_INFO_UPDATE,
   update,
@@ -150,13 +138,14 @@ export const updateAvatarPhoto = (photoFile) => async (dispatch) => {
   }
 };
 
-export const updateProfileInfo = (profileInfo) => async (dispatch) => {
-  let response = await profileAPI.saveProfileInfo(profileInfo);
-  if (response.data.resultCode == 0) {
-    dispatch(setProfileInfoUpdate(response.data.data));
-    console.log(response.data.data);
-    dispatch(setInfoUpdate(true));
-  }
-};
+export const updateProfileInfo =
+  (profileInfo) => async (dispatch, getState) => {
+    let userId = getState().auth.userId;
+    let response = await profileAPI.saveProfileInfo(profileInfo);
+    if (response.data.resultCode == 0) {
+      dispatch(getProfile(userId));
+      dispatch(setInfoUpdate(true));
+    }
+  };
 
 export default postReducer;

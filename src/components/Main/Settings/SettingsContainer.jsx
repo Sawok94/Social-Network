@@ -4,6 +4,7 @@ import {
   updateProfileInfo,
   updateAvatarPhoto,
 } from '../../../redux/profiles-reducer';
+import { getAuthId } from '../../../selectors/auth-selectors';
 import {
   getProfilesProfile,
   getProfilesUpdateAvatar,
@@ -16,6 +17,7 @@ const mapStateToProps = (state) => {
     profile: getProfilesProfile(state),
     updateAvatar: getProfilesUpdateAvatar(state),
     updateInfo: getProfilesUpdateInfo(state),
+    myId: getAuthId(state),
   };
 };
 

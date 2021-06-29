@@ -22,18 +22,5 @@
 }
 
 .info_lookingForAJob_title {
-  font-weight: bold;
   margin-top: 10px;
-}
-
-.info_lookingForAJobQuestion {
-  margin-right: 20px;
-}
-
-.info_lookingForAJobDescription {
-  font-style: italic;
-}
-
-.info_lookingForAJobDescription_comment {
-  margin-right: 20px;
 }
