@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from '../Settings/Settings.module.css';
 import border from '../Main.module.css';
 import SettingsInfo from './SettingsInfo/SettingsInfo.jsx';
 
 const Settings = (props) => {
-  // const [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log('This will run after 1 second!');
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   let photoSelected = (e) => {
     e.target.files.length && props.updateAvatarPhoto(e.target.files[0]);
@@ -12,7 +19,6 @@ const Settings = (props) => {
 
   let updateInfo = (profileInfo) => {
     props.updateProfileInfo(profileInfo);
-    console.log(profileInfo);
   };
 
   return (

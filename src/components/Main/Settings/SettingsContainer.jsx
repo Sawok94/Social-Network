@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 import {
   updateProfileInfo,
   updateAvatarPhoto,
@@ -21,7 +23,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {
-  updateAvatarPhoto,
-  updateProfileInfo,
-})(Settings);
+export default compose(
+  connect(mapStateToProps, {
+    updateAvatarPhoto,
+    updateProfileInfo,
+  }),
+  withAuthRedirect
+)(Settings);

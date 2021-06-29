@@ -39,3 +39,7 @@
   margin: 10px;
   font-weight: bolder;
 }
+
+.login_wrapper_form_input_captcha {
+  width: 100px;
+}

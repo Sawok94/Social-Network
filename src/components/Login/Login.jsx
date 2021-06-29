@@ -14,7 +14,9 @@ const Login = (props) => {
   return (
     <div className={`${style.login_wrapper} ${border.wrapper}`}>
       <form className={style.login_wrapper_form}>
-        {props.error && <div className={style.login_wrapper_form_error} >{props.error}</div>}
+        {props.error && (
+          <div className={style.login_wrapper_form_error}>{props.error}</div>
+        )}
         <div>
           <label className={style.login_wrapper_form_lbl}>Логин:</label>
           <Field
@@ -52,6 +54,21 @@ const Login = (props) => {
             Сохранить аккаунт
           </label>
         </div>
+        {props.captcha && (
+          <div className={style.login_wrapper_form}>
+            <img
+              src={props.captcha}
+              alt='captcha'
+              width="100"
+            />
+            <Field
+              className={style.login_wrapper_form_input_captcha}
+              name='captcha'
+              component='input'
+              required
+            />
+          </div>
+        )}
         <button
           className={style.login_wrapper_form_btn}
           type='submit'
@@ -59,7 +76,8 @@ const Login = (props) => {
             props.login(
               data.emailInputForm,
               data.passwordInputForm,
-              data.checkboxInputForm
+              data.checkboxInputForm,
+              data.captcha
             );
           })}
         >

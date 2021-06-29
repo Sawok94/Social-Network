@@ -3,9 +3,6 @@ import style from './SettingsInfo.module.css';
 import { Field, reduxForm } from 'redux-form';
 
 const SettingsInfo = (props) => {
-  {
-    console.log(props.profile);
-  }
   return (
     <form onSubmit={props.handleSubmit}>
       <div className={style.setting_info}>
@@ -20,6 +17,7 @@ const SettingsInfo = (props) => {
                 placeholder='Введите имя...'
                 maxlength='15'
                 className={style.setting_field_name}
+                required
               />
             </td>
           </tr>
@@ -32,6 +30,7 @@ const SettingsInfo = (props) => {
                 placeholder='Опишите Ваши навыки...'
                 maxlength='50'
                 className={style.setting_field_scills}
+                required
               />
             </td>
           </tr>
@@ -44,6 +43,7 @@ const SettingsInfo = (props) => {
                 placeholder='Расскажите о себе...'
                 maxlength='50'
                 className={style.setting_field_aboutMe}
+                required
               />
             </td>
           </tr>
@@ -79,7 +79,6 @@ const SettingsInfo = (props) => {
                       placeholder='Введите URL адрес...'
                       maxlength='50'
                       className={style.setting_field_name}
-                      // value={props.status}
                     />
                   </td>
                 </tr>
