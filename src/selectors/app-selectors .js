@@ -4,6 +4,10 @@ export const getMyFriendsProfile = (state) => {
   return state.app.myFriendsProfile;
 };
 
+export const getInitialized = (state) => {
+  return state.app.initialized;
+};
+
 export const showMyFriends = createSelector(getMyFriendsProfile, (users) => {
   function shuffle(arr) {
     var j, temp;

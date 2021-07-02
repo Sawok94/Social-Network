@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import style from '../Settings/Settings.module.css';
 import border from '../Main.module.css';
 import SettingsInfo from './SettingsInfo/SettingsInfo.jsx';
+import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
 
 const Settings = (props) => {
-  const [editMode, setEditMode] = useState(false);
-
   useEffect(() => {
-    const timer = setTimeout(() => {
-      console.log('This will run after 1 second!');
-    }, 1000);
-    return () => clearTimeout(timer);
+    props.getProfileSettings(props.myId);
+    console.log('123');
   }, []);
 
   let photoSelected = (e) => {
@@ -23,36 +20,37 @@ const Settings = (props) => {
 
   return (
     <div className={`${style.container} ${border.wrapper}`}>
-      <div className={style.setting}>
-        <div className={style.setting_avatar}>
-          <b>Обновить аватарку</b>
-          <input
-            type='file'
-            onChange={photoSelected}
-            className={style.setting_avatar_file}
+      {!props.profileSettings ? (
+        <Preloader />
+      ) : (
+        <div className={style.setting}>
+          <div className={style.setting_avatar}>
+            <b>Обновить аватарку</b>
+            <input
+              type='file'
+              onChange={photoSelected}
+              className={style.setting_avatar_file}
+            />
+          </div>
+          {props.updateAvatar && (
+            <div className={style.setting_avatar_succes}>
+              * Фотография обновлена
+            </div>
+          )}
+          <hr />
+          <SettingsInfo
+            onSubmit={updateInfo}
+            initialValues={props.profileSettings}
+            profile={props.profileSettings}
           />
+          {props.updateInfo && (
+            <div className={style.setting_avatar_succes}>
+              * Информация обновлена
+            </div>
+          )}
         </div>
-        {props.updateAvatar && (
-          <div className={style.setting_avatar_succes}>
-            * Фотография обновлена
-          </div>
-        )}
-        <hr />
-        <SettingsInfo
-          onSubmit={updateInfo}
-          initialValues={
-            props.myId === props.profile.userId ? props.profile : ''
-          }
-          profile={props.profile}
-        />
-        {props.updateInfo && (
-          <div className={style.setting_avatar_succes}>
-            * Информация обновлена
-          </div>
-        )}
-      </div>
+      )}
     </div>
   );
 };
-
 export default Settings;

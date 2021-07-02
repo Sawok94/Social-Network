@@ -5,10 +5,11 @@ import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 import {
   updateProfileInfo,
   updateAvatarPhoto,
+  getProfileSettings,
 } from '../../../redux/profiles-reducer';
 import { getAuthId } from '../../../selectors/auth-selectors';
 import {
-  getProfilesProfile,
+  getProfilesProfileSetting,
   getProfilesUpdateAvatar,
   getProfilesUpdateInfo,
 } from '../../../selectors/profiles-selectors';
@@ -16,7 +17,7 @@ import Settings from './Settings';
 
 const mapStateToProps = (state) => {
   return {
-    profile: getProfilesProfile(state),
+    profileSettings: getProfilesProfileSetting(state),
     updateAvatar: getProfilesUpdateAvatar(state),
     updateInfo: getProfilesUpdateInfo(state),
     myId: getAuthId(state),
@@ -27,6 +28,7 @@ export default compose(
   connect(mapStateToProps, {
     updateAvatarPhoto,
     updateProfileInfo,
+    getProfileSettings,
   }),
   withAuthRedirect
 )(Settings);

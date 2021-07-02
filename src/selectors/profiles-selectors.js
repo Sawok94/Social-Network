@@ -6,6 +6,10 @@ export const getProfilesProfile = (state) => {
   return state.profiles.profile;
 };
 
+export const getProfilesProfileSetting = (state) => {
+  return state.profiles.profileSettings;
+};
+
 export const getProfilesStatus = (state) => {
   return state.profiles.status;
 };

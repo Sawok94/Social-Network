@@ -1,6 +1,15 @@
 import React from 'react';
 import style from './SettingsInfo.module.css';
 import { Field, reduxForm } from 'redux-form';
+import { maxLength } from '../../../../utils/validators/validators';
+import {
+  Input,
+  Textarea,
+} from '../../../../utils/validators/Forms/ValidationForms';
+
+const maxLengthNickName = maxLength(10);
+const maxLengthTextArea = maxLength(30);
+const maxLengthUrl = maxLength(40);
 
 const SettingsInfo = (props) => {
   return (
@@ -13,9 +22,9 @@ const SettingsInfo = (props) => {
             <td>
               <Field
                 name='fullName'
-                component='input'
+                component={Input}
                 placeholder='Введите имя...'
-                maxlength='15'
+                validate={[maxLengthNickName]}
                 className={style.setting_field_name}
                 required
               />
@@ -26,9 +35,9 @@ const SettingsInfo = (props) => {
             <td>
               <Field
                 name='lookingForAJobDescription'
-                component='textarea'
+                component={Textarea}
+                validate={[maxLengthTextArea]}
                 placeholder='Опишите Ваши навыки...'
-                maxlength='50'
                 className={style.setting_field_scills}
                 required
               />
@@ -39,9 +48,9 @@ const SettingsInfo = (props) => {
             <td>
               <Field
                 name='aboutMe'
-                component='textarea'
+                component={Textarea}
                 placeholder='Расскажите о себе...'
-                maxlength='50'
+                validate={[maxLengthNickName]}
                 className={style.setting_field_aboutMe}
                 required
               />
@@ -67,17 +76,17 @@ const SettingsInfo = (props) => {
           <table className={style.setting_info_edit}>
             {Object.keys(props.profile.contacts).map((key) => {
               return (
-                <tr>
+                <tr key={key}>
                   <th>
                     <b> {key}: </b>
                   </th>
                   <td>
                     <Field
                       name={`contacts.${key}`}
-                      component='input'
+                      component={Input}
                       type='url'
                       placeholder='Введите URL адрес...'
-                      maxlength='50'
+                      validate={[maxLengthUrl]}
                       className={style.setting_field_name}
                     />
                   </td>

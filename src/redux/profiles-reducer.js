@@ -3,6 +3,7 @@ import { profileAPI } from '../api/api';
 const ADD_POST = 'ADD_POST';
 const DELETE_POST = 'DELETE_POST';
 const SET_PROFILE = 'SET_PROFILE';
+const SET_PROFILE_SETTINGS = 'SET_PROFILE_SETTINGS';
 const SET_STATUS = 'SET_STATUS';
 const SET_AVATAR_PHOTO = 'SET_AVATAR_PHOTO';
 const SET_AVATAR_PHOTO_UPDATE = 'SET_AVATAR_PHOTO_UPDATE';
@@ -14,6 +15,7 @@ const initialState = {
     { id: 1, textPost: 'Two' },
   ],
   profile: null,
+  profileSettings: null,
   status: '',
   updateAvatar: false,
   updateInfo: false,
@@ -43,6 +45,12 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         profile: action.profile,
+      };
+    }
+    case SET_PROFILE_SETTINGS: {
+      return {
+        ...state,
+        profileSettings: action.profileSettings,
       };
     }
     case SET_STATUS: {
@@ -92,6 +100,11 @@ export const setProfile = (profile) => ({
   profile,
 });
 
+export const setProfileSettings = (profileSettings) => ({
+  type: SET_PROFILE_SETTINGS,
+  profileSettings,
+});
+
 export const setStatus = (status) => ({
   type: SET_STATUS,
   status,
@@ -117,6 +130,11 @@ export const getProfile = (userId) => async (dispatch) => {
   dispatch(setProfile(response.data));
 };
 
+export const getProfileSettings = (userId) => async (dispatch) => {
+  let response = await profileAPI.getProfile(userId);
+  dispatch(setProfileSettings(response.data));
+};
+
 export const getMyStatus = (userId) => async (dispatch) => {
   let response = await profileAPI.getStatus(userId);
   dispatch(setStatus(response.data));
@@ -135,6 +153,10 @@ export const updateAvatarPhoto = (photoFile) => async (dispatch) => {
   if (response.data.resultCode == 0) {
     dispatch(setAvatarPhoto(response.data.data.photos));
     dispatch(setAvatarPhotoUpdate(true));
+    const timer = setTimeout(() => {
+      dispatch(setAvatarPhotoUpdate(false));
+      clearTimeout(timer);
+    }, 1000);
   }
 };
 
@@ -145,6 +167,10 @@ export const updateProfileInfo =
     if (response.data.resultCode == 0) {
       dispatch(getProfile(userId));
       dispatch(setInfoUpdate(true));
+      const timer = setTimeout(() => {
+        dispatch(setInfoUpdate(false));
+        clearTimeout(timer);
+      }, 1000);
     }
   };
 

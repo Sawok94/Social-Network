@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { withSuspense } from '../../hoc/withSuspense';
+import Error404 from '../../utils/OverallComponents/Error404/Error404';
 import style from '../Main/Main.module.css';
 
 const ProfileContainer = React.lazy(() => import('./Profile/ProfileContainer'));
@@ -16,15 +17,21 @@ const LoginContainer = React.lazy(() => import('../Login/LoginContainer'));
 const Main = (props) => {
   return (
     <div className={style.main}>
-      <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)} />
-      <Route
-        path='/messages/:userId?'
-        render={withSuspense(MessagesContainer)}
-      />
-      <Route path='/friends' render={withSuspense(FriendsContainer)} />
-      <Route path='/settings' render={withSuspense(SettingsContainer)} />
-      {<Route path='' /> && <Redirect to={'/profile'} />}
-      <Route path='/login' render={withSuspense(LoginContainer)} />
+      <Switch>
+        <Route
+          path='/profile/:userId?'
+          render={withSuspense(ProfileContainer)}
+        />
+        <Route
+          path='/messages/:userId?'
+          render={withSuspense(MessagesContainer)}
+        />
+        <Route path='/friends' render={withSuspense(FriendsContainer)} />
+        <Route path='/settings' render={withSuspense(SettingsContainer)} />
+        <Route path='/login' render={withSuspense(LoginContainer)} />
+        {<Redirect exact from='/' to='/profile' />}
+        {<Route path='*' render={() => <Error404 />} />}
+      </Switch>
     </div>
   );
 };
