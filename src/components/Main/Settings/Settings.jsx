@@ -7,7 +7,6 @@ import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
 const Settings = (props) => {
   useEffect(() => {
     props.getProfileSettings(props.myId);
-    console.log('123');
   }, []);
 
   let photoSelected = (e) => {

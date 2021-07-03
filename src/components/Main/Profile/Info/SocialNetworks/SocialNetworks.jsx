@@ -9,57 +9,43 @@ import vk from '../../../../../assets/vk.png';
 import website from '../../../../../assets/website.png';
 
 const SocialNetworks = (props) => {
+  const socialLink = (key, images, alt) => {
+    return (
+      <a
+        key={key}
+        href={`${props.contacts[key]}`}
+        className={style.info_contact_a}
+        target='_blank'
+      >
+        <img src={images} alt={alt} />
+      </a>
+    );
+  };
   return (
     <div className={style.info_contact}>
       {Object.keys(props.contacts).map((key) => {
+        console.log(props.contacts[key]);
         if (props.contacts[key]) {
           switch (key) {
             case 'github':
-              return (
-                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
-                  <img src={github} alt='github' />
-                </a>
-              );
+              return socialLink(key, github, 'github');
             case 'facebook':
-              return (
-                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
-                  <img src={facebook} alt='facebook' />
-                </a>
-              );
+              return socialLink(key, facebook, 'facebook');
             case 'vk':
-              return (
-                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
-                  <img src={vk} alt='vk' />
-                </a>
-              );
+              return socialLink(key, vk, 'vk');
             case 'youtube':
-              return (
-                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
-                  <img src={youtube} alt='youtube' />
-                </a>
-              );
+              return socialLink(key, youtube, 'youtube');
             case 'website':
-              return (
-                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
-                  <img src={website} alt='website' />
-                </a>
-              );
+              return socialLink(key, website, 'website');
             case 'twitter':
-              return (
-                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
-                  <img src={twitter} alt='twitter' />
-                </a>
-              );
+              return socialLink(key, twitter, 'twitter');
             case 'instagram':
-              return (
-                <a href={`${props.contacts[key]}`} className={style.info_contact_a} target='_blank'>
-                  <img src={instagram} alt='instagram' />
-                </a>
-              );
+              return socialLink(key, instagram, 'instagram');
+            default:
+              return <div className=''>Социльные сети не указанны...</div>;
           }
         }
       })}
-      {/* <span className=''>Социльные сети не указанны...</span> */}
     </div>
   );
 };

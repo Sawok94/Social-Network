@@ -162,10 +162,11 @@ export const updateAvatarPhoto = (photoFile) => async (dispatch) => {
 
 export const updateProfileInfo =
   (profileInfo) => async (dispatch, getState) => {
-    let userId = getState().auth.userId;
+    let userId = getState().auth.id;
     let response = await profileAPI.saveProfileInfo(profileInfo);
     if (response.data.resultCode == 0) {
       dispatch(getProfile(userId));
+      dispatch(getProfileSettings(userId));
       dispatch(setInfoUpdate(true));
       const timer = setTimeout(() => {
         dispatch(setInfoUpdate(false));
