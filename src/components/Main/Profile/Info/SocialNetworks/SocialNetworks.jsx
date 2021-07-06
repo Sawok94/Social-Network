@@ -16,6 +16,7 @@ const SocialNetworks = (props) => {
         href={`${props.contacts[key]}`}
         className={style.info_contact_a}
         target='_blank'
+        rel='noreferrer'
       >
         <img src={images} alt={alt} />
       </a>
@@ -24,7 +25,6 @@ const SocialNetworks = (props) => {
   return (
     <div className={style.info_contact}>
       {Object.keys(props.contacts).map((key) => {
-        console.log(props.contacts[key]);
         if (props.contacts[key]) {
           switch (key) {
             case 'github':
@@ -42,9 +42,10 @@ const SocialNetworks = (props) => {
             case 'instagram':
               return socialLink(key, instagram, 'instagram');
             default:
-              return <div className=''>Социльные сети не указанны...</div>;
+              return null;
           }
         }
+        return null;
       })}
     </div>
   );

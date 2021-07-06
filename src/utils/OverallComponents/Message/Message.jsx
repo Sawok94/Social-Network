@@ -5,7 +5,7 @@ import style from '../Message/Message.module.css';
 const Message = (props) => {
   return (
     <div className={style.message}>
-      <Avatar style='avatar__small' />
+      <Avatar style={`avatar__small`} />
       <div>
         <div className={style.message__name}>Name</div>
         <div className={style.message__text}>{props.textMessage}</div>

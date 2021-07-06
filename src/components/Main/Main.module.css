@@ -1,7 +1,6 @@
 .main {
   grid-area: main;
-
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .wrapper {

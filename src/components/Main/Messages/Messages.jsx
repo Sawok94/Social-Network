@@ -3,19 +3,22 @@ import style from '../Messages/Messages.module.css';
 import ListFriends from './ListFriends/ListFriends';
 import ListMessagesContainer from './ListMessages/ListMessagesContainer';
 
-const Messages = (props) => {
+const Messages = ({
+  getUserProfile,
+  currentPage,
+  sizePage,
+  searchName,
+  searchFriends,
+  profiles,
+}) => {
   useEffect(() => {
-    props.getUserProfile(
-      props.currentPage,
-      props.sizePage,
-      props.searchName,
-      props.searchFriends
-    );
+    getUserProfile(currentPage, sizePage, searchName, searchFriends);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className={style.container}>
-      <ListFriends profiles={props.profiles} />
+      <ListFriends profiles={profiles} />
       <ListMessagesContainer />
     </div>
   );

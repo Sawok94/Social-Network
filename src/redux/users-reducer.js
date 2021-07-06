@@ -79,7 +79,7 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         followingInProgress: action.isToggle
           ? [...state.followingInProgress, action.userId]
-          : state.followingInProgress.filter((id) => id != action.userId),
+          : state.followingInProgress.filter((id) => id !== action.userId),
       };
     }
     default:
@@ -147,7 +147,7 @@ export const getUserProfile =
 
 const followUnfollow = async (dispatch, userId, apiMetod, actionCreator) => {
   let response = await apiMetod(userId);
-  if (response.data.resultCode == 0) {
+  if (response.data.resultCode === 0) {
     dispatch(actionCreator(userId));
     dispatch(toggleFollowingInProgress(false, userId));
   }

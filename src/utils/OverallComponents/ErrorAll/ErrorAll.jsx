@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './ErrorAll.module.css';
-import erorAll from '../../../assets/broken_link_40px.png';
+import erorAll from '../../../assets/broken_link.png';
 
 const ErrorAll = (props) => {
   return (

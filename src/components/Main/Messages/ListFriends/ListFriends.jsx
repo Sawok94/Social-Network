@@ -9,6 +9,7 @@ const ListFriends = (props) => {
         props.profiles.map((profile) => {
           return (
             <FriendsProfileMessages
+              key={profile.id}
               id={profile.id}
               name={profile.name}
               photo={profile.photos.small}

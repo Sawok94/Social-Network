@@ -53,6 +53,7 @@ const PageSwitching = (props) => {
                     props.currentPage === page ? style.pageActive : style.page
                   }
                   onClick={onSetCurrentPage}
+                  key={page}
                 >
                   {page}
                 </span>

@@ -6,12 +6,10 @@ import style from './FriendsProfile.module.css';
 const FriendsProfile = (props) => {
   return (
     <div className={style.profile}>
-      <Avatar photo={props.photo} style='avatar__middle' />
-      <div className={style.profile_name}>
-        <NavLink to={'/profile/' + props.id} className={style.link}>
-          {props.name}
-        </NavLink>
-      </div>
+      <NavLink to={'/profile/' + props.id} className={style.profile_link}>
+        <Avatar photo={props.photo} style={`avatar__middle`} />
+        {props.name}
+      </NavLink>
     </div>
   );
 };

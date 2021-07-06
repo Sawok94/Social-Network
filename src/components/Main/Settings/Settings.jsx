@@ -7,6 +7,7 @@ import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
 const Settings = (props) => {
   useEffect(() => {
     props.getProfileSettings(props.myId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let photoSelected = (e) => {
@@ -19,7 +20,7 @@ const Settings = (props) => {
 
   return (
     <div className={`${style.container} ${border.wrapper}`}>
-      {!props.profileSettings ? (
+      {!props.profileForSettings ? (
         <Preloader />
       ) : (
         <div className={style.setting}>
@@ -39,8 +40,8 @@ const Settings = (props) => {
           <hr />
           <SettingsInfo
             onSubmit={updateInfo}
-            initialValues={props.profileSettings}
-            profile={props.profileSettings}
+            initialValues={props.profileForSettings}
+            profile={props.profileForSettings}
           />
           {props.updateInfo && (
             <div className={style.setting_avatar_succes}>

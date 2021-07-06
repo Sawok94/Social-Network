@@ -12,6 +12,7 @@ const Profile = (props) => {
     let id = props.match.params.userId || props.id;
     props.getProfile(id);
     props.getMyStatus(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.match.params.userId]);
 
   if (!props.profile) {
@@ -39,7 +40,9 @@ const Profile = (props) => {
         deletePost={props.deletePost}
         addPost={props.addPost}
         posts={props.posts}
+        login={props.login}
         profilePhoto={props.profile.photos.small}
+        profileMyPhoto={props.myProfile.photos.small}
       />
       <Friends myFriendsProfile={props.myFriendsProfile} />
     </div>

@@ -21,9 +21,11 @@
 
 .summary {
   list-style: none;
-  padding: 0 8px;
-
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  margin: 0 5px;
 }
 
 .header_accordion:hover {
@@ -31,22 +33,19 @@
   display: block;
 }
 
-.header_accordion_auth {
-  display: flex;
-}
-
 .header_accordion_auth_name {
   font-weight: 500;
-  font-size: 22px;
-
-  margin-top: 8px;
+  font-size: 16px;
 }
 
 .header_accordion_auth_avatar {
-  margin: 7px;
+  margin: 4px 7px;
 }
 
 .header_accordion_auth_arrow {
+  font-size: 14px;
+  font-weight: bold;
+  /* margin-left: 5px; */
   transform: rotate(270deg);
 }
 
@@ -54,7 +53,7 @@
   border: 1px rgb(255, 255, 255) solid;
   border-radius: 5px;
   box-shadow: 0 0 10px rgb(0 0 0 / 50%);
-  padding: 5px 10px;
+  padding: 4px 10px;
 
   background: rgb(255, 255, 255);
   color: rgb(72, 67, 167);

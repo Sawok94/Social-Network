@@ -5,9 +5,6 @@ import userIcon from '../../assets/user.png';
 import messagesIcon from '../../assets/messages.png';
 import friendsIcon from '../../assets/friends.png';
 import settingsIcon from '../../assets/settings.png';
-// import newsIcon from '../../assets/news.png';
-// import musicIcon from '../../assets/music.png';
-// import videoIcon from '../../assets/video.png';
 
 const NavBar = (props) => {
   return (

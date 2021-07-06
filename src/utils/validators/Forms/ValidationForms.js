@@ -15,7 +15,7 @@ export const Textarea = ({ input, meta, ...props }) => {
       />
       {hasError && (
         <div className={style.text_error}>
-          <span className={style.text_error_span}>&#9940; </span>
+          &#9940;
           {meta.error}
         </div>
       )}
@@ -33,11 +33,11 @@ export const Input = ({ input, meta, ...props }) => {
           hasError && style.textarea_error
         }`}
         {...props}
-        {...input} 
+        {...input}
       />
       {hasError && (
         <div className={style.text_error}>
-          <span className={style.text_error_span}>&#9940; </span>
+          &#9940;
           {meta.error}
         </div>
       )}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import style from '../Header/Header.module.css';
 import logo from '../../assets/logo.jpg';
 import Avatar from '../../utils/OverallComponents/Avatar/Avatar';
@@ -6,11 +6,11 @@ import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
   const [editMode, setEditMode] = useState(false);
-
+  console.log(props);
   return (
     <div className={style.header}>
-      <img src={logo} className={style.header_img} alt='logo' />
-      {props.isAuth && (
+      <img src={logo} className={style.header_img} alt='logoImg' />
+      {props.isAuth && props.profile && (
         <details
           className={style.header_accordion}
           onMouseEnter={() => {
@@ -22,18 +22,20 @@ const Header = (props) => {
           open={editMode}
         >
           <summary className={style.summary}>
-            <div className={style.header_accordion_auth}>
-              <div className={style.header_accordion_auth_name}>
-                {props.login}
-              </div>
-              <div className={style.header_accordion_auth_avatar}>
-                <Avatar style='avatar__small' />
-              </div>
-              <div className={style.header_accordion_auth_arrow}> &#8249;</div>
-            </div>
+            <span className={style.header_accordion_auth_name}>
+              {props.login}
+            </span>
+            <span className={style.header_accordion_auth_avatar}>
+              <Avatar
+                photo={props.profile.photos.small}
+                style={`avatar__small`}
+              />
+            </span>
+            <span className={style.header_accordion_auth_arrow}>&#8249;</span>
           </summary>
+
           <div className={style.header_accordion_exit} onClick={props.logout}>
-            <NavLink to={'/login'}> Выход</NavLink>
+            <NavLink to={'/login'}>Выход</NavLink>
           </div>
         </details>
       )}

@@ -7,7 +7,7 @@ export const getProfilesProfile = (state) => {
 };
 
 export const getProfilesProfileSetting = (state) => {
-  return state.profiles.profileSettings;
+  return state.profiles.profileForSettings;
 };
 
 export const getProfilesStatus = (state) => {

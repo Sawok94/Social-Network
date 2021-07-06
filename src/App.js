@@ -28,7 +28,7 @@ function App(props) {
     return () => {
       window.removeEventListener('unhandledrejection', allError);
     };
-  }, []);
+  }, [props]);
 
   if (!props.initialized) {
     return <Preloader />;

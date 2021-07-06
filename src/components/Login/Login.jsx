@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 import { Input } from '../../utils/validators/Forms/ValidationForms';
 import { required } from '../../utils/validators/validators';
 import style from '../Login/Login.module.css';

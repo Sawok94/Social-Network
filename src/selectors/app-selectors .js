@@ -4,6 +4,10 @@ export const getMyFriendsProfile = (state) => {
   return state.app.myFriendsProfile;
 };
 
+export const getMyProfile = (state) => {
+  return state.app.myProfile;
+};
+
 export const getInitialized = (state) => {
   return state.app.initialized;
 };

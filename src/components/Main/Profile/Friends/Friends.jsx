@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import style from '../Friends/Friends.module.css';
 import border from '../../Main.module.css';
 import FriendsProfile from './FriendsProfile/FriendsProfile';
@@ -7,11 +7,9 @@ import { NavLink } from 'react-router-dom';
 const Friends = (props) => {
   return (
     <div className={`${style.friends} ${border.wrapper}`}>
-      <span className={style.friends_title}>
-        <NavLink to={'/friends'} className={style.friends_title_link}>
-          Друзья
-        </NavLink>
-      </span>
+      <NavLink to={'/friends'} className={style.friends_title_link}>
+        Друзья
+      </NavLink>
       <div className={style.profiles}>
         {props.myFriendsProfile &&
           props.myFriendsProfile.map((profile) => {

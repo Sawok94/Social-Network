@@ -18,7 +18,7 @@ const Photo = (props) => {
       }}
     >
       {redirect && <Redirect to={'/settings'} />}
-      <Avatar photo={props.photo} style='avatar__large' />
+      <Avatar photo={props.photo} style={`avatar__large`} />
       {editMode && props.isOwner && (
         <div
           className={style.photo_editor}
@@ -26,9 +26,9 @@ const Photo = (props) => {
             setRedirect(true);
           }}
         >
-          <span className={style.photo_editor_text}>
+          {/* <span className={style.photo_editor_text}> */}
             &#10006; Сменить Аватарку
-          </span>
+          {/* </span> */}
         </div>
       )}
     </div>

@@ -3,14 +3,14 @@ body {
 }
 
 .app-container {
-  width: 1000px;
+  width: 700px;
   margin: 0 auto;
 
   display: grid;
   grid-template-areas: 'header header' 'navBar main';
-  grid-template-rows: 50px 1fr;
-  grid-template-columns: 1.7fr 8.3fr;
-  grid-gap: 15px;
+  grid-template-rows: 45px 1fr;
+  grid-template-columns: 140px 600px;
+  grid-gap: 13px;
 }
 
 .wrapper {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
@@ -11,8 +10,12 @@ import {
   getProfile,
   updateMyStatus,
 } from '../../../redux/profiles-reducer';
-import { showMyFriends } from '../../../selectors/app-selectors ';
-import { getAuthId, getIsAuth } from '../../../selectors/auth-selectors';
+import { getMyProfile, showMyFriends } from '../../../selectors/app-selectors ';
+import {
+  getAuthId,
+  getAuthLogin,
+  getIsAuth,
+} from '../../../selectors/auth-selectors';
 import {
   getProfilesPosts,
   getProfilesProfile,
@@ -24,9 +27,11 @@ const mapStateToProps = (state) => {
   return {
     posts: getProfilesPosts(state),
     profile: getProfilesProfile(state),
+    myProfile: getMyProfile(state),
     status: getProfilesStatus(state),
     id: getAuthId(state),
     isAuth: getIsAuth(state),
+    login: getAuthLogin(state),
     myFriendsProfile: showMyFriends(state),
   };
 };

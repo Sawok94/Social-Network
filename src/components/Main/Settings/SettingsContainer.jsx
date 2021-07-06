@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
@@ -17,7 +16,7 @@ import Settings from './Settings';
 
 const mapStateToProps = (state) => {
   return {
-    profileSettings: getProfilesProfileSetting(state),
+    profileForSettings: getProfilesProfileSetting(state),
     updateAvatar: getProfilesUpdateAvatar(state),
     updateInfo: getProfilesUpdateInfo(state),
     myId: getAuthId(state),

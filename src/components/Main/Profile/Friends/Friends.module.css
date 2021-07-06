@@ -1,16 +1,13 @@
 .friends {
-  grid-area: 'friends';
-  height: 250px;
-  padding: 0 10px;
-}
-
-.friends_title {
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
+  grid-area: friends;
+  height: 200px;
+  padding: 0 15px;
 }
 
 .friends_title_link {
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
   color: #000;
   text-decoration: none;
 }
@@ -18,8 +15,9 @@
 .profiles {
   display: grid;
   grid-template-areas: 'profile profile' 'profile profile';
-  grid-template-rows: repeat(2, 100px);
-  grid-template-columns: repeat(2, 90px);
+  grid-template-rows: repeat(2, 70px);
+  grid-template-columns: repeat(2, 60px);
+  grid-gap: 10px;
 
-  margin-top: 10px;
+  margin-top: 20px;
 }

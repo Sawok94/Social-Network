@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { withSuspense } from '../../hoc/withSuspense';
 import Error404 from '../../utils/OverallComponents/Error404/Error404';
