@@ -1,2 +1,22 @@
+.friendsProfile {
+  text-align: center;
+  margin-left: 2px;
+  padding: 7px;
+}
 
+.friendsProfile:hover {
+  background: #e2dada;
+}
 
+.friendsProfile_link {
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.friendsProfile_link_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

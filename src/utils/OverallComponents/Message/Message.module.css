@@ -1,14 +1,19 @@
 .message {
   padding: 10px 40px;
   display: flex;
-
-  font-size: 10px;
 }
 
 .message__name {
-  font-weight: bold;
+  margin-left: 15px;
 }
 
-.message__text{
-  white-space: pre;
+.message__date{
+  margin-left: 10px;
+  font-size: 11px;
+  color: rgb(137, 137, 137);
+}
+
+.message__text {
+  word-break: break-all;
+  margin-left: 15px;
 }

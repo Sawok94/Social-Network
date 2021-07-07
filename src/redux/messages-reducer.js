@@ -2,8 +2,8 @@ const ADD_MESSAGE = 'ADD_MESSAGE';
 
 const initialState = {
   messages: [
-    { id: 0, textMessage: 'One' },
-    { id: 1, textMessage: 'Two' },
+    { id: 0, textMessage: 'One', dateMessage: '22:30' },
+    { id: 1, textMessage: 'Two', dateMessage: '10:22' },
   ],
 };
 
@@ -17,6 +17,7 @@ const messageReducer = (state = initialState, action) => {
           {
             id: state.messages.length,
             textMessage: action.textMessage,
+            dateMessage: action.dateMessage,
           },
         ],
       };
@@ -26,9 +27,10 @@ const messageReducer = (state = initialState, action) => {
   }
 };
 
-export const addMessage = (textMessage) => ({
+export const addMessage = (textMessage, dateMessage) => ({
   type: ADD_MESSAGE,
   textMessage,
+  dateMessage,
 });
 
 export default messageReducer;

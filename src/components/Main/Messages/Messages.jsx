@@ -17,7 +17,7 @@ const Messages = ({
   }, []);
 
   return (
-    <div className={style.container}>
+    <div className={style.messages}>
       <ListFriends profiles={profiles} />
       <ListMessagesContainer />
     </div>

@@ -1,7 +1,7 @@
 .friends {
   grid-area: friends;
   height: 200px;
-  padding: 0 15px;
+  padding: 5px 15px 0;
 }
 
 .friends_title_link {
@@ -12,6 +12,11 @@
   text-decoration: none;
 }
 
+.friends_title:hover{
+  background: #f7f4f4;
+}
+
+
 .profiles {
   display: grid;
   grid-template-areas: 'profile profile' 'profile profile';
@@ -19,5 +24,5 @@
   grid-template-columns: repeat(2, 60px);
   grid-gap: 10px;
 
-  margin-top: 20px;
+  margin-top: 15px;
 }

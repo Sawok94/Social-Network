@@ -1,5 +1,5 @@
-.container {
+.messages {
   display: grid;
-  grid-gap: 15px;
-  grid-template-columns: 200px 1fr;
+  grid-gap: 5px;
+  grid-template-columns: 100px 488px;
 }

@@ -52,11 +52,11 @@ const Info = (props) => {
         </div>
         <div className={style.info_lookingForAJob_title}>
           <b>Мои навыки: </b>
-          {props.info.lookingForAJobDescription}
+          {props.info.lookingForAJobDescription || 'не указанно'}
         </div>
         <div className={style.info_lookingForAJob_title}>
           <b>Обо мне: </b>
-          {props.info.aboutMe}
+          {props.info.aboutMe || 'не указанно'}
         </div>
 
         <SocialNetworks contacts={props.info.contacts} />

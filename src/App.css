@@ -11,6 +11,7 @@ body {
   grid-template-rows: 45px 1fr;
   grid-template-columns: 140px 600px;
   grid-gap: 13px;
+  box-sizing: content-box;
 }
 
 .wrapper {

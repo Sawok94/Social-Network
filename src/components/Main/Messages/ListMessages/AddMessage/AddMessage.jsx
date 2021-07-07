@@ -8,14 +8,14 @@ import {
 } from '../../../../../utils/validators/validators';
 import { Textarea } from '../../../../../utils/validators/Forms/ValidationForms';
 
-const maxLengthVal = maxLength(5);
+const maxLengthVal = maxLength(500);
 
 const AddMessageForm = (props) => {
   return (
     <div className={border.wrapper}>
       <form onSubmit={props.handleSubmit} className={style.message__form}>
         <Field
-          placeholder='Введите текст сообщения...'
+          placeholder=' Введите текст сообщения...'
           name='textArea'
           component={Textarea}
           validate={[required, maxLengthVal]}

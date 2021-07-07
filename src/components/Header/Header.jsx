@@ -6,7 +6,6 @@ import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
   const [editMode, setEditMode] = useState(false);
-  console.log(props);
   return (
     <div className={style.header}>
       <img src={logo} className={style.header_img} alt='logoImg' />

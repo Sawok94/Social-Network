@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .container_error {
@@ -12,7 +12,6 @@
 
 .friendsSwither {
   padding: 20px;
-  font-size: 20px;
   font-weight: bold;
 
   display: flex;

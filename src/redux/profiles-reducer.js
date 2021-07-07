@@ -27,12 +27,12 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         posts: [
-          ...state.posts,
           {
             id: state.posts.length,
             textPost: action.textPost,
             datePost: action.datePost,
           },
+          ...state.posts,
         ],
       };
     }

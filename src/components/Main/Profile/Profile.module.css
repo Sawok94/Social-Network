@@ -1,7 +1,7 @@
-.container {
+.profile {
   display: grid;
   grid-template-areas: 'photo info' 'friends wall';
-  grid-template-rows: 160px 400px;
+  grid-template-rows: 160px 1fr;
   grid-template-columns: 160px 420px;
   grid-gap: 13px;
 }

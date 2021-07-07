@@ -8,7 +8,7 @@ import {
 } from '../../../../utils/validators/Forms/ValidationForms';
 
 const maxLengthNickName = maxLength(10);
-const maxLengthTextArea = maxLength(30);
+const maxLengthTextArea = maxLength(1000);
 const maxLengthUrl = maxLength(40);
 
 const SettingsInfo = (props) => {
@@ -51,7 +51,7 @@ const SettingsInfo = (props) => {
                   name='aboutMe'
                   component={Textarea}
                   placeholder='Расскажите о себе...'
-                  validate={[maxLengthNickName]}
+                  validate={[maxLengthTextArea]}
                   className={style.setting_field_aboutMe}
                   required
                 />

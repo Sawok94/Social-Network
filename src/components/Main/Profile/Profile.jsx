@@ -24,7 +24,7 @@ const Profile = (props) => {
   }
 
   return (
-    <div className={style.container}>
+    <div className={style.profile}>
       <Photo
         isOwner={!props.match.params.userId}
         photo={props.profile.photos.large}
@@ -37,6 +37,7 @@ const Profile = (props) => {
         myId={props.id}
       />
       <Wall
+        urlId={props.match.params.userId}
         deletePost={props.deletePost}
         addPost={props.addPost}
         posts={props.posts}

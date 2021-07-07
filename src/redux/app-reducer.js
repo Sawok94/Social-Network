@@ -65,7 +65,6 @@ export const getMyProfile = () => async (dispatch, getState) => {
   let userId = getState().auth.id;
   let response = await profileAPI.getProfile(userId);
   dispatch(setMyProfile(response.data));
-  console.log(response.data);
 };
 
 export const initializeApp = () => (dispatch) => {

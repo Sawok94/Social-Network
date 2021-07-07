@@ -24,11 +24,10 @@ const Wall = (props) => {
       clickDate.toLocaleString('ru', options)
     );
   };
-  console.log(props.posts);
   return (
     <div className={style.wall}>
       <AddPostForm onSubmit={addNewPost} photo={props.profileMyPhoto} />
-      {props.posts.length ? (
+      {props.posts.length && !props.urlId ? (
         props.posts.map((post) => (
           <Post
             key={post.id}

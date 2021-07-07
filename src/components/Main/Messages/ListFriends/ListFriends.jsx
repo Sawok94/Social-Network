@@ -4,7 +4,7 @@ import FriendsProfileMessages from './FriendsProfileMessages/FriendsProfileMessa
 
 const ListFriends = (props) => {
   return (
-    <div className={style.container}>
+    <div className={style.listFriends}>
       {props.profiles &&
         props.profiles.map((profile) => {
           return (

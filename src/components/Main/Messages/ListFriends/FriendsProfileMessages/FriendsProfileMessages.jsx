@@ -5,13 +5,14 @@ import style from './FriendsProfileMessages.module.css';
 
 const FriendsProfileMessages = (props) => {
   return (
-    <div className={style.s}>
-      <Avatar photo={props.photo} style={`avatar__middle`} />
-      <div className={style.friendsProfile__infoProfile_name}>
-        <NavLink to={'/messages/' + props.id} className={style.link}>
-          {props.name}
-        </NavLink>
-      </div>
+    <div className={style.friendsProfile}>
+      <NavLink
+        to={'/messages/' + props.id}
+        className={style.friendsProfile_link}
+      >
+        <Avatar photo={props.photo} style={`avatar__small`} />
+        <div className={style.friendsProfile_link_name}>{props.name}</div>
+      </NavLink>
     </div>
   );
 };
