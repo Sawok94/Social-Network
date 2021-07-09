@@ -63,8 +63,11 @@ export const getMyFriends =
 
 export const getMyProfile = () => async (dispatch, getState) => {
   let userId = getState().auth.id;
-  let response = await profileAPI.getProfile(userId);
-  dispatch(setMyProfile(response.data));
+  let isAuth = getState().auth.isAuth;
+  if (isAuth) {
+    let response = await profileAPI.getProfile(userId);
+    dispatch(setMyProfile(response.data));
+  }
 };
 
 export const initializeApp = () => (dispatch) => {

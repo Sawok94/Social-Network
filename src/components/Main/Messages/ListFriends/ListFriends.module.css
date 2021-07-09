@@ -1,5 +1,4 @@
 .listFriends {
-  border-left: 2px solid rgb(174, 166, 166);
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;

@@ -30,10 +30,18 @@ const Header = (props) => {
                 style={`avatar__small`}
               />
             </span>
-            <span className={style.header_accordion_auth_arrow}>&#8249;</span>
+            <span className={style.header_accordion_auth_arrow}>
+              <b>&#8249;</b>
+            </span>
           </summary>
 
-          <div className={style.header_accordion_exit} onClick={props.logout}>
+          <div
+            className={style.header_accordion_exit}
+            onClick={() => {
+              setEditMode(false);
+              props.logout();
+            }}
+          >
             <NavLink to={'/login'}>Выход</NavLink>
           </div>
         </details>

@@ -8,7 +8,6 @@ import Photo from './Photo/Photo';
 import Wall from './Wall/Wall';
 
 const Profile = (props) => {
-  console.log(props.isAuth);
   useEffect(() => {
     let id = props.match.params.userId || props.id;
     props.getProfile(id);
@@ -25,29 +24,31 @@ const Profile = (props) => {
   }
 
   return (
-    <div className={style.profile}>
-      <Photo
-        isOwner={!props.match.params.userId}
-        photo={props.profile.photos.large}
-      />
-      <Info
-        isOwner={!props.match.params.userId}
-        info={props.profile}
-        updateMyStatus={props.updateMyStatus}
-        status={props.status}
-        myId={props.id}
-      />
-      <Wall
-        urlId={props.match.params.userId}
-        deletePost={props.deletePost}
-        addPost={props.addPost}
-        posts={props.posts}
-        login={props.login}
-        profilePhoto={props.profile.photos.small}
-        profileMyPhoto={props.myProfile.photos.small}
-      />
-      <Friends myFriendsProfile={props.myFriendsProfile} />
-    </div>
+    props.myProfile && (
+      <div className={style.profile}>
+        <Photo
+          isOwner={!props.match.params.userId}
+          photo={props.profile.photos.large}
+        />
+        <Info
+          isOwner={!props.match.params.userId}
+          info={props.profile}
+          updateMyStatus={props.updateMyStatus}
+          status={props.status}
+          myId={props.id}
+        />
+        <Wall
+          urlId={props.match.params.userId}
+          deletePost={props.deletePost}
+          addPost={props.addPost}
+          posts={props.posts}
+          login={props.login}
+          profilePhoto={props.profile.photos.small}
+          profileMyPhoto={props.myProfile.photos.small}
+        />
+        <Friends myFriendsProfile={props.myFriendsProfile} />
+      </div>
+    )
   );
 };
 

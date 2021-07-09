@@ -44,8 +44,6 @@
 
 .header_accordion_auth_arrow {
   font-size: 14px;
-  font-weight: bold;
-  /* margin-left: 5px; */
   transform: rotate(270deg);
 }
 

@@ -1,9 +1,8 @@
 .messages {
   display: grid;
-  grid-gap: 5px;
-  /* grid-template-areas:
-    'friends messages'
-    'friends form'; */
+  grid-gap: 2px;
   grid-template-columns: 100px 488px;
-  /* grid-template-rows: 1fr 400px; */
+  grid-template-rows: 1fr 70px;
+
+  margin-bottom: 15px;
 }

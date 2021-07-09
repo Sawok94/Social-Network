@@ -1,14 +1,13 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import style from '../AddMessage/AddMessage.module.css';
-import border from '../../../Main.module.css';
-import {
-  maxLength,
-  required,
-} from '../../../../../utils/validators/validators';
-import { Textarea } from '../../../../../utils/validators/Forms/ValidationForms';
+import { Field, reduxForm, reset } from 'redux-form';
+import style from './AddMessage.module.css';
+import border from '../../Main.module.css';
+import { maxLength, required } from '../../../../utils/validators/validators';
+import { Textarea } from '../../../../utils/validators/Forms/ValidationForms';
 
 const maxLengthVal = maxLength(500);
+
+const afterSubmit = (result, dispatch) => dispatch(reset('message'));
 
 const AddMessageForm = (props) => {
   return (
@@ -23,7 +22,9 @@ const AddMessageForm = (props) => {
             cols='40'
             rows='2'
           />
-          <button className={style.message__form_button}>Отправить</button>
+          <button className={style.message__form_button}>
+            <b>Отправить</b>
+          </button>
         </form>
       </div>
     </div>
@@ -32,4 +33,5 @@ const AddMessageForm = (props) => {
 
 export default reduxForm({
   form: 'message',
+  onSubmitSuccess: afterSubmit,
 })(AddMessageForm);

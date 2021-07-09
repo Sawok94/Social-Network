@@ -7,8 +7,8 @@ import {
   Textarea,
 } from '../../../../utils/validators/Forms/ValidationForms';
 
-const maxLengthNickName = maxLength(10);
-const maxLengthTextArea = maxLength(1000);
+const maxLengthNickName = maxLength(30);
+const maxLengthTextArea = maxLength(500);
 const maxLengthUrl = maxLength(40);
 
 const SettingsInfo = (props) => {

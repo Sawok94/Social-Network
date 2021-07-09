@@ -7,13 +7,13 @@
   margin-left: 15px;
 }
 
-.message__date{
+.message__date {
   margin-left: 10px;
   font-size: 11px;
   color: rgb(137, 137, 137);
 }
 
 .message__text {
-  word-break: break-all;
+  word-wrap: break-word;
   margin-left: 15px;
 }

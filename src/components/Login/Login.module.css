@@ -1,3 +1,25 @@
+.login_wrapper {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'Marutya';
+  src: url('../../fonts/Marutya.ttf') format('truetype');
+}
+
+.login_wrapper_logo {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.login_wrapper_logo_text {
+  font-family: 'Marutya';
+  font-weight: 500;
+}
+
 .login_wrapper_form {
   width: 300px;
 
@@ -9,35 +31,59 @@
   user-select: none;
 }
 
+.login_wrapper_form_top {
+  margin-top: 60px;
+}
+
+.login_wrapper_form_field {
+  margin-top: 10px;
+}
+
 .login_wrapper_form_error {
   color: red;
-  font-weight: bolder;
 
-  margin: 50px 0 20px;
   border: 2px red solid;
   border-radius: 2%;
   padding: 15px;
+  position: absolute;
+  top: 210px;
 }
 
 .login_wrapper_form_lbl {
-  font-weight: bolder;
   font-size: 10px;
-  margin-left: 10px;
 }
 
 .login_wrapper_form_input {
   padding: 10px;
-  margin: 0 10px;
+  border: 1px solid rgb(72, 67, 167);
+  border-radius: 4px;
 }
 
-.login_wrapper_form_label {
-  font-size: 10px;
+.login_wrapper_form_saveMe {
+  display: flex;
+  align-items: center;
+
+  margin-top: 15px;
+}
+
+.login_wrapper_form_saveMe_label {
+  font-size: 12px;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .login_wrapper_form_btn {
-  margin: 10px;
-  font-weight: bolder;
+  margin-top: 20px;
+
+  border-radius: 8px;
+  padding: 6px 9px;
+
+  background: rgb(72, 67, 167);
+  border-color: white;
+  color: white;
+  outline: none;
+
+  cursor: pointer;
 }
 
 .login_wrapper_form_input_captcha {

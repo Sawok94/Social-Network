@@ -2,6 +2,6 @@
   display: grid;
   grid-template-areas: 'photo info' 'friends wall';
   grid-template-rows: 160px 1fr;
-  grid-template-columns: 160px 420px;
-  grid-gap: 13px;
+  grid-template-columns: 160px 422px;
+  grid-gap: 8px;
 }

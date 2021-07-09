@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, reset } from 'redux-form';
 import style from '../AddPostForm/AddPostForm.module.css';
 import border from '../../../Main.module.css';
 import Avatar from '../../../../../utils/OverallComponents/Avatar/Avatar';
@@ -9,7 +9,9 @@ import {
 } from '../../../../../utils/validators/validators';
 import { Textarea } from '../../../../../utils/validators/Forms/ValidationForms';
 
-const maxLengthVal = maxLength(5000);
+const maxLengthVal = maxLength(500);
+
+const afterSubmit = (result, dispatch) => dispatch(reset('post'));
 
 const AddPostForm = (props) => {
   return (
@@ -32,4 +34,5 @@ const AddPostForm = (props) => {
 
 export default reduxForm({
   form: 'post',
+  onSubmitSuccess: afterSubmit,
 })(AddPostForm);

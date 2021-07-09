@@ -1,3 +1,4 @@
 .listMessages {
-  /* padding-top: 500px; */
+  display: flex;
+  flex-direction: column-reverse;
 }

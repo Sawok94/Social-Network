@@ -7,9 +7,7 @@ export const Textarea = ({ input, meta, ...props }) => {
   return (
     <div>
       <textarea
-        className={`${style.textarea_successful} ${
-          hasError && style.textarea_error
-        }`}
+        className={`${style.input_successful} ${hasError && style.input_error}`}
         {...props}
         {...input}
       />
@@ -29,8 +27,8 @@ export const Input = ({ input, meta, ...props }) => {
   return (
     <div>
       <input
-        className={`${style.textarea_successful} ${
-          hasError && style.textarea_error
+        className={`${style.input_successful} ${
+          hasError && style.input_error
         }`}
         {...props}
         {...input}

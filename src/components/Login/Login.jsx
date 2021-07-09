@@ -1,58 +1,75 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import { Field } from 'redux-form';
+import App from '../../App';
 import { Input } from '../../utils/validators/Forms/ValidationForms';
 import { required } from '../../utils/validators/validators';
 import style from '../Login/Login.module.css';
 import border from '../Main/Main.module.css';
+import logo from '../../assets/logoLogin.png';
 
 const Login = (props) => {
-  console.log(props.isAuth);
-
   if (props.isAuth) {
+    <App />;
     return <Redirect to={'/profile'} />;
   }
 
   return (
     <div className={`${style.login_wrapper} ${border.wrapper}`}>
-      <form className={style.login_wrapper_form}>
+      <div className={style.login_wrapper_logo}>
+        <img src={logo} alt='logoImg' />
+        <div className={style.login_wrapper_logo_text}>
+          социальная сеть социальных людей
+        </div>
+      </div>
+      <form
+        className={`${style.login_wrapper_form} ${style.login_wrapper_form_top}`}
+      >
         {props.error && (
-          <div className={style.login_wrapper_form_error}>{props.error}</div>
+          <div className={style.login_wrapper_form_error}>
+            <b>{props.error}</b>
+          </div>
         )}
-        <div>
-          <label className={style.login_wrapper_form_lbl}>Логин:</label>
+        <div className={style.login_wrapper_form_field}>
+          <label className={style.login_wrapper_form_lbl}>
+            <b>Логин:</b>
+          </label>
           <Field
             className={style.login_wrapper_form_input}
             name='emailInputForm'
             component={Input}
             validate={[required]}
             type='email'
-            placeholder='Введите email'
-            maxlength='50'
+            placeholder='Введите email...'
             required
           />
         </div>
-        <div>
-          <label className={style.login_wrapper_form_lbl}>Пароль:</label>
+        <div className={style.login_wrapper_form_field}>
+          <label className={style.login_wrapper_form_lbl}>
+            <b>Пароль:</b>
+          </label>
           <Field
             className={style.login_wrapper_form_input}
             name='passwordInputForm'
             component={Input}
             validate={[required]}
             type='password'
-            placeholder='Введите пароль'
-            maxlength='50'
+            autoComplete='true'
+            placeholder='Введите пароль...'
             required
           />
         </div>
-        <div>
+        <div className={style.login_wrapper_form_saveMe}>
           <Field
             name='checkboxInputForm'
             component='input'
             type='checkbox'
             id='checkbox'
           />
-          <label className={style.login_wrapper_form_label} htmlFor='checkbox'>
+          <label
+            className={style.login_wrapper_form_saveMe_label}
+            htmlFor='checkbox'
+          >
             Сохранить аккаунт
           </label>
         </div>
@@ -79,7 +96,7 @@ const Login = (props) => {
             );
           })}
         >
-          Войти
+          <b>Войти</b>
         </button>
       </form>
     </div>

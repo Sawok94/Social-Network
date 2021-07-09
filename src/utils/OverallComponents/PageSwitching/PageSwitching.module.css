@@ -3,6 +3,7 @@
   text-align: center;
   margin: 0 auto;
   user-select: none;
+  font-size: 12px;
 }
 
 .pages__navigator {
@@ -15,6 +16,7 @@
 .page {
   padding: 10px 12px;
   cursor: pointer;
+
 }
 
 .pageActive {

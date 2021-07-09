@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { compose } from 'redux';
 import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
+import { addMessage } from '../../../redux/messages-reducer';
 import { getUserProfile } from '../../../redux/users-reducer';
 import {
   getUsersCurrentPage,
@@ -25,6 +26,7 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps, {
     getUserProfile,
+    addMessage
   }),
   withRouter,
   withAuthRedirect

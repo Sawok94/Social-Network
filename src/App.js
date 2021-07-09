@@ -12,7 +12,7 @@ import { getIsAuth } from './selectors/auth-selectors';
 import ErrorAll from './utils/OverallComponents/ErrorAll/ErrorAll';
 import Preloader from './utils/OverallComponents/Preloader/Preloader';
 
-function App(props) {
+const App = (props) => {
   const [editMode, setEditMode] = useState(false);
 
   const allError = () => {
@@ -29,7 +29,8 @@ function App(props) {
     return () => {
       window.removeEventListener('unhandledrejection', allError);
     };
-  }, [props]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!props.initialized) {
     return <Preloader />;
@@ -43,7 +44,7 @@ function App(props) {
       <Main />
     </div>
   );
-}
+};
 
 const mapStateToProps = (state) => ({
   initialized: getInitialized(state),
