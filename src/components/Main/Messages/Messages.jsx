@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import style from '../Messages/Messages.module.css';
 import ListFriends from './ListFriends/ListFriends';
 import ListMessagesContainer from './ListMessages/ListMessagesContainer';
+import AddMessageForm from './ListMessages/AddMessage/AddMessage';
 
 const Messages = ({
   getUserProfile,
@@ -20,6 +21,7 @@ const Messages = ({
     <div className={style.messages}>
       <ListFriends profiles={profiles} />
       <ListMessagesContainer />
+      <AddMessageForm />
     </div>
   );
 };

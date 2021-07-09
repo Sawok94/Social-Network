@@ -8,6 +8,7 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import Main from './components/Main/Main';
 import { initializeApp } from './redux/app-reducer';
 import { getInitialized } from './selectors/app-selectors ';
+import { getIsAuth } from './selectors/auth-selectors';
 import ErrorAll from './utils/OverallComponents/ErrorAll/ErrorAll';
 import Preloader from './utils/OverallComponents/Preloader/Preloader';
 
@@ -38,7 +39,7 @@ function App(props) {
     <div className='app-container'>
       {editMode && <ErrorAll />}
       <HeaderContainer />
-      <NavBar />
+      <NavBar isAuth={props.isAuth} />
       <Main />
     </div>
   );
@@ -46,6 +47,7 @@ function App(props) {
 
 const mapStateToProps = (state) => ({
   initialized: getInitialized(state),
+  isAuth: getIsAuth(state),
 });
 
 export default compose(

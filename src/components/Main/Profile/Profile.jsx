@@ -8,6 +8,7 @@ import Photo from './Photo/Photo';
 import Wall from './Wall/Wall';
 
 const Profile = (props) => {
+  console.log(props.isAuth);
   useEffect(() => {
     let id = props.match.params.userId || props.id;
     props.getProfile(id);

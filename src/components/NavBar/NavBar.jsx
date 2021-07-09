@@ -13,7 +13,7 @@ const NavBar = (props) => {
         <li className={style.li}>
           <NavLink
             to='/profile'
-            className={style.link}
+            className={`${style.link} ${!props.isAuth && style.link_disabled}`}
             activeClassName={style.activeLink}
           >
             <img src={userIcon} alt='userIcon' />
@@ -23,7 +23,7 @@ const NavBar = (props) => {
         <li className={style.li}>
           <NavLink
             to='/messages'
-            className={style.link}
+            className={`${style.link} ${!props.isAuth && style.link_disabled}`}
             activeClassName={style.activeLink}
           >
             <img src={messagesIcon} alt='messagesIcon' />
@@ -33,7 +33,7 @@ const NavBar = (props) => {
         <li className={style.li}>
           <NavLink
             to='/friends'
-            className={style.link}
+            className={`${style.link} ${!props.isAuth && style.link_disabled}`}
             activeClassName={style.activeLink}
           >
             <img src={friendsIcon} alt='friendsIcon' />
@@ -43,43 +43,13 @@ const NavBar = (props) => {
         <li className={style.li}>
           <NavLink
             to='/settings'
-            className={style.link}
+            className={`${style.link} ${!props.isAuth && style.link_disabled}`}
             activeClassName={style.activeLink}
           >
             <img src={settingsIcon} alt='settingsIcon' />
             Настройки
           </NavLink>
         </li>
-        {/* <li className={style.li}>
-          <NavLink
-            to='/music'
-            className={style.link}
-            activeClassName={style.activeLink}
-          >
-            <img src={musicIcon} alt='musicIcon' />
-            Музыка
-          </NavLink>
-        </li>
-        <li className={style.li}>
-          <NavLink
-            to='/video'
-            className={style.link}
-            activeClassName={style.activeLink}
-          >
-            <img src={videoIcon} alt='videoIcon' />
-            Видио
-          </NavLink>
-        </li> */}
-        {/* <li className={style.li}>
-          <NavLink
-            to='/news'
-            className={style.link}
-            activeClassName={style.activeLink}
-          >
-            <img src={newsIcon} alt='newsIcon' />
-            Новости
-          </NavLink>
-        </li> */}
       </ul>
     </nav>
   );

@@ -1,14 +1,12 @@
 .pages {
-  padding: 25px;
+  padding: 20px 10px;
   text-align: center;
-
+  margin: 0 auto;
   user-select: none;
-  font-size: 8px;
 }
 
 .pages__navigator {
-  margin: 0 30px;
-  font-size: 35px;
+  margin: 0 10px;
   font-weight: bold;
 
   cursor: pointer;

@@ -3,20 +3,45 @@
 }
 
 hr {
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 .setting_avatar {
   display: flex;
 }
 
+.setting_avatar_wrapper {
+  margin: 0 auto;
+}
+
+.setting_avatar_load {
+  display: flex;
+  align-items: center;
+
+  padding: 0px 8px;
+
+  height: 35px;
+  background: rgb(72, 67, 167);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .setting_avatar_file {
-  margin-left: 50px;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.setting_avatar_img {
+  border-right: 1px solid #fff;
+  margin-right: 5px;
+  padding-right: 7px;
 }
 
 .setting_avatar_succes {
   color: red;
   margin-top: 4px;
   position: absolute;
-  left: 50%;
+  left: 52%;
 }

@@ -10,7 +10,7 @@ const ListMessages = (props) => {
   };
 
   return (
-    <div className={`${style.container} ${border.wrapper}`}>
+    <div className={`${style.listMessages} ${border.wrapper}`}>
       {props.profile &&
         props.messages.map((message) => (
           <Message
@@ -21,7 +21,7 @@ const ListMessages = (props) => {
             dateMessage={message.dateMessage}
           />
         ))}
-      <AddMessageForm onSubmit={addNewMessage} />
+        {/* <AddMessageForm onSubmit={addNewMessage} /> */}
     </div>
   );
 };

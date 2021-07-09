@@ -7,14 +7,14 @@ const FriendsProfile = (props) => {
   return (
     <div className={style.friendsProfile}>
       <div>
-        <NavLink to={'/profile/' + props.id} className={style.link}>
+        <NavLink to={'/profile/' + props.id} className={style.friendsProfile_link}>
           <Avatar photo={props.photos.small} style={`avatar__middle`} />
         </NavLink>
       </div>
       <div className={style.friendsProfile__infoProfile}>
         <div className={style.friendsProfile__infoProfile_name}>
-          <NavLink to={'/profile/' + props.id} className={style.link}>
-            {props.name}
+          <NavLink to={'/profile/' + props.id} className={style.friendsProfile_link}>
+            <b>{props.name}</b>
           </NavLink>
         </div>
         <div className={style.friendsProfile__infoProfile_status}>

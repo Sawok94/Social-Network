@@ -12,18 +12,20 @@ const maxLengthVal = maxLength(500);
 
 const AddMessageForm = (props) => {
   return (
-    <div className={border.wrapper}>
-      <form onSubmit={props.handleSubmit} className={style.message__form}>
-        <Field
-          placeholder=' Введите текст сообщения...'
-          name='textArea'
-          component={Textarea}
-          validate={[required, maxLengthVal]}
-          cols='40'
-          rows='2'
-        />
-        <button className={style.message__form_button}>Отправить</button>
-      </form>
+    <div className={style.addMessageForm}>
+      <div className={border.wrapper}>
+        <form onSubmit={props.handleSubmit} className={style.message__form}>
+          <Field
+            placeholder=' Введите текст сообщения...'
+            name='textArea'
+            component={Textarea}
+            validate={[required, maxLengthVal]}
+            cols='40'
+            rows='2'
+          />
+          <button className={style.message__form_button}>Отправить</button>
+        </form>
+      </div>
     </div>
   );
 };

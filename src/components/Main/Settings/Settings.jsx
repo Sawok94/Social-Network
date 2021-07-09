@@ -3,6 +3,7 @@ import style from '../Settings/Settings.module.css';
 import border from '../Main.module.css';
 import SettingsInfo from './SettingsInfo/SettingsInfo.jsx';
 import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
+import downloadImg from '../../../assets/download.png';
 
 const Settings = (props) => {
   useEffect(() => {
@@ -26,11 +27,22 @@ const Settings = (props) => {
         <div className={style.setting}>
           <div className={style.setting_avatar}>
             <b>Обновить аватарку</b>
-            <input
-              type='file'
-              onChange={photoSelected}
-              className={style.setting_avatar_file}
-            />
+            <div className={style.setting_avatar_wrapper}>
+              <label className={style.setting_avatar_load} for='input__file'>
+                <input
+                  type='file'
+                  onChange={photoSelected}
+                  className={style.setting_avatar_file}
+                  id='input__file'
+                />
+                <img
+                  className={style.setting_avatar_img}
+                  src={downloadImg}
+                  alt='downloadImg'
+                />
+                <b>Выберите файл</b>
+              </label>
+            </div>
           </div>
           {props.updateAvatar && (
             <div className={style.setting_avatar_succes}>

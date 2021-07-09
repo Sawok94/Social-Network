@@ -21,6 +21,10 @@
   text-decoration: none;
 }
 
+.link_disabled{
+  pointer-events: none;
+}
+
 .activeLink {
   color: brown;
 }

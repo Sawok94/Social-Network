@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import style from './Friends.module.css';
 import border from '../Main.module.css';
 import Preloader from '../../../utils/OverallComponents/Preloader/Preloader';
@@ -19,10 +19,6 @@ const Friends = (props) => {
       searchFriends
     );
   };
-
-  useState(() => {
-    getUserProfileFunc();
-  }, []);
 
   let profilesPage = !props.profiles ? (
     <Preloader />
@@ -47,12 +43,13 @@ const Friends = (props) => {
   );
 
   return (
-    <div className={`${style.container} ${border.wrapper}`}>
+    <div className={`${style.friends} ${border.wrapper}`}>
       <Search
         onChange={(name) => {
           getUserProfileFunc(name.searchName);
         }}
       />
+
       <div className={style.friendsSwither}>
         <button
           onClick={() => {
@@ -74,11 +71,12 @@ const Friends = (props) => {
         >
           Поиск друзей
         </button>
+        
       </div>
       {profilesPage === false ? (
-        <div className={style.container_error}>
+        <div className={style.friends_error}>
           <img
-            className={style.container_error_img}
+            className={style.friends_error_img}
             src={noSearch}
             alt='noSearchImg'
           />
@@ -88,7 +86,6 @@ const Friends = (props) => {
       ) : (
         profilesPage
       )}
-
       <PageSwitching
         sizePage={props.sizePage}
         totalCount={props.totalCount}

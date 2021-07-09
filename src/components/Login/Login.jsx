@@ -7,6 +7,8 @@ import style from '../Login/Login.module.css';
 import border from '../Main/Main.module.css';
 
 const Login = (props) => {
+  console.log(props.isAuth);
+
   if (props.isAuth) {
     return <Redirect to={'/profile'} />;
   }
@@ -56,11 +58,7 @@ const Login = (props) => {
         </div>
         {props.captcha && (
           <div className={style.login_wrapper_form}>
-            <img
-              src={props.captcha}
-              alt='captcha'
-              width="100"
-            />
+            <img src={props.captcha} alt='captcha' width='100' />
             <Field
               className={style.login_wrapper_form_input_captcha}
               name='captcha'
