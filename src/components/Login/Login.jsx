@@ -19,7 +19,7 @@ const Login = (props) => {
       <div className={style.login_wrapper_logo}>
         <img src={logo} alt='logoImg' />
         <div className={style.login_wrapper_logo_text}>
-          социальная сеть социальных людей
+          социальная сеть гениальных людей
         </div>
       </div>
       <form

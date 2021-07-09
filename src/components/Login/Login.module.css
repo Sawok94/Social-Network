@@ -18,6 +18,7 @@
 .login_wrapper_logo_text {
   font-family: 'Marutya';
   font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .login_wrapper_form {
