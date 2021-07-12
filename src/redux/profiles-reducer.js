@@ -1,4 +1,5 @@
 import { profileAPI } from '../api/api';
+import { getMyProfileApp } from './app-reducer';
 
 const ADD_POST = 'ADD_POST';
 const DELETE_POST = 'DELETE_POST';
@@ -164,6 +165,7 @@ export const updateAvatarPhoto = (photoFile) => async (dispatch) => {
   let response = await profileAPI.savePhoto(photoFile);
   if (response.data.resultCode === 0) {
     dispatch(setAvatarPhoto(response.data.data.photos));
+    dispatch(getMyProfileApp());
     dispatch(setAvatarPhotoUpdate(true));
     const timer = setTimeout(() => {
       dispatch(setAvatarPhotoUpdate(false));

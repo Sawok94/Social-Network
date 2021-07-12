@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import { Field } from 'redux-form';
-import App from '../../App';
 import { Input } from '../../utils/validators/Forms/ValidationForms';
 import { required } from '../../utils/validators/validators';
 import style from '../Login/Login.module.css';
@@ -10,7 +9,6 @@ import logo from '../../assets/logoLogin.png';
 
 const Login = (props) => {
   if (props.isAuth) {
-    <App />;
     return <Redirect to={'/profile'} />;
   }
 
@@ -18,9 +16,7 @@ const Login = (props) => {
     <div className={`${style.login_wrapper} ${border.wrapper}`}>
       <div className={style.login_wrapper_logo}>
         <img src={logo} alt='logoImg' />
-        <div className={style.login_wrapper_logo_text}>
-          социальная сеть гениальных людей
-        </div>
+        <div className={style.login_wrapper_logo_text}>социальная сеть</div>
       </div>
       <form
         className={`${style.login_wrapper_form} ${style.login_wrapper_form_top}`}

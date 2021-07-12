@@ -3,7 +3,6 @@ import Avatar from '../Avatar/Avatar';
 import style from '../Message/Message.module.css';
 
 const Message = (props) => {
-  console.log(props);
   return (
     <div className={style.message}>
       <Avatar photo={props.photo} style={`avatar__small`} />

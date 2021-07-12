@@ -61,7 +61,7 @@ export const getMyFriends =
     dispatch(setMyFriends(response.data.items));
   };
 
-export const getMyProfile = () => async (dispatch, getState) => {
+export const getMyProfileApp = () => async (dispatch, getState) => {
   let userId = getState().auth.id;
   let isAuth = getState().auth.isAuth;
   if (isAuth) {
@@ -75,7 +75,7 @@ export const initializeApp = () => (dispatch) => {
     dispatch(getAuthMe()),
     dispatch(getMyFriends(1, 100, '', true)),
   ]).then(() => {
-    dispatch(getMyProfile());
+    dispatch(getMyProfileApp());
     dispatch(initializedSuccess());
   });
 };

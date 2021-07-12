@@ -1,5 +1,6 @@
 import { stopSubmit } from 'redux-form';
 import { authAPI, captchaAPI } from '../api/api';
+import { initializeApp } from './app-reducer';
 
 const AUTH_ME = 'AUTH_ME';
 const GET_CAPTCHA = 'GET_CAPTCHA';
@@ -55,7 +56,7 @@ export const login =
     const response = await authAPI.login(email, password, rememberMe, captcha);
 
     if (response.data.resultCode === 0) {
-      dispatch(getAuthMe());
+      dispatch(initializeApp());
     } else {
       if (response.data.resultCode === 10) {
         dispatch(getCaptchaUrl());

@@ -28,7 +28,7 @@ const Settings = (props) => {
           <div className={style.setting_avatar}>
             <b>Обновить аватарку</b>
             <div className={style.setting_avatar_wrapper}>
-              <label className={style.setting_avatar_load} for='input__file'>
+              <label className={style.setting_avatar_load} htmlFor='input__file'>
                 <input
                   type='file'
                   onChange={photoSelected}
