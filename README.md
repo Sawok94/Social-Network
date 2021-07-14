@@ -1,6 +1,6 @@
 # Социльная сеть "Socialist" 
 
-Данный проект создан с помощью [Create React App](https://github.com/facebook/create-react-app). При его создании использовались следующие бибилиотеки: redux, react-redux, react-router-dom, redux-thunk, redux-form, axios, reselect.
+Данный проект создан с помощью [Create React App](https://github.com/facebook/create-react-app). При его создании использовались следующие бибилиотеки: **redux, react-redux, react-router-dom, redux-thunk, redux-form, axios, reselect.** В качестве серверного API использовалось Social-Network Server API.
 
 
 
