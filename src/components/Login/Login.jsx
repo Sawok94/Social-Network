@@ -13,22 +13,26 @@ const Login = (props) => {
   }
 
   return (
-    <div className={`${style.login_wrapper} ${border.wrapper}`}>
-      <div className={style.login_wrapper_logo}>
+    <main className={`${style.login_wrapper} ${border.wrapper}`}>
+      <figure className={style.login_wrapper_logo}>
         <img src={logo} alt='logoImg' />
-        <div className={style.login_wrapper_logo_text}>социальная сеть</div>
-      </div>
+        <figcaption className={style.login_wrapper_logo_text}>
+          социальная сеть
+        </figcaption>
+      </figure>
       <form
         className={`${style.login_wrapper_form} ${style.login_wrapper_form_top}`}
       >
         {props.error && (
-          <div className={style.login_wrapper_form_error}>
+          <aside className={style.login_wrapper_form_error}>
             <b>{props.error}</b>
-          </div>
+          </aside>
         )}
-        <div className={style.login_wrapper_form_field}>
+        <section className={style.login_wrapper_form_field}>
           <label className={style.login_wrapper_form_lbl}>
-            <b>Логин:</b>
+            <h7>
+              <b>Логин:</b>
+            </h7>
           </label>
           <Field
             className={style.login_wrapper_form_input}
@@ -39,10 +43,12 @@ const Login = (props) => {
             placeholder='Введите email...'
             required
           />
-        </div>
-        <div className={style.login_wrapper_form_field}>
+        </section>
+        <section className={style.login_wrapper_form_field}>
           <label className={style.login_wrapper_form_lbl}>
-            <b>Пароль:</b>
+            <h7>
+              <b>Пароль:</b>
+            </h7>
           </label>
           <Field
             className={style.login_wrapper_form_input}
@@ -54,8 +60,8 @@ const Login = (props) => {
             placeholder='Введите пароль...'
             required
           />
-        </div>
-        <div className={style.login_wrapper_form_saveMe}>
+        </section>
+        <section className={style.login_wrapper_form_saveMe}>
           <Field
             name='checkboxInputForm'
             component='input'
@@ -68,9 +74,9 @@ const Login = (props) => {
           >
             Сохранить аккаунт
           </label>
-        </div>
+        </section>
         {props.captcha && (
-          <div className={style.login_wrapper_form}>
+          <figure className={style.login_wrapper_form}>
             <img src={props.captcha} alt='captcha' width='100' />
             <Field
               className={style.login_wrapper_form_input_captcha}
@@ -78,7 +84,7 @@ const Login = (props) => {
               component='input'
               required
             />
-          </div>
+          </figure>
         )}
         <button
           className={style.login_wrapper_form_btn}
@@ -95,7 +101,7 @@ const Login = (props) => {
           <b>Войти</b>
         </button>
       </form>
-    </div>
+    </main>
   );
 };
 

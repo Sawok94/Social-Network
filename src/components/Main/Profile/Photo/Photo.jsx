@@ -8,7 +8,7 @@ const Photo = (props) => {
   const [redirect, setRedirect] = useState(false);
 
   return (
-    <div
+    <figure
       className={style.photo}
       onMouseEnter={() => {
         props.isOwner && setEditMode(true);
@@ -20,18 +20,16 @@ const Photo = (props) => {
       {redirect && <Redirect to={'/settings'} />}
       <Avatar photo={props.photo} style={`avatar__large`} />
       {editMode && props.isOwner && (
-        <div
+        <figcaption
           className={style.photo_editor}
           onClick={() => {
             setRedirect(true);
           }}
         >
-          {/* <span className={style.photo_editor_text}> */}
-            &#10006; Сменить Аватарку
-          {/* </span> */}
-        </div>
+          &#10006; Сменить Аватарку
+        </figcaption>
       )}
-    </div>
+    </figure>
   );
 };
 

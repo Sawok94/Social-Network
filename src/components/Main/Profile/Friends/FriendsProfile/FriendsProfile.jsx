@@ -5,12 +5,12 @@ import style from './FriendsProfile.module.css';
 
 const FriendsProfile = (props) => {
   return (
-    <div className={style.profile}>
+    <li className={style.profile}>
       <NavLink to={'/profile/' + props.id} className={style.profile_link}>
         <Avatar photo={props.photo} style={`avatar__middle`} />
         {props.name}
       </NavLink>
-    </div>
+    </li>
   );
 };
 

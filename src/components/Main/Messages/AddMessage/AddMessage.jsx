@@ -11,7 +11,7 @@ const afterSubmit = (result, dispatch) => dispatch(reset('message'));
 
 const AddMessageForm = (props) => {
   return (
-    <div className={style.addMessageForm}>
+    <article className={style.addMessageForm}>
       <div className={border.wrapper}>
         <form onSubmit={props.handleSubmit} className={style.message__form}>
           <Field
@@ -27,7 +27,7 @@ const AddMessageForm = (props) => {
           </button>
         </form>
       </div>
-    </div>
+    </article>
   );
 };
 

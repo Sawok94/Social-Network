@@ -37,12 +37,12 @@ const App = (props) => {
   }
 
   return (
-    <div className='app-container'>
+    <article className='app-container'>
       {editMode && <ErrorAll />}
       <HeaderContainer />
       <NavBar isAuth={props.isAuth} />
       <Main />
-    </div>
+    </article>
   );
 };
 

@@ -5,7 +5,7 @@ import Message from '../../../../utils/OverallComponents/Message/Message';
 
 const ListMessages = (props) => {
   return (
-    <div className={`${style.listMessages} ${border.wrapper}`}>
+    <article className={`${style.listMessages} ${border.wrapper}`}>
       {props.profile &&
         props.messages.map((message) => (
           <Message
@@ -16,7 +16,7 @@ const ListMessages = (props) => {
             dateMessage={message.dateMessage}
           />
         ))}
-    </div>
+    </article>
   );
 };
 

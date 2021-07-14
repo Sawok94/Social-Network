@@ -9,12 +9,12 @@ import {
 
 const maxLengthNickName = maxLength(30);
 const maxLengthTextArea = maxLength(500);
-const maxLengthUrl = maxLength(40);
+const maxLengthUrl = maxLength(100);
 
 const SettingsInfo = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <div className={style.setting_info}>
+      <section className={style.setting_info}>
         <b>Обо мне</b>
         <table className={style.setting_info_edit}>
           <tbody>
@@ -70,9 +70,9 @@ const SettingsInfo = (props) => {
             </tr>
           </tbody>
         </table>
-      </div>
+      </section>
       <hr />
-      <div className={style.setting_social}>
+      <section className={style.setting_social}>
         <b>Социальные сети</b>
         <div>
           <table className={style.setting_info_edit}>
@@ -97,7 +97,7 @@ const SettingsInfo = (props) => {
             </tbody>
           </table>
         </div>
-      </div>
+      </section>
 
       <button className={style.setting_btn}>Сохранить</button>
     </form>

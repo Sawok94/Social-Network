@@ -20,15 +20,18 @@ const Settings = (props) => {
   };
 
   return (
-    <div className={`${style.container} ${border.wrapper}`}>
+    <main className={`${style.container} ${border.wrapper}`}>
       {!props.profileForSettings ? (
         <Preloader />
       ) : (
-        <div className={style.setting}>
-          <div className={style.setting_avatar}>
+        <article className={style.setting}>
+          <section className={style.setting_avatar}>
             <b>Обновить аватарку</b>
             <div className={style.setting_avatar_wrapper}>
-              <label className={style.setting_avatar_load} htmlFor='input__file'>
+              <label
+                className={style.setting_avatar_load}
+                htmlFor='input__file'
+              >
                 <input
                   type='file'
                   onChange={photoSelected}
@@ -43,11 +46,11 @@ const Settings = (props) => {
                 <b>Выберите файл</b>
               </label>
             </div>
-          </div>
+          </section>
           {props.updateAvatar && (
-            <div className={style.setting_avatar_succes}>
+            <aside className={style.setting_avatar_succes}>
               * Фотография обновлена
-            </div>
+            </aside>
           )}
           <hr />
           <SettingsInfo
@@ -56,13 +59,13 @@ const Settings = (props) => {
             profile={props.profileForSettings}
           />
           {props.updateInfo && (
-            <div className={style.setting_avatar_succes}>
+            <aside className={style.setting_avatar_succes}>
               * Информация обновлена
-            </div>
+            </aside>
           )}
-        </div>
+        </article>
       )}
-    </div>
+    </main>
   );
 };
 export default Settings;

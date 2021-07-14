@@ -12,7 +12,7 @@ const Info = (props) => {
   const [redirect, setRedirect] = useState(false);
 
   return (
-    <div
+    <article
       className={`${style.info} ${border.wrapper}`}
       onMouseEnter={() => {
         props.isOwner && setEditMode(true);
@@ -21,8 +21,8 @@ const Info = (props) => {
         props.isOwner && setEditMode(false);
       }}
     >
-      <div className={style.info_name}>{props.info.fullName}</div>
-      <div className={style.info_status}>
+      <section className={style.info_name}>{props.info.fullName}</section>
+      <section className={style.info_status}>
         {props.myId === props.info.userId ? (
           <MyStatus
             onSubmit={(status) => {
@@ -34,8 +34,8 @@ const Info = (props) => {
         ) : (
           <StrangerStatus status={props.status} />
         )}
-      </div>
-      <div className={style.info_lookingForAJob}>
+      </section>
+      <section className={style.info_lookingForAJob}>
         {editMode && props.isOwner && (
           <img
             src={settingImg}
@@ -61,8 +61,8 @@ const Info = (props) => {
         </div>
 
         <SocialNetworks contacts={props.info.contacts} />
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

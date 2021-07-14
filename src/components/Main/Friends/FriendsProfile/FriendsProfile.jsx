@@ -5,22 +5,28 @@ import style from './FriendsProfile.module.css';
 
 const FriendsProfile = (props) => {
   return (
-    <div className={style.friendsProfile}>
-      <div>
-        <NavLink to={'/profile/' + props.id} className={style.friendsProfile_link}>
+    <li className={style.friendsProfile}>
+      <figure>
+        <NavLink
+          to={'/profile/' + props.id}
+          className={style.friendsProfile_link}
+        >
           <Avatar photo={props.photos.small} style={`avatar__middle`} />
         </NavLink>
-      </div>
-      <div className={style.friendsProfile__infoProfile}>
-        <div className={style.friendsProfile__infoProfile_name}>
-          <NavLink to={'/profile/' + props.id} className={style.friendsProfile_link}>
+      </figure>
+      <figcaption className={style.friendsProfile__infoProfile}>
+        <header className={style.friendsProfile__infoProfile_name}>
+          <NavLink
+            to={'/profile/' + props.id}
+            className={style.friendsProfile_link}
+          >
             <b>{props.name}</b>
           </NavLink>
-        </div>
+        </header>
         <div className={style.friendsProfile__infoProfile_status}>
           {props.status || <i>Статус не указан</i>}
         </div>
-      </div>
+      </figcaption>
       <div>
         <button
           className={style.friendsProfile__addFriendBtn}
@@ -34,7 +40,7 @@ const FriendsProfile = (props) => {
           {props.followed ? 'Удалить из друзей' : 'Добавить в друзья'}
         </button>
       </div>
-    </div>
+    </li>
   );
 };
 

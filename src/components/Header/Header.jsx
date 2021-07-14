@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 const Header = (props) => {
   const [editMode, setEditMode] = useState(false);
   return (
-    <div className={style.header}>
+    <header className={style.header}>
       <img src={logo} className={style.header_img} alt='logoImg' />
       {props.isAuth && props.profile && (
         <details
@@ -21,21 +21,20 @@ const Header = (props) => {
           open={editMode}
         >
           <summary className={style.summary}>
-            <span className={style.header_accordion_auth_name}>
-              {props.login}
-            </span>
-            <span className={style.header_accordion_auth_avatar}>
+            <h1 className={style.header_accordion_auth_name}>
+              <b>{props.login}</b>
+            </h1>
+            <figure className={style.header_accordion_auth_avatar}>
               <Avatar
                 photo={props.profile.photos.small}
                 style={`avatar__small`}
               />
-            </span>
+            </figure>
             <span className={style.header_accordion_auth_arrow}>
               <b>&#8249;</b>
             </span>
           </summary>
-
-          <div
+          <aside
             className={style.header_accordion_exit}
             onClick={() => {
               setEditMode(false);
@@ -43,10 +42,10 @@ const Header = (props) => {
             }}
           >
             <NavLink to={'/login'}>Выход</NavLink>
-          </div>
+          </aside>
         </details>
       )}
-    </div>
+    </header>
   );
 };
 

@@ -18,7 +18,7 @@ const MyStatus = (props) => {
         setEditMode(true);
       }}
     >
-      {!editMode && <span>{props.status || <i>Статус не указан</i>}</span>}
+      {!editMode && <h7>{props.status || <i>Статус не указан</i>}</h7>}
 
       {editMode && (
         <form onBlur={props.handleSubmit} onKeyPress={onKeyPressHandler}>

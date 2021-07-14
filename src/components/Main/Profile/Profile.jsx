@@ -28,7 +28,7 @@ const Profile = (props) => {
   }
 
   return (
-    <div className={style.profile}>
+    <main className={style.profile}>
       <Photo
         isOwner={!props.match.params.userId}
         photo={props.profile.photos.large}
@@ -50,7 +50,7 @@ const Profile = (props) => {
         profileMyPhoto={props.myProfile.photos.small}
       />
       <Friends myFriendsProfile={props.myFriendsProfile} />
-    </div>
+    </main>
   );
 };
 

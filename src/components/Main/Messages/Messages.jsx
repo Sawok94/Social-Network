@@ -33,11 +33,11 @@ const Messages = ({
 
   return (
     profiles && (
-      <div className={style.messages}>
+      <main className={style.messages}>
         <ListFriends profiles={profiles} />
         <ListMessagesContainer />
         <AddMessageForm onSubmit={addNewMessage} />
-      </div>
+      </main>
     )
   );
 };

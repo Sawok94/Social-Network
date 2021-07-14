@@ -6,11 +6,11 @@ import { NavLink } from 'react-router-dom';
 
 const Friends = (props) => {
   return (
-    <div className={`${style.friends} ${border.wrapper}`}>
+    <article className={`${style.friends} ${border.wrapper}`}>
       <NavLink to={'/friends'} className={style.friends_title_link}>
-        <div className={style.friends_title}> Друзья</div>
+        <h7 className={style.friends_title}> Друзья</h7>
       </NavLink>
-      <div className={style.profiles}>
+      <ul className={style.profiles}>
         {props.myFriendsProfile &&
           props.myFriendsProfile.map((profile) => {
             return (
@@ -22,8 +22,8 @@ const Friends = (props) => {
               />
             );
           })}
-      </div>
-    </div>
+      </ul>
+    </article>
   );
 };
 

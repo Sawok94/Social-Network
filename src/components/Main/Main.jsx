@@ -16,7 +16,7 @@ const LoginContainer = React.lazy(() => import('../Login/LoginContainer'));
 
 const Main = (props) => {
   return (
-    <div className={style.main}>
+    <main className={style.main}>
       <Switch>
         <Route
           path='/profile/:userId?'
@@ -32,7 +32,7 @@ const Main = (props) => {
         {<Redirect exact from='/' to='/profile' />}
         {<Route path='*' render={() => <Error404 />} />}
       </Switch>
-    </div>
+    </main>
   );
 };
 

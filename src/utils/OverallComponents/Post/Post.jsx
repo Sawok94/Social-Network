@@ -14,7 +14,7 @@ const Post = (props) => {
       >
         &#215;
       </span>
-      <div className={style.post__post}>
+      <section className={style.post__post}>
         <div className={style.post__post_data}>
           <Avatar photo={props.photo} style={`avatar__middle`} />
           <div className={style.post__post_info}>
@@ -23,7 +23,7 @@ const Post = (props) => {
           </div>
         </div>
         <div className={style.post__text}>{props.textPost}</div>
-      </div>
+      </section>
     </div>
   );
 };

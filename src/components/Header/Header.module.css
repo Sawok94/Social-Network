@@ -19,6 +19,11 @@
   margin-right: 10px;
 }
 
+.header_accordion:hover {
+  background: #f7f4f4;
+  display: block;
+}
+
 .summary {
   list-style: none;
   cursor: pointer;
@@ -28,14 +33,8 @@
   margin: 0 5px;
 }
 
-.header_accordion:hover {
-  background: #f7f4f4;
-  display: block;
-}
-
 .header_accordion_auth_name {
-  font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .header_accordion_auth_avatar {

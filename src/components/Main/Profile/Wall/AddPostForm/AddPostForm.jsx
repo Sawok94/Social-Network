@@ -15,7 +15,7 @@ const afterSubmit = (result, dispatch) => dispatch(reset('post'));
 
 const AddPostForm = (props) => {
   return (
-    <div className={border.wrapper}>
+    <section className={border.wrapper}>
       <form onSubmit={props.handleSubmit} className={style.wall__form}>
         <Avatar photo={props.photo} style={`avatar__small`} />
         <Field
@@ -28,7 +28,7 @@ const AddPostForm = (props) => {
         />
         <button className={style.wall__form_button}>Опубликовать</button>
       </form>
-    </div>
+    </section>
   );
 };
 

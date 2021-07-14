@@ -43,14 +43,14 @@ const Friends = (props) => {
   );
 
   return (
-    <div className={`${style.friends} ${border.wrapper}`}>
+    <main className={`${style.friends} ${border.wrapper}`}>
       <Search
         onChange={(name) => {
           getUserProfileFunc(name.searchName);
         }}
       />
 
-      <div className={style.friendsSwither}>
+      <section className={style.friendsSwither}>
         <button
           onClick={() => {
             getUserProfileFunc(props.searchName, true);
@@ -71,10 +71,9 @@ const Friends = (props) => {
         >
           Поиск друзей
         </button>
-        
-      </div>
+      </section>
       {profilesPage === false ? (
-        <div className={style.friends_error}>
+        <article className={style.friends_error}>
           <img
             className={style.friends_error_img}
             src={noSearch}
@@ -82,9 +81,9 @@ const Friends = (props) => {
           />
           <span>Ничего не найдено.</span>
           <span> Попробуйте снова.</span>
-        </div>
+        </article>
       ) : (
-        profilesPage
+        <ul>{profilesPage}</ul>
       )}
       <PageSwitching
         sizePage={props.sizePage}
@@ -94,7 +93,7 @@ const Friends = (props) => {
         searchFriends={props.searchFriends}
         getUserProfile={props.getUserProfile}
       />
-    </div>
+    </main>
   );
 };
 

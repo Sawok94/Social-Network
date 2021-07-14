@@ -4,19 +4,21 @@ import FriendsProfileMessages from './FriendsProfileMessages/FriendsProfileMessa
 
 const ListFriends = (props) => {
   return (
-    <div className={style.listFriends}>
-      {props.profiles &&
-        props.profiles.map((profile) => {
-          return (
-            <FriendsProfileMessages
-              key={profile.id}
-              id={profile.id}
-              name={profile.name}
-              photo={profile.photos.small}
-            />
-          );
-        })}
-    </div>
+    <article className={style.listFriends}>
+      <ul>
+        {props.profiles &&
+          props.profiles.map((profile) => {
+            return (
+              <FriendsProfileMessages
+                key={profile.id}
+                id={profile.id}
+                name={profile.name}
+                photo={profile.photos.small}
+              />
+            );
+          })}
+      </ul>
+    </article>
   );
 };
 

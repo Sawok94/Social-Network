@@ -5,8 +5,8 @@ import searchIcon from '../../../assets/search.png';
 
 const Search = (props) => {
   return (
-    <div className={style.search__container}>
-      <div className={style.search__container__elements}>
+    <article className={style.search__container}>
+      <section className={style.search__container__elements}>
         <img src={searchIcon} alt='searchIcon' />
         <form onSubmit={props.handleSubmit}>
           <Field
@@ -17,8 +17,8 @@ const Search = (props) => {
             type='text'
           />
         </form>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

@@ -25,7 +25,7 @@ const Wall = (props) => {
     );
   };
   return (
-    <div className={style.wall}>
+    <article className={style.wall}>
       <AddPostForm onSubmit={addNewPost} photo={props.profileMyPhoto} />
       {props.posts.length && !props.urlId ? (
         props.posts.map((post) => (
@@ -40,12 +40,12 @@ const Wall = (props) => {
           />
         ))
       ) : (
-        <div className={`${style.wall_noPost} ${border.wrapper}`}>
+        <section className={`${style.wall_noPost} ${border.wrapper}`}>
           <img src={NoPost} alt='NoPostImg' />
-          <div>На стене пока нет ни одной записи</div>
-        </div>
+          <figcaption>На стене пока нет ни одной записи</figcaption>
+        </section>
       )}
-    </div>
+    </article>
   );
 };
 

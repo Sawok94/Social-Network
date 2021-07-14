@@ -27,7 +27,7 @@ const PageSwitching = (props) => {
 
   return (
     totalPages.length > 1 && (
-      <div className={style.pages}>
+      <footer className={style.pages}>
         {
           <span
             className={style.pages__navigator}
@@ -71,7 +71,7 @@ const PageSwitching = (props) => {
             &#187;
           </span>
         }
-      </div>
+      </footer>
     )
   );
 };

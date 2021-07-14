@@ -5,14 +5,14 @@ import eror404 from '../../../assets/404.png';
 
 const Error404 = (props) => {
   return (
-    <div className={border.wrapper}>
-      <div className={style.error404}>
+    <aside className={border.wrapper}>
+      <figure className={style.error404}>
         <img src={eror404} alt='404img' />
-        <div className={style.error404_text}>
+        <figcaption className={style.error404_text}>
           <b>Станица не найдена...</b>
-        </div>
-      </div>
-    </div>
+        </figcaption>
+      </figure>
+    </aside>
   );
 };
 

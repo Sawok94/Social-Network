@@ -4,7 +4,7 @@ import style from '../Message/Message.module.css';
 
 const Message = (props) => {
   return (
-    <div className={style.message}>
+    <section className={style.message}>
       <Avatar photo={props.photo} style={`avatar__small`} />
       <div>
         <div className={style.message__name}>
@@ -13,7 +13,7 @@ const Message = (props) => {
         </div>
         <div className={style.message__text}>{props.textMessage}</div>
       </div>
-    </div>
+    </section>
   );
 };
 

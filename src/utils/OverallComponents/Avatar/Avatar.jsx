@@ -4,13 +4,13 @@ import avatar from '../../../assets/avatar.png';
 
 const Avatar = (props) => {
   return (
-    <div>
+    <figure>
       <img
         src={props.photo || avatar}
         className={props.style}
         alt={`avatar`}
       />
-    </div>
+    </figure>
   );
 };
 
