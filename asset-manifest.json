@@ -5,13 +5,13 @@
     "main.css": "/Social-Network-Socialist/static/css/main.7b1359f6.chunk.css",
     "main.js": "/Social-Network-Socialist/static/js/main.a61ea5e0.chunk.js",
     "main.js.map": "/Social-Network-Socialist/static/js/main.a61ea5e0.chunk.js.map",
-    "runtime-main.js": "/Social-Network-Socialist/static/js/runtime-main.73b025ab.js",
-    "runtime-main.js.map": "/Social-Network-Socialist/static/js/runtime-main.73b025ab.js.map",
+    "runtime-main.js": "/Social-Network-Socialist/static/js/runtime-main.915237e3.js",
+    "runtime-main.js.map": "/Social-Network-Socialist/static/js/runtime-main.915237e3.js.map",
     "static/js/3.fc0c0c24.chunk.js": "/Social-Network-Socialist/static/js/3.fc0c0c24.chunk.js",
     "static/js/3.fc0c0c24.chunk.js.map": "/Social-Network-Socialist/static/js/3.fc0c0c24.chunk.js.map",
     "static/css/4.840647d9.chunk.css": "/Social-Network-Socialist/static/css/4.840647d9.chunk.css",
-    "static/js/4.3bd1eae6.chunk.js": "/Social-Network-Socialist/static/js/4.3bd1eae6.chunk.js",
-    "static/js/4.3bd1eae6.chunk.js.map": "/Social-Network-Socialist/static/js/4.3bd1eae6.chunk.js.map",
+    "static/js/4.c3082207.chunk.js": "/Social-Network-Socialist/static/js/4.c3082207.chunk.js",
+    "static/js/4.c3082207.chunk.js.map": "/Social-Network-Socialist/static/js/4.c3082207.chunk.js.map",
     "static/css/5.9916bbd9.chunk.css": "/Social-Network-Socialist/static/css/5.9916bbd9.chunk.css",
     "static/js/5.87e818f5.chunk.js": "/Social-Network-Socialist/static/js/5.87e818f5.chunk.js",
     "static/js/5.87e818f5.chunk.js.map": "/Social-Network-Socialist/static/js/5.87e818f5.chunk.js.map",
@@ -39,7 +39,7 @@
     "static/media/logo.png": "/Social-Network-Socialist/static/media/logo.f88c7962.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.73b025ab.js",
+    "static/js/runtime-main.915237e3.js",
     "static/js/3.fc0c0c24.chunk.js",
     "static/css/main.7b1359f6.chunk.css",
     "static/js/main.a61ea5e0.chunk.js"
