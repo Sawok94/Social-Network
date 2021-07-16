@@ -2,7 +2,7 @@
   "files": {
     "static/js/0.5845791e.chunk.js": "/Social-Network-Socialist/static/js/0.5845791e.chunk.js",
     "static/js/0.5845791e.chunk.js.map": "/Social-Network-Socialist/static/js/0.5845791e.chunk.js.map",
-    "main.css": "/Social-Network-Socialist/static/css/main.2285f7ca.chunk.css",
+    "main.css": "/Social-Network-Socialist/static/css/main.1b2f16ad.chunk.css",
     "main.js": "/Social-Network-Socialist/static/js/main.b0c4f1e0.chunk.js",
     "main.js.map": "/Social-Network-Socialist/static/js/main.b0c4f1e0.chunk.js.map",
     "runtime-main.js": "/Social-Network-Socialist/static/js/runtime-main.b3e89b08.js",
@@ -32,7 +32,7 @@
     "static/css/6.a504c6f2.chunk.css.map": "/Social-Network-Socialist/static/css/6.a504c6f2.chunk.css.map",
     "static/css/7.989545a4.chunk.css.map": "/Social-Network-Socialist/static/css/7.989545a4.chunk.css.map",
     "static/css/8.8e42e093.chunk.css.map": "/Social-Network-Socialist/static/css/8.8e42e093.chunk.css.map",
-    "static/css/main.2285f7ca.chunk.css.map": "/Social-Network-Socialist/static/css/main.2285f7ca.chunk.css.map",
+    "static/css/main.1b2f16ad.chunk.css.map": "/Social-Network-Socialist/static/css/main.1b2f16ad.chunk.css.map",
     "static/js/3.fc0c0c24.chunk.js.LICENSE.txt": "/Social-Network-Socialist/static/js/3.fc0c0c24.chunk.js.LICENSE.txt",
     "static/media/Login.module.css": "/Social-Network-Socialist/static/media/Marutya.fcb51f17.ttf",
     "static/media/avatar.8ddff555.png": "/Social-Network-Socialist/static/media/avatar.8ddff555.png",
@@ -41,7 +41,7 @@
   "entrypoints": [
     "static/js/runtime-main.b3e89b08.js",
     "static/js/3.fc0c0c24.chunk.js",
-    "static/css/main.2285f7ca.chunk.css",
+    "static/css/main.1b2f16ad.chunk.css",
     "static/js/main.b0c4f1e0.chunk.js"
   ]
 }
