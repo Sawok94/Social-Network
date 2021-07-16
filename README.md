@@ -1,4 +1,4 @@
-![alt text](src/assets/logoLogin.png)
+![alt text](src/assets/logo.png)
 
 ### Социaльная сеть "Socialist" 
 
