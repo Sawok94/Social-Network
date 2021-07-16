@@ -27,7 +27,6 @@ const Info = (props) => {
           <MyStatus
             onSubmit={(status) => {
               props.updateMyStatus(status.statusInputForm || '');
-              console.log('yes');
             }}
             status={props.status}
           />

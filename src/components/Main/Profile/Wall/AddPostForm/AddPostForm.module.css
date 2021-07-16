@@ -8,13 +8,26 @@
 
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 
   margin-bottom: 8px;
+}
+
+@-moz-document url-prefix() {
+  .wall__form {
+    padding: 15px 5px;
+  }
+}
+
+.wall__form_field {
+  margin: 0 5px;
+  border: 1px solid rgb(72, 67, 167);
+  border-radius: 4px;
+  resize: none;
 }
 
 .wall__form_button {

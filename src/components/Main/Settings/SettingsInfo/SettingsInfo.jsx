@@ -8,7 +8,7 @@ import {
 } from '../../../../utils/validators/Forms/ValidationForms';
 
 const maxLengthNickName = maxLength(30);
-const maxLengthTextArea = maxLength(500);
+const maxLengthTextArea = maxLength(100);
 const maxLengthUrl = maxLength(100);
 
 const SettingsInfo = (props) => {
@@ -26,7 +26,7 @@ const SettingsInfo = (props) => {
                   component={Input}
                   placeholder='Введите имя...'
                   validate={[maxLengthNickName]}
-                  className={style.setting_field_name}
+                  className={style.setting_field_input}
                   required
                 />
               </td>
@@ -39,8 +39,10 @@ const SettingsInfo = (props) => {
                   component={Textarea}
                   validate={[maxLengthTextArea]}
                   placeholder='Опишите Ваши навыки...'
-                  className={style.setting_field_scills}
+                  className={style.setting_field_input}
                   required
+                  minRows='2'
+                  maxRows='3'
                 />
               </td>
             </tr>
@@ -52,8 +54,10 @@ const SettingsInfo = (props) => {
                   component={Textarea}
                   placeholder='Расскажите о себе...'
                   validate={[maxLengthTextArea]}
-                  className={style.setting_field_aboutMe}
+                  className={style.setting_field_input}
                   required
+                  minRows='2'
+                  maxRows='3'
                 />
               </td>
             </tr>
@@ -88,7 +92,7 @@ const SettingsInfo = (props) => {
                         type='url'
                         placeholder='Введите URL адрес...'
                         validate={[maxLengthUrl]}
-                        className={style.setting_field_name}
+                        className={style.setting_field_input}
                       />
                     </td>
                   </tr>

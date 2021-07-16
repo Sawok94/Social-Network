@@ -1,4 +1,5 @@
 import React from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
 import style from './ValidationForms.module.css';
 
 export const Textarea = ({ input, meta, ...props }) => {
@@ -6,7 +7,7 @@ export const Textarea = ({ input, meta, ...props }) => {
 
   return (
     <div>
-      <textarea
+      <TextareaAutosize
         className={`${style.input_successful} ${hasError && style.input_error}`}
         {...props}
         {...input}
@@ -27,9 +28,7 @@ export const Input = ({ input, meta, ...props }) => {
   return (
     <div>
       <input
-        className={`${style.input_successful} ${
-          hasError && style.input_error
-        }`}
+        className={`${style.input_successful} ${hasError && style.input_error}`}
         {...props}
         {...input}
       />

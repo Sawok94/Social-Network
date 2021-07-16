@@ -22,9 +22,11 @@ const AddPostForm = (props) => {
           placeholder=' Введите текст поста...'
           name='textAreaForm'
           component={Textarea}
+          className={style.wall__form_field}
           validate={[required, maxLengthVal]}
-          cols='26'
-          rows='2'
+          cols='29'
+          minRows='2'
+          maxRows='10'
         />
         <button className={style.wall__form_button}>Опубликовать</button>
       </form>

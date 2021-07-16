@@ -3,31 +3,21 @@
   text-align: left;
 }
 
-.setting_field_name {
-  width: 164px;
-  margin-top: 10px;
+.setting_field_input {
   padding: 5px;
-  border: 1px solid rgb(72, 67, 167);
-  border-radius: 4px;
-}
-
-.setting_field_scills {
-  resize: none;
   margin-top: 10px;
   border: 1px solid rgb(72, 67, 167);
   border-radius: 4px;
-}
+  width: 170px;
 
-.setting_field_aboutMe {
   resize: none;
-  margin-top: 5px;
-  border: 1px solid rgb(72, 67, 167);
-  border-radius: 4px;
 }
 
 .setting_btn {
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 
   border-radius: 8px;

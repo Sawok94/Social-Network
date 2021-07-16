@@ -8,32 +8,32 @@
   width: 100%;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-.header_img {
+.header_logo {
   margin: 5px;
-  width: 70px;
-  height: 33px;
+  cursor: pointer;
 }
 
 .header_accordion {
   z-index: 1;
   margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
 }
 
 .header_accordion:hover {
   background: #f7f4f4;
-  display: block;
 }
 
-.summary {
+.header_accordion_auth_block {
   list-style: none;
   cursor: pointer;
   display: -webkit-box;
@@ -42,6 +42,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+
   margin: 0 5px;
 }
 

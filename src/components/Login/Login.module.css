@@ -31,13 +31,9 @@
 
 .login_wrapper_form {
   width: 300px;
-
   margin: 0 auto;
-
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -74,6 +70,7 @@
   padding: 10px;
   border: 1px solid rgb(72, 67, 167);
   border-radius: 4px;
+  width: 170px;
 }
 
 .login_wrapper_form_saveMe {

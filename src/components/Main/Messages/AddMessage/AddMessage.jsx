@@ -18,9 +18,11 @@ const AddMessageForm = (props) => {
             placeholder=' Введите текст сообщения...'
             name='textArea'
             component={Textarea}
+            className={style.message__form_field}
             validate={[required, maxLengthVal]}
             cols='40'
-            rows='2'
+            minRows='2'
+            maxRows='2'
           />
           <button className={style.message__form_button}>
             <b>Отправить</b>
