@@ -40,6 +40,7 @@ const Profile = (props) => {
         status={props.status}
         myId={props.id}
       />
+      
       <Wall
         urlId={props.match.params.userId}
         deletePost={props.deletePost}
@@ -49,6 +50,7 @@ const Profile = (props) => {
         profilePhoto={props.profile.photos.small}
         profileMyPhoto={props.myProfile.photos.small}
       />
+
       <Friends myFriendsProfile={props.myFriendsProfile} />
     </main>
   );
