@@ -5,7 +5,6 @@ body {
 .app-container {
   width: 700px;
   margin: 0 auto;
-
   display: grid;
   grid-template-areas: 'header header' 'navBar main';
   grid-template-rows: 45px 1fr;
