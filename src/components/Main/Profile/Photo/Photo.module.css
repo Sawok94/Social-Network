@@ -1,5 +1,5 @@
 .photo {
-  grid-area: "photo";
+  grid-area: 'photo';
   position: relative;
 }
 

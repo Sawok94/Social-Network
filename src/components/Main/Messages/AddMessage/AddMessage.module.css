@@ -1,5 +1,5 @@
 .addMessageForm {
-  width: 485px;
+  width: 488px;
   grid-column-start: 2;
   grid-column-end: 4;
 }
@@ -7,9 +7,17 @@
 .message__form {
   padding: 15px;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .message__form_button {

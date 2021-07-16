@@ -9,7 +9,7 @@ const Error404 = (props) => {
       <figure className={style.error404}>
         <img src={eror404} alt='404img' />
         <figcaption className={style.error404_text}>
-          <b>Станица не найдена...</b>
+          <b>Страница не найдена...</b>
         </figcaption>
       </figure>
     </aside>

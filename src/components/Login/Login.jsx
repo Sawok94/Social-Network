@@ -5,7 +5,7 @@ import { Input } from '../../utils/validators/Forms/ValidationForms';
 import { required } from '../../utils/validators/validators';
 import style from '../Login/Login.module.css';
 import border from '../Main/Main.module.css';
-import logo from '../../assets/logoLogin.png';
+import logo from '../../assets/logo.png';
 
 const Login = (props) => {
   if (props.isAuth) {
@@ -31,7 +31,7 @@ const Login = (props) => {
         <section className={style.login_wrapper_form_field}>
           <label className={style.login_wrapper_form_lbl}>
             <h7>
-              <b>Логин:</b>
+              <b>Логин: sashka.lunkin94@gmail.com</b>
             </h7>
           </label>
           <Field
@@ -47,7 +47,7 @@ const Login = (props) => {
         <section className={style.login_wrapper_form_field}>
           <label className={style.login_wrapper_form_lbl}>
             <h7>
-              <b>Пароль:</b>
+              <b>Пароль: SocialNetworkAPI</b>
             </h7>
           </label>
           <Field

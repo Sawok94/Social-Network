@@ -11,6 +11,9 @@
 .li {
   margin: 5px;
   vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -21,7 +24,7 @@
   text-decoration: none;
 }
 
-.link_disabled{
+.link_disabled {
   pointer-events: none;
 }
 

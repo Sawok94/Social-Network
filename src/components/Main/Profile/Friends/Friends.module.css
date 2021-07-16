@@ -11,10 +11,9 @@
   text-decoration: none;
 }
 
-.friends_title:hover{
+.friends_title:hover {
   background: #f7f4f4;
 }
-
 
 .profiles {
   display: grid;

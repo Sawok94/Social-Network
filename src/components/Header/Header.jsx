@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import style from '../Header/Header.module.css';
-import logo from '../../assets/logo.jpg';
+import logo from '../../assets/logo.png';
 import Avatar from '../../utils/OverallComponents/Avatar/Avatar';
 import { NavLink } from 'react-router-dom';
+import exitImg from '../../assets/exit.png';
 
 const Header = (props) => {
   const [editMode, setEditMode] = useState(false);
   return (
     <header className={style.header}>
-      <img src={logo} className={style.header_img} alt='logoImg' />
+      <img width='70' height='33' src={logo} className={style.header_img} alt='logoImg' />
       {props.isAuth && props.profile && (
         <details
           className={style.header_accordion}
@@ -41,7 +42,10 @@ const Header = (props) => {
               props.logout();
             }}
           >
-            <NavLink to={'/login'}>Выход</NavLink>
+            <img src={exitImg} alt='exitImg' />
+            <NavLink className={style.header_accordion_exitLink} to={'/login'}>
+              Выход
+            </NavLink>
           </aside>
         </details>
       )}

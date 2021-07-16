@@ -8,7 +8,7 @@ const Friends = (props) => {
   return (
     <article className={`${style.friends} ${border.wrapper}`}>
       <NavLink to={'/friends'} className={style.friends_title_link}>
-        <h7 className={style.friends_title}> Друзья</h7>
+        <div className={style.friends_title}> Друзья</div>
       </NavLink>
       <ul className={style.profiles}>
         {props.myFriendsProfile &&

@@ -21,6 +21,7 @@
   margin-top: 3px;
   word-wrap: break-word;
   max-width: 100ch;
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: pre;
   overflow: hidden;
