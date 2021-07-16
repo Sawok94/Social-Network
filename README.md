@@ -1,13 +1,10 @@
-# Социльная сеть "Socialist" 
+![alt text](src/assets/logoLogin.png)
 
-Данный проект создан с помощью [Create React App](https://github.com/facebook/create-react-app).
+### Социaльная сеть "Socialist" 
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Данный проект создан с помощью **Create React App.** 
+При его создании использовались следующие библиотеки: **redux, react-redux, react-router-dom, redux-thunk, redux-form, axios, reselect, react-textarea-autosize.** 
+В качестве **серверного API** использовалось Social-Network Server API, а взаимодействие с ним осуществлялось с помощью **REST API.** 
+В качестве CSS использовалась концепция **CSS Modules.** 
+Приложение полностью построено на **функциональных компонентах** с использованием **Хуков**. 
+При проектировании архитектуры приложения использовался **паттерн Presentational and Container Components.**
